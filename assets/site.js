@@ -361,7 +361,8 @@
       const p = h.filter((e) => e.Fatsa);
       const svg = document.querySelector('#curve svg');
       const note = $('#curveNote');
-      if (p.length < 3) {
+      const yillar = p.length >= 2 && (Date.parse(p[p.length - 1].t) - Date.parse(p[0].t)) > 30 * 864e5;
+      if (p.length < 2 || (p.length === 2 && !yillar)) {
         svg.style.display = 'none';
         const son = p[p.length - 1];
         if (son) {
