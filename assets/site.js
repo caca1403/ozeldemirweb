@@ -356,7 +356,7 @@
   /* fiyat egrisi: kendi gunluk olcumlerimiz */
   const curve = $('#curve');
   if (curve) {
-    fetch('assets/piyasa-history.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((h) => {
+    fetch('assets/piyasa-history.json?g=' + GUN, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((h) => {
       h = Array.isArray(h) ? h : [];
       const p = h.filter((e) => e.Fatsa);
       const svg = document.querySelector('#curve svg');
@@ -503,7 +503,8 @@
   const FLOOR = { zemin: 0.97, '1-3': 1, '4-8': 1.02, '9+': 1.03 };
 
   /* piyasa verisi: assets/piyasa.json varsa sabit degerlerin yerine gecer */
-  fetch('assets/piyasa.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((d) => {
+  var GUN = new Date().toISOString().slice(0, 10);
+  fetch('assets/piyasa.json?g=' + GUN, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((d) => {
     if (!d || !d.ppm2 || !d.ppm2.Fatsa) return;
     Object.keys(d.ppm2).forEach((k) => { if (k in PPM2) PPM2[k] = d.ppm2[k]; });
     if (!d.guncellendi) return;

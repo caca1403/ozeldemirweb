@@ -9,6 +9,7 @@
   var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; };
 
   /* gorunur alana girince acilma (reveal + cubuklar) */
+  var GUN = new Date().toISOString().slice(0, 10);
   var io = new IntersectionObserver(function (g) {
     g.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
@@ -26,7 +27,7 @@
     requestAnimationFrame(adim);
   }
 
-  fetch('assets/piyasa.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+  fetch('assets/piyasa.json?g=' + GUN, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
     if (!d || !d.ppm2 || !d.ppm2[AD]) return;
     var v = d.ppm2[AD], tarih = trTarih(d.guncellendi);
     sayac($('#ilceNo'), v, '');
@@ -82,7 +83,7 @@
     }
   }).catch(function () {});
 
-  fetch('assets/piyasa-history.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (h) {
+  fetch('assets/piyasa-history.json?g=' + GUN, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (h) {
     h = Array.isArray(h) ? h : [];
     var p = h.filter(function (e) { return e[AD]; });
     var svg = document.querySelector('#curve svg');
