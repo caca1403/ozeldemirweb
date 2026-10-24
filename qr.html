@@ -226,9 +226,7 @@ footer .loc{display:inline-flex;align-items:center;gap:7px}
 (() => {
   'use strict';
   const $ = (s) => document.querySelector(s);
-  const MOBIL = matchMedia('(max-width:900px),(orientation:portrait) and (max-width:1024px)').matches;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches && !MOBIL;
-  document.documentElement.classList.toggle('reduced', reduced);
+  const reduced = false; /* video ve efektler her cihazda oynar */
 
   /* arka plan videosu: hareket tercihine gore */
   const v = $('#bgv');

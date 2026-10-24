@@ -8,10 +8,8 @@
     const t = clamp((p - e0) / (e1 - e0), 0, 1);
     return t * t * (3 - 2 * t);
   };
-  /* mobilde efektler her zaman acik; hareket kisitliligi yalniz masaustunde dikkate alinir */
-  const forceMq = matchMedia('(max-width:900px),(orientation:portrait) and (max-width:1024px)');
-  const mqR = matchMedia('(prefers-reduced-motion: reduce)');
-  const reduced = () => mqR.matches && !forceMq.matches;
+  /* efektler her cihazda zorla acik (sahip istegi); hareket kisitliligi dinlenmiyor */
+  const reduced = () => false;
 
   /* ilanlar: assets/listings.js tek kaynak, yonetim paneli localStorage taslagi */
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -314,8 +312,6 @@
   }, { rootMargin: '200px 0px' });
   heroIO.observe(hero);
 
-  mqR.addEventListener('change', syncMotion);
-  forceMq.addEventListener('change', syncMotion);
   if (reduced()) pinFinal();
   applyHeroMode();
   onScroll();
