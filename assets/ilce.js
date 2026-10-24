@@ -66,15 +66,30 @@
   }).catch(function () {});
 
   fetch('assets/piyasa-history.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (h) {
-    var p = (Array.isArray(h) ? h : []).filter(function (e) { return e[AD]; }).map(function (e) { return e[AD]; });
-    if (p.length < 2) { if (h && h[0]) $('#curveNote').textContent = 'İlk ölçüm: ' + trTarih(h[0].t) + ' · ' + tl(h[0][AD]) + ' TL/m² — her sabah yeniden ölçüyoruz.'; return; }
-    var mn = Math.min.apply(null, p), mx = Math.max.apply(null, p), ac = Math.max(1, mx - mn);
-    $('#curveLine').setAttribute('points', p.map(function (y, i) {
-      var x = 8 + (i / (p.length - 1)) * 604;
+    h = Array.isArray(h) ? h : [];
+    var p = h.filter(function (e) { return e[AD]; });
+    var svg = document.querySelector('#curve svg');
+    var note = $('#curveNote');
+    if (p.length < 3) {
+      svg.style.display = 'none';
+      var son = p[p.length - 1];
+      note.textContent = son
+        ? 'Bugünkü ölçüm: ' + tl(son[AD]) + ' TL/m² (' + trTarih(son.t) + ') — her sabah yenilenir. Çizgi 3. ölçümden sonra belirir; her geçen gün 12 aya bir adım daha yaklaşır.'
+        : 'Ölçümler yarın sabah başlıyor — her sabah 06:00\u0027da otomatik.';
+      return;
+    }
+    var degerler = p.map(function (e) { return e[AD]; });
+    var mn = Math.min.apply(null, degerler), mx = Math.max.apply(null, degerler), ac = Math.max(1, mx - mn);
+    var pts = degerler.map(function (y, i) {
+      var x = 8 + (i / (degerler.length - 1)) * 604;
       return x.toFixed(1) + ',' + (140 - ((y - mn) / ac) * 128).toFixed(1);
-    }).join(' '));
-    var dv = Math.round((p[p.length - 1] / p[0] - 1) * 1000) / 10;
-    $('#curveNote').textContent = p.length + ' ölçüm · ' + trTarih(h[0].t) + ' → ' + trTarih(h[h.length - 1].t) + ' · ilkine göre %' + (dv > 0 ? '+' : '') + dv;
+    });
+    $('#curveLine').setAttribute('points', pts.join(' '));
+    var fill = document.getElementById('curveFill');
+    if (fill) fill.setAttribute('points', '8,150 ' + pts.join(' ') + ' 612,150');
+    var dv = Math.round((degerler[degerler.length - 1] / degerler[0] - 1) * 1000) / 10;
+    note.textContent = p.length + ' ölçüm · ' + trTarih(p[0].t) + ' → ' + trTarih(p[p.length - 1].t) +
+      ' · en düşük ' + tl(mn) + ' · en yüksek ' + tl(mx) + ' · ilkine göre %' + (dv > 0 ? '+' : '') + dv;
   }).catch(function () {});
 
   var tum = (window.OD_LISTINGS || []).filter(function (l) { return l.district === AD; });

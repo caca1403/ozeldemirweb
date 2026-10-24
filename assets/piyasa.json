@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-24",
+ "guncellendi": "2026-10-25",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -13,172 +13,31 @@
  "ek": {
   "Fatsa": {
    "amortisman": 18,
-   "yasi": 7,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 34085,
-     "t": "unitPrice",
-     "r": 0.3756
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 5010495,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 21307,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 7
   },
   "Altınordu": {
    "amortisman": 17,
-   "yasi": 5,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 45599,
-     "t": "unitPrice",
-     "r": 0.3248
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 5243885,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 23019,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 5
   },
   "Ünye": {
    "amortisman": 19,
-   "yasi": 4,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 37173,
-     "t": "unitPrice",
-     "r": 0.404
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 4720971,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 21215,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 4
   },
   "Perşembe": {
    "amortisman": 19,
-   "yasi": 4,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 47556,
-     "t": "unitPrice",
-     "r": 0.4833
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 6182280,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 24210,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 4
   },
   "Gülyalı": {
    "amortisman": 14,
-   "yasi": 1,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 54722,
-     "t": "unitPrice",
-     "r": 0.3671
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 6566640,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 16804,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 1
   },
   "Korgan": {
    "amortisman": 12,
-   "yasi": 9,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 23723,
-     "t": "unitPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 2894206,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 17974,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 9
   },
   "Diğer": {
    "amortisman": 16,
-   "yasi": 5,
-   "istat": [
-    {
-     "l": "Ort. m² Fiyatı",
-     "a": 40020,
-     "t": "unitPrice",
-     "r": 0.2759
-    },
-    {
-     "l": "Ort. Fiyat",
-     "a": 5002500,
-     "t": "totalPrice",
-     "r": null
-    },
-    {
-     "l": "Ort. Kira",
-     "a": 23579,
-     "t": "totalPrice",
-     "r": null
-    }
-   ]
+   "yasi": 5
   }
- },
- "mahalle": {}
+ }
 }

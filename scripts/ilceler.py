@@ -70,7 +70,7 @@ SABLON = """<!doctype html>
 
       <figure class="curve" id="curve">
         <figcaption><b>{ADI}</b> · kendi günlük ölçümümüz</figcaption>
-        <svg viewBox="0 0 620 150" preserveAspectRatio="none" role="img" aria-label="{ADI} metrekare fiyatının zaman içinde değişimi"><polyline id="curveLine" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"></polyline></svg>
+        <svg viewBox="0 0 620 150" preserveAspectRatio="none" role="img" aria-label="{ADI} metrekare fiyatının zaman içinde değişimi"><polygon id="curveFill" fill="rgba(201,162,74,.09)" stroke="none"></polygon><polyline id="curveLine" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"></polyline></svg>
         <p class="curve-note" id="curveNote">İlk ölçüm toplandı — eğri yeni ölçümlerle belirir.</p>
       </figure>
 
@@ -151,7 +151,7 @@ SABLON = """<!doctype html>
   </div>
 </footer>
 <script src="assets/listings.js"></script>
-<script src="assets/ilce.js?v=3"></script>
+<script src="assets/ilce.js?v=4"></script>
 </body>
 </html>
 """

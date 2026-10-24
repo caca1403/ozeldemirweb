@@ -2,6 +2,10 @@
 """Emlakjet SSR sayfalarindan ilce + Fatsa mahalle istatistiklerini ceker.
 Başarısız ilçede/eskisini korur; Fatsa fiyati yoksa hata ile cikar (workflow commit yapmaz)."""
 import datetime, json, os, re, sys, urllib.request
+from zoneinfo import ZoneInfo
+
+def bugun_tr():
+    return datetime.datetime.now(ZoneInfo('Europe/Istanbul')).date().isoformat()
 
 URUMLAR = {
     "Fatsa": "ordu-fatsa", "Altınordu": "ordu-altinordu", "Ünye": "ordu-unye",
@@ -126,7 +130,7 @@ def main():
 
     mahalle = dict(onceki.get("mahalle", {}))
     mad, mslug = MAHALLE_ILCE
-    if mad in html_cache:
+    if mslug in html_cache:
         try:
             liste = mahalle_verileri(html_cache[mslug], mslug)
             if liste:
@@ -140,7 +144,7 @@ def main():
 
     if "Fatsa" not in ppm2:
         sys.exit("Fatsa verisi yok — yayin yapilmayacak.")
-    json.dump({"guncellendi": datetime.date.today().isoformat(), "kaynak": "emlakjet.com",
+    json.dump({"guncellendi": bugun_tr(), "kaynak": "emlakjet.com",
                "ppm2": ppm2, "ek": ek, "mahalle": mahalle},
               open(HEDEF, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     hist_yol = os.path.join(KOK, "assets", "piyasa-history.json")
@@ -148,11 +152,12 @@ def main():
         hist = json.load(open(hist_yol, encoding="utf-8"))
     except Exception:
         hist = []
-    bugun = datetime.date.today().isoformat()
+    bugun = bugun_tr()
     hist = [e for e in hist if e.get("t") != bugun]
     yet = {"t": bugun}
     yet.update({k: v for k, v in ppm2.items() if k != "Diğer"})
     hist.append(yet)
+    hist.sort(key=lambda e: e.get("t", ""))
     json.dump(hist[-400:], open(hist_yol, "w", encoding="utf-8"), ensure_ascii=False)
     print("yazildi:", HEDEF, ("(eksik: " + ",".join(eksik) + ")") if eksik else "")
 

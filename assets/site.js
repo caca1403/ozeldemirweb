@@ -357,18 +357,31 @@
   const curve = $('#curve');
   if (curve) {
     fetch('assets/piyasa-history.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((h) => {
-      const AY2 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
-      const tr = (iso) => { const t = new Date(iso + 'T00:00:00'); return t.getDate() + ' ' + AY2[t.getMonth()] + ' ' + t.getFullYear(); };
-      const p = (Array.isArray(h) ? h : []).filter((e) => e.Fatsa).map((e) => e.Fatsa);
-      if (p.length < 2) {
-        if (h && h[0]) $('#curveNote').textContent = 'İlk ölçüm: ' + tr(h[0].t) + ' · ' + fmt(h[0].Fatsa) + " TL/m² — her sabah 06:00'da yeniden ölçüyoruz.";
+      h = Array.isArray(h) ? h : [];
+      const p = h.filter((e) => e.Fatsa);
+      const svg = document.querySelector('#curve svg');
+      const note = $('#curveNote');
+      if (p.length < 3) {
+        svg.style.display = 'none';
+        const son = p[p.length - 1];
+        if (son) {
+          const AY3 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+          const tt = new Date(son.t + 'T00:00:00');
+          note.textContent = 'Bugünkü ölçüm: ' + fmt(son.Fatsa) + ' TL/m² (' + tt.getDate() + ' ' + AY3[tt.getMonth()] + ' ' + tt.getFullYear() + ') — her sabah yenilenir. Çizgi 3. ölçümden sonra belirir; her geçen gün 12 aya bir adım daha yaklaşır.';
+        }
         return;
       }
-      const mn = Math.min(...p), mx = Math.max(...p), ac = Math.max(1, mx - mn);
-      $('#curveLine').setAttribute('points', p.map((y, i) =>
-        ((8 + (i / (p.length - 1)) * 604).toFixed(1)) + ',' + (140 - ((y - mn) / ac) * 128).toFixed(1)).join(' '));
-      const dv = Math.round((p[p.length - 1] / p[0] - 1) * 1000) / 10;
-      $('#curveNote').textContent = p.length + ' ölçüm · ' + tr(h[0].t) + ' → ' + tr(h[h.length - 1].t) + ' · ilkine göre %' + (dv > 0 ? '+' : '') + dv;
+      const v = p.map((e) => e.Fatsa);
+      const mn = Math.min(...v), mx = Math.max(...v), ac = Math.max(1, mx - mn);
+      const pts = v.map((y, i) => ((8 + (i / (v.length - 1)) * 604).toFixed(1)) + ',' + (140 - ((y - mn) / ac) * 128).toFixed(1));
+      $('#curveLine').setAttribute('points', pts.join(' '));
+      const fill = document.getElementById('curveFill');
+      if (fill) fill.setAttribute('points', '8,150 ' + pts.join(' ') + ' 612,150');
+      const AY3 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+      const tr3 = (iso) => { const t = new Date(iso + 'T00:00:00'); return t.getDate() + ' ' + AY3[t.getMonth()] + ' ' + t.getFullYear(); };
+      const dv = Math.round((v[v.length - 1] / v[0] - 1) * 1000) / 10;
+      note.textContent = p.length + ' ölçüm · ' + tr3(p[0].t) + ' → ' + tr3(p[p.length - 1].t) +
+        ' · en düşük ' + fmt(mn) + ' · en yüksek ' + fmt(mx) + ' · ilkine göre %' + (dv > 0 ? '+' : '') + dv;
     }).catch(() => {});
   }
 
