@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Fotoğraf yok">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2A2019"/>
+      <stop offset="1" stop-color="#1E1712"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <g fill="none" stroke="#C9A24A" stroke-opacity=".55" stroke-width="6" stroke-linecap="round">
+    <circle cx="600" cy="320" r="54"/>
+    <path d="M575 366 556 500h88l-19-134"/>
+    <path d="M556 430h34M590 465h-30"/>
+  </g>
+  <text x="600" y="590" text-anchor="middle" fill="#C4B49B" font-family="Georgia, serif" font-size="30" letter-spacing="6">FOTOĞRAF YOK</text>
+</svg>

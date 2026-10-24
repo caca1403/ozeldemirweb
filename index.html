@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="dark">
+<html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Özel Demir | Gayrimenkul Danışmanı — Ordu</title>
-<meta name="description" content="Ordu gayrimenkul danışmanı Özel Demir: satılık/kiralık ilanlar, ücretsiz mülk değerleme, piyasa analizi, stratejik pazarlama ve güçlü müzakere. 30 yıllık sektör tecrübesi." />
-<meta property="og:title" content="Özel Demir | Gayrimenkul Danışmanı — Ordu" />
-<meta property="og:description" content="Ordu'dan emlak hayallerinize açılan kapı. İlanlar, ücretsiz değerleme ve piyasa analizi." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://caca1403.github.io/ozeldemirweb/" />
-<meta property="og:image" content="https://caca1403.github.io/ozeldemirweb/assets/video/hero-poster.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://caca1403.github.io/ozeldemirweb/" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2308090a'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='24' fill='%235ecfc0'%3EOD%3C/text%3E%3C/svg%3E" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-<link rel="stylesheet" href="assets/css/site.css" />
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Özel Demir | Fatsa ve Ordu Gayrimenkul Danışmanı</title>
+<meta name="description" content="Fatsa ve Ordu'da satılık, kiralık ve yatırımlık gayrimenkul. 30 yıl deneyim, aynı gün ücretsiz değerleme, doğru fiyat.">
+<meta name="theme-color" content="#1E1712">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://caca1403.github.io/ozeldemirweb/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Özel Demir Gayrimenkul Danışmanlığı">
+<meta property="og:title" content="Özel Demir | Fatsa ve Ordu Gayrimenkul Danışmanı">
+<meta property="og:description" content="30 yıl deneyim, aynı gün ücretsiz değerleme. Fatsa ve Ordu'da doğru fiyat.">
+<!-- DEPLOY STEP: yayına alınca og:url ve og:image için tam adresi buraya yaz -->
+<meta property="og:url" content="https://caca1403.github.io/ozeldemirweb/">
+<meta property="og:image" content="https://caca1403.github.io/ozeldemirweb/assets/hero-poster.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231E1712'/%3E%3Ccircle cx='16' cy='12' r='5' fill='none' stroke='%23C9A24A' stroke-width='2'/%3E%3Cpath d='M13.6 16.6 11 29h10l-2.6-12.4' fill='none' stroke='%23C9A24A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -34,513 +35,477 @@
 </script>
 </head>
 <body>
-<a class="skip" href="#ilanlar">İlanlara atla</a>
-<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="pbar" aria-hidden="true"><i id="pbar"></i></div>
+<a class="skip" href="#main">İçeriğe geç</a>
 
-<!-- ============ NAV ============ -->
-<nav class="nav" id="nav" aria-label="Ana menü">
-  <div class="in">
-    <a href="#" class="logo"><span class="lm photo"><img src="assets/img/od-avatar.jpg" alt="" width="32" height="32" /></span>Özel Demir</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#ilanlar">İlanlar</a></li>
-      <li><a href="#about">Hakkımda</a></li>
-      <li><a href="#services">Hizmetler</a></li>
-      <li><a href="#portfolio">Portföy</a></li>
-      <li><a href="#hesapla">Değerleme</a></li>
-      <li><a href="#certificates">Sertifikalar</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact">İletişim</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="#ilanlar" class="iconbtn favbtn" id="favBtn" aria-label="Favori ilanlar" style="display:none"><i class="fas fa-heart"></i><span class="cnt" id="favCount">0</span></a>
-      <button class="iconbtn" id="tgl" aria-label="Tema değiştir"><i class="fas fa-moon"></i></button>
-      <button class="iconbtn burger" id="burger" aria-label="Menüyü aç/kapat" aria-expanded="false" style="display:none"><i class="fas fa-bars"></i></button>
-    </div>
-  </div>
-</nav>
-
-<main>
-<!-- ============ HERO · VİDEO ============ -->
-<header class="hero" id="hero">
-  <div class="hero-media">
-    <video autoplay muted loop playsinline poster="assets/video/hero-poster.jpg" preload="metadata" aria-hidden="true">
-      <source src="assets/video/hero.mp4" type="video/mp4" />
-      <img src="assets/video/hero-poster.jpg" alt="" />
-    </video>
-  </div>
-  <div class="hero-shade" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
-
-  <div class="wrap">
-    <span class="hero-kicker"><span class="dot"></span>Ordu · Gayrimenkul Danışmanlığı</span>
-    <h1><span class="grad">Doğru adres,<br>doğru zamanda.</span></h1>
-    <p class="sub">30 yıllık inşaat, 10 yıllık müteahhitlik ve 16 yıl yurtdışı tecrübesiyle alım–satım sürecinizi şeffaf, stressiz ve kârlı bir deneyime dönüştürüyorum.</p>
-
-    <label class="qsearch"><i class="fas fa-magnifying-glass"></i>
-      <input id="heroQ" type="search" placeholder="İlan ara: bölge, oda, anahtar kelime… (Enter)" aria-label="İlan ara" />
-    </label>
-
-    <div class="hero-actions">
-      <a href="#ilanlar" class="btn btn-p">İlanları İncele <i class="fas fa-arrow-right"></i></a>
-      <a href="#hesapla" class="btn btn-g"><i class="fas fa-calculator"></i> Hızlı Değerleme</a>
-    </div>
-
-    <div class="herometa">
-      <span><i class="fas fa-check"></i>24 saatte geri dönüş</span>
-      <span><i class="fas fa-check"></i>Taahhütsüz değerleme</span>
-      <span><i class="fas fa-check"></i>Tapuya kadar tek muhatap</span>
-    </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true"><span></span>Aşağı kaydır</div>
+<header class="nav" id="nav">
+  <a class="brand" href="#hero" aria-label="Özel Demir, başa dön">
+    <b>Özel Demir</b><span>Gayrimenkul</span>
+  </a>
+  <nav class="nav-links" aria-label="Ana menü">
+    <a href="#hakkimda">Hakkımda</a>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#ilanlar">İlanlar</a>
+    <a href="#deger">Değer</a>
+    <a href="#tereddutler">Tereddütler</a>
+    <a href="#sertifikalar">Belgeler</a>
+  </nav>
+  <a class="btn small" href="https://wa.me/905327983352?text=Merhaba%2C%20sitenizden%20geliyorum." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 2a8 8 0 1 1-4.1 14.8l-.4-.2-2.7.7.7-2.6-.2-.4A8 8 0 0 1 12 4Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-.8.8-.8 1.8s.8 2 1 2.2c.1.2 1.6 2.6 4 3.5 1.9.8 2.3.6 2.7.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.1-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.4Z"/></svg>
+    WhatsApp
+  </a>
 </header>
 
-<!-- marquee -->
-<div class="marquee" aria-hidden="true">
-  <div class="mtrack">
-    <span>Satılık Daire</span><i class="fas fa-circle"></i><span>Kiralık Daire</span><i class="fas fa-circle"></i><span>Arsa</span><i class="fas fa-circle"></i><span>Ticari Mülk</span><i class="fas fa-circle"></i><span>Ücretsiz Değerleme</span><i class="fas fa-circle"></i><span>Yatırım Danışmanlığı</span><i class="fas fa-circle"></i><span>Kiralama Yönetimi</span><i class="fas fa-circle"></i><span>Ordu</span><i class="fas fa-circle"></i>
-    <span>Satılık Daire</span><i class="fas fa-circle"></i><span>Kiralık Daire</span><i class="fas fa-circle"></i><span>Arsa</span><i class="fas fa-circle"></i><span>Ticari Mülk</span><i class="fas fa-circle"></i><span>Ücretsiz Değerleme</span><i class="fas fa-circle"></i><span>Yatırım Danışmanlığı</span><i class="fas fa-circle"></i><span>Kiralama Yönetimi</span><i class="fas fa-circle"></i><span>Ordu</span><i class="fas fa-circle"></i>
+<nav class="rail" id="rail" aria-label="Bölümler">
+  <a href="#hakkimda" data-r="hakkimda"><b>01</b><i>Hakkında</i></a>
+  <a href="#hizmetler" data-r="hizmetler"><b>02</b><i>Hizmetler</i></a>
+  <a href="#ilanlar" data-r="ilanlar"><b>03</b><i>İlanlar</i></a>
+  <a href="#piyasa" data-r="piyasa"><b>04</b><i>Piyasa</i></a>
+  <a href="#fiyat" data-r="fiyat"><b>05</b><i>Fiyat</i></a>
+  <a href="#surec" data-r="surec"><b>06</b><i>Süreç</i></a>
+  <a href="#deger" data-r="deger"><b>07</b><i>Değer</i></a>
+  <a href="#tereddutler" data-r="tereddutler"><b>08</b><i>Tereddütler</i></a>
+  <a href="#sertifikalar" data-r="sertifikalar"><b>09</b><i>Sertifikalar</i></a>
+  <button class="rail-top" id="railTop" type="button" aria-label="Başa dön">↑</button>
+</nav>
+
+<section class="hero" id="hero" aria-label="Özel Demir, giriş">
+  <div class="stage">
+    <div class="poster" aria-hidden="true"></div>
+    <video id="heroVideo" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <div class="bands">
+      <article class="band rise" data-start="0" data-end="0.22">
+        <span class="kicker"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>Fatsa · Ordu</span>
+        <h2><span class="w" style="--th:0">Otuz</span> <span class="w" style="--th:.08">yıldır</span><br><span class="w" style="--th:.16">aynı</span> <span class="w" style="--th:.24">iş.</span></h2>
+      </article>
+
+      <article class="band punch" data-start="0.24" data-end="0.46">
+        <h2><span class="w" style="--th:0">Fiyatı</span> <span class="w" style="--th:.06">tahmin</span> <span class="w" style="--th:.12">etmeyiz.</span><br><span class="w em" style="--th:.2">Ölçeriz.</span></h2>
+      </article>
+
+      <article class="band approach" data-start="0.48" data-end="0.72">
+        <h2><span class="w" style="--th:0">Alırız,</span> <span class="w" style="--th:.06">satarız,</span><br><span class="w em" style="--th:.14">inşa</span> <span class="w em" style="--th:.2">ederiz.</span></h2>
+        <p class="sub">Danışmanlık, müteahhitlik, değerleme ve yatırım. Tek çatı altında.</p>
+      </article>
+
+      <article class="band settle" data-start="0.74" data-end="1">
+        <span class="kicker"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>Ücretsiz değerleme</span>
+        <h2><span class="w" style="--th:0">Evinizin</span> <span class="w" style="--th:.06">doğru</span> <span class="w" style="--th:.12">fiyatını</span><br><span class="w" style="--th:.18">bugün</span> <span class="w" style="--th:.24">öğrenin.</span></h2>
+        <p class="sub">Bir mesaj yeter. Aynı gün döneriz.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/905327983352?text=Merhaba%2C%20sitenizden%20geliyorum." target="_blank" rel="noopener">WhatsApp'tan yazın</a>
+          <a class="phone" href="tel:+905327983352">0532 798 33 52</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="cue" aria-hidden="true"><span>Kaydır</span><i></i></div>
+  </div>
+
+  <div class="hero-static">
+    <div class="shot" role="img" aria-label="Ceviz masa üzerinde pirinç bir anahtar, sabah ışığı"></div>
+    <div class="copy">
+      <h1>Otuz yıldır alır, satar, inşa ederiz.</h1>
+      <p>Fatsa ve Ordu'da alım-satım danışmanlığı, müteahhitlik, değerleme ve yatırım. Ücretsiz değerleme, aynı gün.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/905327983352?text=Merhaba%2C%20sitenizden%20geliyorum." target="_blank" rel="noopener">WhatsApp'tan yazın</a>
+        <a class="phone" href="tel:+905327983352">0532 798 33 52</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="main" tabindex="-1">
+  <div class="thread" aria-hidden="true">
+    <svg viewBox="0 0 40 1000" preserveAspectRatio="none">
+      <path id="threadPath" pathLength="1" d="M20 0 C34 140 6 260 20 400 C34 540 6 660 20 800 C30 900 14 950 20 1000"/>
+    </svg>
+  </div>
+
+  <section class="sec" id="hakkimda">
+    <div class="wrap about">
+      <div class="portrait reveal">
+        <img src="assets/img/portre.png" alt="Özel Demir, gayrimenkul danışmanı" width="806" height="802" loading="lazy" data-parallax>
+      </div>
+      <div class="about-body">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>01 · Hakkında</span>
+        <h2 class="reveal d1">Otuz yıl, tek bir iş: kıymet bilmek.</h2>
+        <p class="reveal d2 words" data-words>Fatsa'da başladık, bugün Ordu'nun tamamında çalışıyoruz. Bir evin fiyatını yalnızca metrekaresi belirlemez. Sokağı, ışığı, komşusu ve zamanı da belirler. Otuz yıldır bu işi yapıyoruz çünkü her evin anlatacak bir hikâyesi var.</p>
+        <p class="reveal d2">Yalnızca fiyat söylemeyiz. Alım-satımı yürütür, arsayı projeye çevirir, binayı yapar, kiralar ve portföyü yönetiriz. Tapudan ekspertize, imardan müteahhitliğe kadar işin her aşamasındayız.</p>
+        <div class="stats reveal d3">
+          <div><b>30</b><span>yıl sektör</span></div>
+          <div><b>10+</b><span>yıl müteahhitlik</span></div>
+          <div><b>16</b><span>yıl yurtdışı</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto" id="manifesto" aria-label="Yaklaşım">
+    <div class="wrap">
+      <p class="mf-text" id="mfText">Bir evi satmakla iş bitmez. Alırız, satarız, inşa ederiz; değerini ölçer, sürecini yönetiriz. Otuz yıldır aynı sokaklarda, aynı işin her aşamasında varız.</p>
+      <p class="mf-sign">Özel Demir · Fatsa</p>
+    </div>
+  </section>
+
+  <section class="hsec" id="hizmetler" aria-labelledby="hizmetler-title">
+    <div class="hpin">
+      <div class="wrap hhead">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>02 · Hizmetler</span>
+        <h2 class="reveal d1" id="hizmetler-title">Beş iş, tek bir sonuç: doğru karar.</h2>
+      </div>
+      <div class="hviewport">
+        <div class="htrack" id="hTrack">
+          <article class="hpanel">
+            <span class="hno">01</span>
+            <h3>Alım-Satım Danışmanlığı</h3>
+            <p>Alıcı bulmakla kalmaz; doğru fiyatı kurar, süreci baştan sona yönetiriz.</p>
+            <span class="hmeta">Satılık · kiralık · portföy</span>
+          </article>
+          <article class="hpanel">
+            <span class="hno">02</span>
+            <h3>Müteahhitlik ve Proje Geliştirme</h3>
+            <p>Arsadan projeye, temelden teslime. On yılı aşkın müteahhitlik tecrübesi.</p>
+            <span class="hmeta">Arsa · inşaat · teslim</span>
+          </article>
+          <article class="hpanel">
+            <span class="hno">03</span>
+            <h3>Değerleme ve Piyasa Analizi</h3>
+            <p>Son satışlar, metrekare, kat, manzara. Tahmin değil, kayıt ve yazılı rapor.</p>
+            <span class="hmeta">Bölge verisi · yazılı rapor</span>
+          </article>
+          <article class="hpanel">
+            <span class="hno">04</span>
+            <h3>Kiralama ve Portföy Yönetimi</h3>
+            <p>Kiracı seçimi, sözleşme, tahliye, kira takibi. Mülkünüz sizin adınıza yönetilir.</p>
+            <span class="hmeta">Kiracı · sözleşme · takip</span>
+          </article>
+          <article class="hpanel">
+            <span class="hno">05</span>
+            <h3>Hukuki ve Teknik Takip</h3>
+            <p>Tapu, ekspertiz, imar, vergi, DASK. Evrakı ve randevuları biz takip ederiz.</p>
+            <span class="hmeta">Tapu · ekspertiz · imar</span>
+          </article>
+        </div>
+      </div>
+      <div class="hprogress" aria-hidden="true"><i id="hBar"></i></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ilanlar">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>03 · İlanlar</span>
+        <h2 class="reveal d1">Şu an portföyde.</h2>
+      </div>
+      <div class="chips reveal" role="group" aria-label="İlanları filtrele">
+        <button class="chip" data-filter="tumu" aria-pressed="true">Tümü</button>
+        <button class="chip" data-filter="satilik" aria-pressed="false">Satılık</button>
+        <button class="chip" data-filter="kiralik" aria-pressed="false">Kiralık</button>
+        <button class="chip" data-filter="satildi" aria-pressed="false">Satıldı</button>
+      </div>
+      <div class="grid" id="listingGrid"></div>
+      <p class="note reveal">Yeni ilanlar için <a href="https://wa.me/905327983352?text=Merhaba%2C%20yeni%20ilanlar%C4%B1%20sormak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yazın</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="piyasa">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>04 · Piyasa</span>
+        <h2 class="reveal d1">Fatsa'da metrekare ne kadar?</h2>
+        <p class="lede reveal d2">Ekim 2026, satılık daire ilanları. İlçe ilçe ortalama metrekare fiyatı.</p>
+      </div>
+      <div class="bigstat reveal">
+        <span class="bigstat-no" data-count="30018">30.018</span>
+        <span class="bigstat-unit">TL / m²</span>
+        <p>Fatsa · Ekim 2026 · satılık daire ortalaması</p>
+      </div>
+      <div class="market reveal" id="market">
+        <div class="mrow"><span class="mname">Fatsa</span><span class="mbar"><i style="--w:67.2%"></i></span><b>30.018 TL</b></div>
+        <div class="mrow"><span class="mname">Altınordu</span><span class="mbar"><i style="--w:77.6%"></i></span><b>34.628 TL</b></div>
+        <div class="mrow"><span class="mname">Ünye</span><span class="mbar"><i style="--w:76.9%"></i></span><b>34.334 TL</b></div>
+        <div class="mrow"><span class="mname">Perşembe</span><span class="mbar"><i style="--w:85.8%"></i></span><b>38.287 TL</b></div>
+        <div class="mrow"><span class="mname">Gülyalı</span><span class="mbar"><i style="--w:100%"></i></span><b>44.642 TL</b></div>
+        <div class="mrow"><span class="mname">Korgan</span><span class="mbar"><i style="--w:51.8%"></i></span><b>23.122 TL</b></div>
+      </div>
+      <p class="note reveal">Kaynak: Emlakjet, Ekim 2026 satılık daire ilan ortalamaları. Metrekare fiyatı, ilan fiyatının dairenin metrekaresine bölünmesiyle hesaplanır. Kesin değer yerinde inceleme ister.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="fiyat">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>05 · Fiyat</span>
+        <h2 class="reveal d1">Fiyatı ne belirler?</h2>
+        <p class="lede reveal d2">Aynı mahallede iki daire arasındaki fark çoğu zaman metrekareden değil, bu altı başlıktan çıkar.</p>
+      </div>
+      <div class="factors">
+        <article class="factor reveal"><span class="fno">01</span><h3>Konum ve ulaşım</h3><p>Sahil, merkez, okul ve hastane aksı. Günlük hayatın ne kadar içinde olduğu fiyatın ilk belirleyicisi.</p></article>
+        <article class="factor reveal d1"><span class="fno">02</span><h3>Bina yaşı ve yapı</h3><p>Deprem yönetmeliği, yalıtım, malzeme ve işçilik. Doğru yapılmış eski bina da prim yapar.</p></article>
+        <article class="factor reveal d2"><span class="fno">03</span><h3>Kat ve manzara</h3><p>Deniz, yeşil, gürültü ve gün ışığı. Aynı binada kat ve cephe farkı belirgin bir fiyat farkı yaratır.</p></article>
+        <article class="factor reveal"><span class="fno">04</span><h3>Metrekare ve plan</h3><p>Net kullanım, oda sayısı, ferahlık. Brüt metrekare değil, gerçekten kullanılan alan önemli.</p></article>
+        <article class="factor reveal d1"><span class="fno">05</span><h3>Site ve ortak alan</h3><p>Otopark, asansör, güvenlik, aidat. Aidatı yüksek site her alıcı için avantaj değildir.</p></article>
+        <article class="factor reveal d2"><span class="fno">06</span><h3>Piyasa ve alıcı</h3><p>Emsal satışlar, bekleme süresi, sezon. Fiyatı biz belirlemeyiz; ölçeriz.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="surec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>06 · Süreç</span>
+        <h2 class="reveal d1">Üç adım, sürpriz yok.</h2>
+      </div>
+      <div class="scrolly">
+        <div class="scrolly-media reveal">
+          <img src="assets/img/satilan-altinordu.jpg" alt="Satılan geniş aile dairesi" width="946" height="845" loading="lazy">
+          <span class="scrolly-badge">38 günde satıldı</span>
+        </div>
+        <div class="scrolly-steps">
+          <article class="sstep">
+            <span class="no">01</span>
+            <h3>Bugün arayın.</h3>
+            <p>Telefon veya WhatsApp. Yerinizi ve niyetinizi dinleriz.</p>
+          </article>
+          <article class="sstep">
+            <span class="no">02</span>
+            <h3>Aynı gün değerleme.</h3>
+            <p>Bölge verisiyle fiyatı netleştiririz. Rakamı yazılı veririz.</p>
+          </article>
+          <article class="sstep">
+            <span class="no">03</span>
+            <h3>Üç ile beş gün içinde pazarda.</h3>
+            <p>Fotoğraf, ilan, tanıtım hazır. Sonrası müzakere.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cream" id="deger">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>07 · Değer</span>
+        <h2 class="reveal d1">Evinizin değeri, birkaç saniyede.</h2>
+        <p class="lede reveal d2">İlçeyi ve metrekaresi girin. Bölgesel veriyle bir aralık çıkaralım. Kesin rakamı birlikte netleştiririz.</p>
+      </div>
+      <div class="val">
+        <form class="form reveal" id="valForm" novalidate>
+          <div class="field">
+            <label for="district">İlçe</label>
+            <select id="district" name="district">
+              <option>Altınordu</option>
+              <option>Ünye</option>
+              <option selected>Fatsa</option>
+              <option>Perşembe</option>
+              <option>Gülyalı</option>
+              <option>Korgan</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="m2">Metrekare</label>
+            <input id="m2" name="m2" type="number" inputmode="numeric" min="20" max="100000" step="1" placeholder="Örnek: 145" value="145" required>
+          </div>
+          <div class="field">
+            <label for="type">Tip</label>
+            <select id="type" name="type">
+              <option value="konut" selected>Konut</option>
+              <option value="arsa">Arsa</option>
+              <option value="ticari">Ticari</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="year">Yapım yılı</label>
+              <input id="year" name="year" type="number" inputmode="numeric" min="1950" max="2026" step="1" value="2015">
+            </div>
+            <div class="field">
+              <label for="floor">Kat</label>
+              <select id="floor" name="floor">
+                <option value="zemin">Zemin</option>
+                <option value="1-3" selected>1-3</option>
+                <option value="4-8">4-8</option>
+                <option value="9+">9 ve üzeri</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn" type="submit">Hesapla</button>
+          <p class="fine">Bölge verisi: Emlakjet, Ekim 2026. Yaş ve kat düzeltmesi konutta uygulanır.</p>
+        </form>
+        <div class="result reveal d1" aria-live="polite">
+          <span class="label">Tahmini aralık</span>
+          <p class="range" id="valRange">İlçeyi ve metrekaresi girin.</p>
+          <p class="fine" id="valNote">Ön hesaplama, bölgesel metrekare değerleriyle yapılır. Kesin değer, yerinde inceleme ile netleşir.</p>
+          <div class="actions">
+            <a class="btn ghost" id="valLink" href="https://wa.me/905327983352" target="_blank" rel="noopener" hidden>Bu rakamı birlikte netleştirelim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="tereddutler">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>08 · Tereddütler</span>
+        <h2 class="reveal d1">Akılda kalan sorular.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Fiyat düşük kalır mı?<i aria-hidden="true"></i></summary>
+          <p>Fiyatı biz belirlemeyiz, pazar belirler. Biz o pazarı ölçeriz. Bölgedeki son satışlar, metrekare, kat ve manzara. Sonra size bir aralık değil, tek bir doğru fiyat söyleriz.</p>
+        </details>
+        <details>
+          <summary>Ne kadar sürede satılır?<i aria-hidden="true"></i></summary>
+          <p>Değerleme aynı gün, pazara çıkış üç ile beş gün. Satış süresi fiyata ve alıcıya bağlı. Yanlış fiyat her şeyi geciktirir.</p>
+        </details>
+        <details>
+          <summary>Komisyon ne kadar?<i aria-hidden="true"></i></summary>
+          <p>Konuştuğumuz gün net söyleriz. Sürpriz yok, sonradan ek yok. Sözleşmede ne yazıyorsa o.</p>
+        </details>
+        <details>
+          <summary>Resmi işler göz korkutuyor.<i aria-hidden="true"></i></summary>
+          <p>Tapu, ekspertiz, imar, vergi. Hepsini biz takip ederiz. Siz randevuya gelirsiniz.</p>
+        </details>
+        <details>
+          <summary>Alıcı gerçek mi?<i aria-hidden="true"></i></summary>
+          <p>Her arayanı size göndermeyiz. Önce niyetini, bütçesini ve zamanını sorarız. Ciddi olan gelir.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="sertifikalar">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>09 · Sertifikalar</span>
+        <h2 class="reveal d1">Belgeler ve yetkinlik</h2>
+        <p class="lede reveal d2">Mesleki eğitim ve yasal yeterlilik belgeleri. Büyütmek için karta dokunun.</p>
+      </div>
+      <div class="certs">
+        <button class="certcard reveal" type="button" data-img="assets/img/certificates/belge-6.jpg" data-title="Gayrimenkul Değerleme ve Yatırım Uzmanlığı" data-meta="400 saat · İstanbul Arel Üniversitesi · 2024">
+          <span class="cno">01</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-6.jpg" alt="Gayrimenkul Değerleme ve Yatırım Uzmanlığı belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Gayrimenkul Değerleme ve Yatırım Uzmanlığı</b><small>400 saat · Arel Üniversitesi · 2024</small></span>
+        </button>
+        <button class="certcard reveal d1" type="button" data-img="assets/img/certificates/belge-5.jpg" data-title="Emlak Danışmanlığı Komisyonculuğu" data-meta="120 saat · İstanbul Arel Üniversitesi · 2024">
+          <span class="cno">02</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-5.jpg" alt="Emlak Danışmanlığı Komisyonculuğu belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Emlak Danışmanlığı Komisyonculuğu</b><small>120 saat · Arel Üniversitesi · 2024</small></span>
+        </button>
+        <button class="certcard reveal d2" type="button" data-img="assets/img/certificates/belge-4.jpg" data-title="Emlak Danışmanlığı İş Analizi ve İş Takibi" data-meta="120 saat · İstanbul Arel Üniversitesi · 2024">
+          <span class="cno">03</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-4.jpg" alt="Emlak Danışmanlığı İş Analizi ve İş Takibi belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Emlak Danışmanlığı İş Analizi ve İş Takibi</b><small>120 saat · Arel Üniversitesi · 2024</small></span>
+        </button>
+        <button class="certcard reveal" type="button" data-img="assets/img/certificates/belge-1.jpg" data-title="Mortgage Brokerliği" data-meta="120 saat · İstanbul Arel Üniversitesi · 2024">
+          <span class="cno">04</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-1.jpg" alt="Mortgage Brokerliği belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Mortgage Brokerliği</b><small>120 saat · Arel Üniversitesi · 2024</small></span>
+        </button>
+        <button class="certcard reveal d1" type="button" data-img="assets/img/certificates/belge-3.jpg" data-title="Müteahhitlik" data-meta="150 saat · İstanbul Arel Üniversitesi · 2024">
+          <span class="cno">05</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-3.jpg" alt="Müteahhitlik belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Müteahhitlik</b><small>150 saat · Arel Üniversitesi · 2024</small></span>
+        </button>
+        <button class="certcard reveal d2" type="button" data-img="assets/img/certificates/belge-2.jpg" data-title="Oto Alım Satım Galericiliği" data-meta="120 saat · İstanbul Arel Üniversitesi · 2024">
+          <span class="cno">06</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-2.jpg" alt="Oto Alım Satım Galericiliği belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Oto Alım Satım Galericiliği</b><small>120 saat · Arel Üniversitesi · 2024</small></span>
+        </button>
+        <button class="certcard reveal" type="button" data-img="assets/img/certificates/belge-9.jpg" data-title="Betonarme Demir, Kalıpçılık ve Çatıcılık" data-meta="40 saat · Millî Eğitim Bakanlığı · 2015">
+          <span class="cno">07</span>
+          <span class="cimg"><img src="assets/img/certificates/belge-9.jpg" alt="MEB betonarme demir, kalıpçılık ve çatıcılık kurs bitirme belgesi" width="946" height="660" loading="lazy"></span>
+          <span class="cbody"><b>Betonarme Demir, Kalıpçılık ve Çatıcılık</b><small>40 saat · MEB · 2015</small></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="iletisim">
+    <div class="wrap">
+      <span class="kicker reveal"><svg viewBox="0 0 12 16" aria-hidden="true"><circle cx="6" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4.4 8.2 3 15h6L7.6 8.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>İletişim</span>
+      <h2 class="reveal d1">Evinizin doğru fiyatını bugün öğrenin.</h2>
+      <p class="reveal d2">Bir mesaj yeter. Aynı gün döneriz.</p>
+      <div class="actions reveal d3">
+        <a class="btn" href="https://wa.me/905327983352?text=Merhaba%2C%20sitenizden%20geliyorum." target="_blank" rel="noopener">WhatsApp'tan yazın</a>
+        <a class="phone" href="tel:+905327983352">0532 798 33 52</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="listingModal" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="lmTitle">
+    <button class="modal-x" type="button" data-close aria-label="İlanı kapat">Kapat</button>
+    <div class="modal-media"><img id="lmImg" src="" alt="" width="1200" height="800"></div>
+    <div class="modal-body">
+      <span class="tag" id="lmTag">Satılık</span>
+      <h2 id="lmTitle"></h2>
+      <p class="modal-price" id="lmPrice"></p>
+      <dl class="modal-specs" id="lmSpecs"></dl>
+      <p class="modal-desc" id="lmDesc"></p>
+      <ul class="modal-feats" id="lmFeats"></ul>
+      <a class="btn" id="lmWa" href="#" target="_blank" rel="noopener">WhatsApp'tan sorun</a>
+      <p class="fine">Fiyat ve bilgiler bilgilendirme amaçlıdır; kesin bilgi için iletişime geçin.</p>
+    </div>
   </div>
 </div>
 
-<!-- ============ METRİK ============ -->
-<section class="mband" aria-label="Rakamlarla">
-  <div class="wrap">
-    <div><div class="mnum"><span class="counter" data-t="30">0</span><em>+</em></div><div class="mlab">Yıl sektör deneyimi</div></div>
-    <div><div class="mnum"><span class="counter" data-t="10">0</span><em>+</em></div><div class="mlab">Yıl müteahhitlik</div></div>
-    <div><div class="mnum"><span class="counter" data-t="16">0</span></div><div class="mlab">Yıl yurtdışı proje</div></div>
-    <div><div class="mnum"><span class="counter" data-t="5">0</span><em>+</em></div><div class="mlab">Yıl emlak danışmanlığı</div></div>
-  </div>
-</section>
-
-<!-- ============ 01 · İLANLAR ============ -->
-<section class="sec" id="ilanlar">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">01</span> İlanlar</span>
-        <h2>Güncel <span class="ac">satılık &amp; kiralık</span><br>portföy</h2>
-      </div>
-      <p>Ara, filtrele, favorilerine ekle; detayda fotoğrafları gez ve tek dokunuşla WhatsApp'tan sor.</p>
-    </div>
-
-    <div class="searchbar" role="search">
-      <div class="field"><label for="q">Anahtar kelime</label>
-        <input id="q" type="search" placeholder="Örn: deniz manzarası, arsa, Boztepe…" /></div>
-      <div class="field"><label for="fTypeSel">Kategori</label>
-        <select id="fTypeSel"><option value="all">Tümü</option><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="ticari">Ticari</option></select></div>
-      <div class="field"><label for="fDistrict">İlçe</label>
-        <select id="fDistrict"><option value="all">Tüm ilçeler</option></select></div>
-      <button class="btn btn-p reset" type="button"><i class="fas fa-rotate-left"></i> Temizle</button>
-    </div>
-
-    <div class="filters" role="group" aria-label="Durum filtreleri">
-      <button class="fchip on" data-status="all">Tümü <span class="n"></span></button>
-      <button class="fchip" data-status="satilik">Satılık</button>
-      <button class="fchip" data-status="kiralik">Kiralık</button>
-      <button class="fchip" data-status="satildi">Satılanlar</button>
-      <button class="fchip" id="favOnly"><i class="fas fa-heart"></i> Favoriler <span class="n">0</span></button>
-      <span style="margin-left:auto">
-        <select class="sortsel" id="sort" aria-label="Sıralama">
-          <option value="new">En yeni</option><option value="price-asc">Fiyat (artan)</option>
-          <option value="price-desc">Fiyat (azalan)</option><option value="m2-desc">m² (büyük)</option>
-        </select>
-      </span>
-    </div>
-
-    <div class="resultbar"><span id="resultCount">—</span><span class="reset">Filtreleri sıfırla ↺</span></div>
-    <div class="grid" id="grid" aria-live="polite"></div>
-    <div class="loadmore"><button class="btn" id="loadMore" type="button">Daha fazla ilan <i class="fas fa-chevron-down"></i></button></div>
-  </div>
-</section>
-
-<!-- ============ 02 · HAKKIMDA ============ -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="rv">
-        <figure class="portrait">
-          <img src="assets/img/bio.png" alt="Özel Demir" loading="lazy" decoding="async" />
-        </figure>
-      </div>
-      <div>
-        <span class="kicker"><span class="idx">02</span> Hakkımda</span>
-        <h2 style="font-size:clamp(1.9rem,3.8vw,3.4rem)">Merhaba, ben<br><span class="ac">Özel Demir</span></h2>
-        <p class="lead" style="margin-top:24px">Yaklaşık 30 yıldır inşaat sektörünün içindeyim; 10 yılı müteahhitlikle sahada, şantiyede ve masada uçtan uca süreç yönettim. 16 yıl yurtdışı projelerinde farklı standartlarla çalışarak global bir bakış kazandım. Son 5 yıldır gayrimenkul danışmanlığı ile oto alım–satım faaliyetlerini birlikte yürütüyorum.</p>
-
-        <div class="expertise">
-          <span class="mono">Uzmanlık</span>
-          <div id="et" aria-live="polite">Gayrimenkul Değerleme ve Yatırım Uzmanlığı</div>
-        </div>
-
-        <dl class="meta">
-          <div><dt>Konum</dt><dd>Fatsa / Ordu</dd></div>
-          <div><dt>Deneyim</dt><dd>30+ yıl sektör</dd></div>
-          <div><dt>Uzmanlık</dt><dd>Konut · Arsa · Ticari</dd></div>
-          <div><dt>Hizmet</dt><dd>Satış · Kiralama · Değerleme</dd></div>
-        </dl>
+<div class="certmodal" id="certModal" hidden>
+  <div class="cm-bg" data-cclose></div>
+  <div class="cm-panel" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+    <button class="cm-x" type="button" data-cclose aria-label="Belgeyi kapat">Kapat</button>
+    <div class="cm-media"><img id="cmImg" src="" alt="" width="946" height="660"></div>
+    <div class="cm-body">
+      <h3 id="cmTitle"></h3>
+      <p id="cmMeta"></p>
+      <div class="cm-nav">
+        <button type="button" id="cmPrev" aria-label="Önceki belge">← Önceki</button>
+        <span id="cmCount">1 / 7</span>
+        <button type="button" id="cmNext" aria-label="Sonraki belge">Sonraki →</button>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ============ 03 · HİZMETLER ============ -->
-<section class="sec" id="services">
+<footer class="foot">
   <div class="wrap">
-    <div class="sechead">
+    <div class="foot-grid">
       <div>
-        <span class="kicker"><span class="idx">03</span> Hizmetler</span>
-        <h2>İhtiyacınıza göre<br><span class="ac">uçtan uca</span> destek</h2>
-      </div>
-      <p>Fiyat bulmaktan öte: riskleri erken gören, fırsatı zamanında yakalatan bir süreç yönetimi.</p>
-    </div>
-
-    <div class="srows">
-      <div class="srow rv">
-        <span class="n">01</span>
-        <h3>Piyasa Analizi &amp; Değerleme</h3>
-        <p>Mahalle bazlı emsal incelemesi, güncel trendler ve mülkünüzün gerçek değeri. Veriye dayalı konumlandırma ile satışı hızlandırıyorum.</p>
-        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
-      </div>
-      <div class="srow rv">
-        <span class="n">02</span>
-        <h3>Stratejik Pazarlama</h3>
-        <p>Profesyonel fotoğraf, video ve hedefli dijital reklamlarla doğru alıcıya hızlı ulaşım.</p>
-        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
-      </div>
-      <div class="srow rv">
-        <span class="n">03</span>
-        <h3>Güçlü Müzakere</h3>
-        <p>Teklif yönetimi, sözleşme ve teslim takvimi dahil masada sizi en avantajlı koşullarla temsil ediyorum.</p>
-        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
-      </div>
-      <div class="srow rv">
-        <span class="n">04</span>
-        <h3>Hukuki &amp; Teknik Kontrol</h3>
-        <p>Tapu, takyidat, iskan, DASK ve imar kontrolleriyle sürprizsiz, güvenli işlem.</p>
-        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
-      </div>
-      <div class="srow rv">
-        <span class="n">05</span>
-        <h3>Yatırım &amp; Geliştirme Danışmanlığı</h3>
-        <p>Arsa, ticari ve karma yatırımlarda imar okumaları, altyapı erişimi ve kamu yatırımlarını gözeterek orta–uzun vadeli değer odaklı yatırım kurgusu.</p>
-        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 04 · SÜREÇ ============ -->
-<section class="sec" id="process">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">04</span> Nasıl çalışırım</span>
-        <h2>Dört adımda<br><span class="ac">şeffaf süreç</span></h2>
-      </div>
-      <p>Baştan sona ne olduğunu bildiğiniz, takvimli ve raporlu bir yol haritası.</p>
-    </div>
-
-    <div class="tl" aria-hidden="true">
-      <div><b>Gün 1</b><span>Keşif &amp; değerleme</span></div>
-      <div><b>Gün 3</b><span>Fotoğraf, video &amp; ilana çıkış</span></div>
-      <div><b>Gün 7</b><span>Filtrelenmiş alıcı görüşmeleri</span></div>
-      <div><b>Gün 10+</b><span>Müzakere, tapu &amp; teslim</span></div>
-    </div>
-
-    <div class="steps">
-      <div class="step rv"><div class="n">01</div><h4>Keşif &amp; Değerleme</h4><p>Mülkünüzü yerinde inceler, emsal analiziyle gerçek değeri netleştiririm.</p></div>
-      <div class="step rv"><div class="n">02</div><h4>Konumlandırma</h4><p>Hedef alıcı profili, fiyat stratejisi ve pazara çıkış takvimi belirlenir.</p></div>
-      <div class="step rv"><div class="n">03</div><h4>Pazarlama &amp; Görüşme</h4><p>Profesyonel sunum, ilan yönetimi ve filtrelenmiş alıcı görüşmeleri yürütülür.</p></div>
-      <div class="step rv"><div class="n">04</div><h4>Müzakere &amp; Tapu</h4><p>Teklifler optimize edilir; sözleşme, banka ve tapu süreci koordineli kapanır.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 05 · PORTFÖY ============ -->
-<section class="sec" id="portfolio">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">05</span> Portföy</span>
-        <h2>Satışı tamamlanan<br><span class="ac">mülkler</span></h2>
-      </div>
-      <p>Döndürerek inceleyin — her satışta stratejik pazarlama ve doğru müzakere var.</p>
-    </div>
-    <div class="stage" id="stage" aria-label="Portföy galerisi"></div>
-    <div class="pnav">
-      <button id="pvPrev" aria-label="Önceki"><i class="fas fa-arrow-left"></i></button>
-      <button id="pvNext" aria-label="Sonraki"><i class="fas fa-arrow-right"></i></button>
-    </div>
-    <div class="dots" id="pDots"></div>
-  </div>
-</section>
-
-<!-- ============ 06 · ANLIK DEĞERLEME ============ -->
-<section class="sec" id="hesapla">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <span class="kicker"><span class="idx">06</span> Anlık değerleme</span>
-        <h2 style="font-size:clamp(1.9rem,3.8vw,3.4rem)">Mülkünüzün değerini<br><span class="ac">saniyeler içinde</span> öğrenin</h2>
-        <p class="lead" style="margin-top:22px">Bölgesel m² fiyatları; konum, durum, yaş ve kategoriye göre anlık tahmin aralığı üretir. Kesin değer için ücretsiz yerinde değerleme talep edin.</p>
-        <div class="klist">
-          <div><i class="fas fa-check"></i><div><b>Emsal bazlı analiz</b><p>Gerçek işlem verileriyle pazar gerçeklerine uygun fiyat.</p></div></div>
-          <div><i class="fas fa-check"></i><div><b>Hızlı geri dönüş</b><p>WhatsApp veya telefon ile aynı gün ön bilgilendirme.</p></div></div>
-          <div><i class="fas fa-check"></i><div><b>Bağlayıcı değil</b><p>Değerleme ücretsiz ve taahhütsüz.</p></div></div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h3>Değer Hesaplayıcı</h3>
-        <form id="calcForm" onsubmit="return false" aria-label="Değer hesaplayıcı">
-          <div class="row2">
-            <div class="field"><label for="cType">Kategori</label>
-              <select id="cType" name="type"><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="ticari">Ticari</option></select></div>
-            <div class="field"><label for="cDist">İlçe</label>
-              <select id="cDist" name="dist"><option>Altınordu</option><option>Ünye</option><option>Fatsa</option><option>Perşembe</option><option>Gülyalı</option><option>Korgan</option><option>Diğer</option></select></div>
-          </div>
-          <div class="row2">
-            <div class="field"><label for="cM2">m²</label><input id="cM2" name="m2" type="number" value="120" min="1" /></div>
-            <div class="field"><label for="cAge">Bina yaşı</label><input id="cAge" name="age" type="number" value="5" min="0" /></div>
-          </div>
-          <div class="field"><label for="cCond">Durum</label>
-            <select id="cCond" name="cond"><option value="cok-iyi">Çok iyi / renoveli</option><option value="iyi" selected>İyi</option><option value="orta">Orta</option><option value="kotu">Kötü / çıkma</option></select></div>
-          <div id="calcOut" aria-live="polite"></div>
-          <a href="#degerleme" class="btn btn-p" style="margin-top:6px">Yerinde Ücretsiz Değerleme <i class="fas fa-arrow-right"></i></a>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 07 · SERTİFİKALAR ============ -->
-<section class="sec" id="certificates">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">07</span> Güvence</span>
-        <h2>Sertifikalarım ve<br><span class="ac">belgelerim</span></h2>
-      </div>
-      <p>Mesleki yetkinlik ve yasal yeterlilik belgelerim. Büyütmek için karta dokunun.</p>
-    </div>
-    <div class="certs">
-      <figure class="cert" aria-label="Sertifika 1" tabindex="0"><img src="assets/img/certificates/belge-1.jpg" alt="Sertifika 1" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 2" tabindex="0"><img src="assets/img/certificates/belge-2.jpg" alt="Sertifika 2" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 3" tabindex="0"><img src="assets/img/certificates/belge-3.jpg" alt="Sertifika 3" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 4" tabindex="0"><img src="assets/img/certificates/belge-4.jpg" alt="Sertifika 4" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 5" tabindex="0"><img src="assets/img/certificates/belge-5.jpg" alt="Sertifika 5" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 6" tabindex="0"><img src="assets/img/certificates/belge-6.jpg" alt="Sertifika 6" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 7" tabindex="0"><img src="assets/img/certificates/belge-7.jpg" alt="Sertifika 7" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 8" tabindex="0"><img src="assets/img/certificates/belge-8.jpg" alt="Sertifika 8" loading="lazy" /></figure>
-      <figure class="cert" aria-label="Sertifika 9" tabindex="0"><img src="assets/img/certificates/belge-9.jpg" alt="Sertifika 9" loading="lazy" /></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DEĞERLEME FORMU ============ -->
-<section class="sec" id="degerleme">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <span class="kicker"><span class="idx">06</span> Devamı</span>
-        <h2 style="font-size:clamp(1.9rem,3.8vw,3.4rem)">Formu doldurun,<br><span class="ac">24 saat</span> içinde dönüş yapayım</h2>
-        <p class="lead" style="margin-top:22px">Mülkünüzün konumunu, büyüklüğünü ve durumunu paylaşın; emsal verilerle hazırlanmış ücretsiz ön değerlemeyi ileteyim.</p>
-        <div class="klist">
-          <div><i class="fas fa-shield-halved"></i><div><b>Gizlilik</b><p>Bilgileriniz yalnızca size dönüş için kullanılır, üçüncü tarafla paylaşılmaz.</p></div></div>
-          <div><i class="fas fa-clock"></i><div><b>Hız</b><p>Mesai saatleri içinde ortalama dönüş süresi 2 saatin altında.</p></div></div>
-        </div>
-      </div>
-
-      <form class="panel" id="vForm" novalidate>
-        <h3>Değerleme Talebi</h3>
-        <div class="row2">
-          <div class="field"><label for="fName">Ad Soyad</label><input id="fName" required placeholder="Adınız Soyadınız" /></div>
-          <div class="field"><label for="fPhone">Telefon</label><input id="fPhone" type="tel" required pattern="[\d\s+()\-]{7,}" placeholder="05xx xxx xx xx" /></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="fType2">Mülk Türü</label><select id="fType2" required><option value="">Seçiniz</option><option>Konut</option><option>Arsa</option><option>Ticari</option><option>Yatırım</option></select></div>
-          <div class="field"><label for="fM2">m² (yaklaşık)</label><input id="fM2" type="number" min="1" placeholder="Örn. 120" /></div>
-        </div>
-        <div class="field"><label for="fLoc">İlçe / Mahalle</label><input id="fLoc" placeholder="Örn. Fatsa, Merkez" /></div>
-        <div class="field"><label for="fNote">Notunuz</label><textarea id="fNote" placeholder="Kat, yaş, eşya durumu…"></textarea></div>
-        <button class="btn btn-p" id="fBtn" type="submit">Talebi Gönder <i class="fas fa-paper-plane"></i></button>
-        <div class="fmsg" id="fMsg" role="status"></div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 08 · REFERANSLAR ============ -->
-<section class="sec" id="testimonials">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">08</span> Referanslar</span>
-        <h2>Müşterilerim<br><span class="ac">ne diyor?</span></h2>
-      </div>
-      <p>İşlemleri şeffaf ve güvenli kılmanın en iyi kanıtı, müşteri memnuniyetidir.</p>
-    </div>
-    <div class="tslider" id="tslider">
-      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Evimizi satma sürecimizde olağanüstü destek oldu. Uzmanlığı ve samimiyeti sayesinde her şey sorunsuz ilerledi.</p><div class="who"><div class="av">AY</div><div><b>Ayşe Yılmaz</b><span>Konut satışı</span></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>İhtiyaçlarımızı dinleyerek tam da hayalimizdeki evi buldu. Her sorumuza sabırla yanıt verdi.</p><div class="who"><div class="av">MD</div><div><b>Mehmet Demir</b><span>Konut alımı</span></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Profesyonel yaklaşımı ve pazarlık becerileri sayesinde arsamı beklediğimden iyi bir fiyata sattım.</p><div class="who"><div class="av">SA</div><div><b>Selin Arslan</b><span>Arsa satışı</span></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Kiralama sürecimizi o kadar kolaylaştırdı ki sanki hiçbir şey yapmamıza gerek kalmadı.</p><div class="who"><div class="av">EK</div><div><b>Emre Karaca</b><span>Kiralama</span></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Doğru yatırım için doğru kişiyi bulduğumuzu anladık. Tavsiyeleriyle kısa sürede kazanç sağladık.</p><div class="who"><div class="av">BA</div><div><b>Burcu Aksoy</b><span>Yatırım</span></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Sadece danışman değil, aynı zamanda bir dost. Her zaman ulaşılabilir. Kesinlikle tavsiye ederim.</p><div class="who"><div class="av">KD</div><div><b>Kemal Doğan</b><span>Konut satışı</span></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 09 · BLOG ============ -->
-<section class="sec" id="blog">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">09</span> Blog</span>
-        <h2>Piyasaya dair<br><span class="ac">güncel yazılar</span></h2>
-      </div>
-      <p>Ordu ve çevresinde yatırımcılar için yol gösterici analizler ve pratik rehberler.</p>
-    </div>
-    <div class="bgrid">
-      <article class="post rv" data-a="trendler" tabindex="0">
-        <div class="top"><i class="fas fa-chart-line"></i></div>
-        <div class="bd"><span class="date">Eylül 2026 · Piyasa</span><h3>2026 Emlak Piyasası Trendleri</h3><p>Ordu ve çevresinde yatırımcıları ilgilendiren makro ve mikro trendler…</p><span class="more">Oku <i class="fas fa-arrow-right"></i></span></div>
-      </article>
-      <article class="post rv" data-a="danisman" tabindex="0">
-        <div class="top"><i class="fas fa-user-check"></i></div>
-        <div class="bd"><span class="date">Ağustos 2026 · Rehber</span><h3>Doğru Emlak Danışmanı Nasıl Seçilir?</h3><p>Şeffaflık, yerel uzmanlık ve pazarlama gücü neden belirleyici?…</p><span class="more">Oku <i class="fas fa-arrow-right"></i></span></div>
-      </article>
-      <article class="post rv" data-a="deger" tabindex="0">
-        <div class="top"><i class="fas fa-screwdriver-wrench"></i></div>
-        <div class="bd"><span class="date">Temmuz 2026 · İpuçları</span><h3>Ev Satarken Değeri Zıplatmak</h3><p>Küçük dokunuşlarla büyük fark yaratmanın pratik yolları…</p><span class="more">Oku <i class="fas fa-arrow-right"></i></span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 10 · SSS ============ -->
-<section class="sec" id="faq">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">10</span> SSS</span>
-        <h2>Sıkça sorulan<br><span class="ac">sorular</span></h2>
-      </div>
-      <p>Aklınıza takılanlar; kısa ve net yanıtlarıyla.</p>
-    </div>
-    <div class="faq">
-      <div class="fq"><div class="q">Gayrimenkulümü neden sizinle satmalıyım? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Stratejik pazarlama, güçlü müzakere ve şeffaf iletişimle en doğru fiyattan hızlı satış hedeflerim. Her adımı raporladığım için sürecin neresinde olduğunuzu hep bilirsiniz.</p></div></div>
-      <div class="fq"><div class="q">Ücretsiz mülk değerlemesi yapıyor musunuz? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Evet. Bölgesel piyasa analizleriyle ücretsiz ve profesyonel değerleme sağlıyorum; formu doldurmanız yeterli.</p></div></div>
-      <div class="fq"><div class="q">Sadece konut satışıyla mı ilgileniyorsunuz? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Hayır. Arsa, ticari gayrimenkul, kiralama ve farklı yatırım fırsatları da uzmanlık alanımda; oto alım–satım da yürütüyorum.</p></div></div>
-      <div class="fq"><div class="q">Süreç ne kadar sürüyor? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Değerleme aynı gün, pazara çıkış 3–5 gün içinde gerçekleşir. Satış süresi fiyatlama ve pazar koşullarına bağlıdır; hedefim en kısa sürede en doğru fiyattır.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 11 · İLETİŞİM ============ -->
-<section class="sec" id="contact">
-  <div class="wrap">
-    <div class="sechead">
-      <div>
-        <span class="kicker"><span class="idx">11</span> İletişim</span>
-        <h2>Yolculuğa<br><span class="ac">birlikte başlayalım</span></h2>
-      </div>
-      <p>Sorularınız, değerleme talepleriniz ve yatırım fırsatları için bana doğrudan ulaşın.</p>
-    </div>
-
-    <div class="contact-wrap">
-      <div class="ccards">
-        <a class="ccard" href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum." target="_blank" rel="noopener">
-          <div class="ic"><i class="fab fa-whatsapp"></i></div><div><b>WhatsApp</b><span>Anlık mesaj · 7/24 ulaşılabilir</span></div></a>
-        <a class="ccard" href="tel:+905327983352">
-          <div class="ic"><i class="fas fa-phone"></i></div><div><b>Telefon</b><span>+90 532 798 33 52</span></div></a>
-        <a class="ccard" href="https://www.instagram.com/ozel.demir.737" target="_blank" rel="noopener">
-          <div class="ic"><i class="fab fa-instagram"></i></div><div><b>Instagram</b><span>@ozel.demir · güncel ilanlar</span></div></a>
-        <div class="map"><iframe title="Ofis konumu — Fatsa, Ordu" src="https://www.openstreetmap.org/export/embed.html?bbox=37.44%2C40.99%2C37.56%2C41.06&amp;layer=mapnik" loading="lazy"></iframe></div>
-      </div>
-
-      <div class="quickform">
-        <h3>Hızlı mesaj</h3>
-        <form id="quickForm" novalidate style="display:flex;flex-direction:column;gap:14px">
-          <div class="field"><label for="kName">Ad Soyad</label><input id="kName" required placeholder="Adınız" /></div>
-          <div class="field"><label for="kMsg">Mesajınız</label><textarea id="kMsg" required placeholder="Kısa mesajınız…"></textarea></div>
-          <button class="btn btn-wa" type="submit"><i class="fab fa-whatsapp"></i> WhatsApp ile Gönder</button>
-          <div class="fmsg" id="kMsgOut" role="status"></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FINAL ============ -->
-<section class="final" id="final">
-  <div class="wrap">
-    <h2>Bu sayfa biter —<br><span class="ac">anahtar teslimi</span> başlar.</h2>
-    <div class="cta">
-      <a class="btn btn-p" href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
-      <a class="btn" href="tel:+905327983352"><i class="fas fa-phone"></i> +90 532 798 33 52</a>
-    </div>
-    <div class="trustrow">
-      <span><i class="fas fa-check"></i>Ücretsiz değerleme</span>
-      <span><i class="fas fa-check"></i>Tapuya kadar tek muhatap</span>
-      <span><i class="fas fa-check"></i>Şeffaf raporlama</span>
-      <span><i class="fas fa-check"></i>7/24 WhatsApp</span>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <a href="#" class="logo"><span class="lm photo"><img src="assets/img/od-avatar.jpg" alt="" width="32" height="32" /></span>Özel Demir</a>
-        <p class="fclose">Bu sadece sayfanın sonu. Bir sonrakini birlikte bulalım.</p>
-        <div class="fsocial">
-          <a href="https://www.facebook.com/share/1CXTdbtjbb/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/ozel.demir.737" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/905327983352" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4>Hızlı Erişim</h4>
-        <a href="#ilanlar">İlanlar</a>
-        <a href="#services">Hizmetler</a>
-        <a href="#hesapla">Değer Hesaplama</a>
-        <a href="#blog">Blog</a>
-        <a href="#degerleme">Ücretsiz Değerleme</a>
-        <a href="yonetim.html">Yönetim Paneli</a>
+        <b>Özel Demir</b>
+        <p>Gayrimenkul danışmanlığı. Fatsa, Ordu. Otuz yıldır doğru fiyat.</p>
       </div>
       <div>
         <h4>İletişim</h4>
-        <a href="tel:+905327983352">+90 532 798 33 52</a>
-        <a href="https://wa.me/905327983352" target="_blank" rel="noopener">WhatsApp</a>
-        <a>Fatsa / Ordu, Türkiye</a>
+        <div class="row">
+          <a href="tel:+905327983352">+90 532 798 33 52</a>
+          <a href="https://wa.me/905327983352" target="_blank" rel="noopener">WhatsApp</a>
+          <span>Fatsa, Ordu</span>
+        </div>
+      </div>
+      <div>
+        <h4>Sosyal</h4>
+        <div class="row">
+          <a href="https://www.instagram.com/ozel.demir.737" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/share/1CXTdbtjbb/" target="_blank" rel="noopener">Facebook</a>
+        </div>
       </div>
     </div>
-    <div class="fbot"><span>© 2026 Özel Demir · Gayrimenkul Danışmanlığı</span><span>Tüm hakları saklıdır.</span></div>
+    <div class="foot-mark" aria-hidden="true">Özel Demir</div>
+    <div class="foot-bottom">
+      <span>© 2026 Özel Demir Gayrimenkul Danışmanlığı · <a href="qr.html">QR hızlı erişim</a> · <a href="yonetim.html">İlan yönetimi</a></span>
+      <span>Fatsa · Ordu</span>
+    </div>
   </div>
 </footer>
 
-<a class="fab wa" href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile yaz"><i class="fab fa-whatsapp"></i></a>
-<button class="fab top" id="toTop" aria-label="Yukarı çık"><i class="fas fa-arrow-up"></i></button>
-
-<!-- ============ MODALS ============ -->
-<div class="modal" id="mImg" role="dialog" aria-modal="true" aria-label="Görsel görüntüleyici">
-  <span class="x" data-close aria-label="Kapat">&times;</span><img class="mv" id="mImgSrc" alt="" />
-</div>
-<div class="modal" id="mBlog" role="dialog" aria-modal="true" aria-label="Blog yazısı">
-  <span class="x" data-close aria-label="Kapat">&times;</span><div class="art" id="mBlogBox"></div>
-</div>
-<div class="modal" id="mDetail" role="dialog" aria-modal="true" aria-label="İlan detayı">
-  <span class="x" data-close aria-label="Kapat">&times;</span><div class="art" id="dBody"></div>
-</div>
-
-<!-- ============ SCRIPTS ============ -->
-<script src="assets/data/listings.js"></script>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/listings.js"></script>
-<script src="assets/js/valuation.js"></script>
+<script src="assets/listings.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>

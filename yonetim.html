@@ -1,136 +1,998 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="light">
+<html lang="tr" class="lock">
+<script>try{if(sessionStorage.getItem('od.panel')==='1')document.documentElement.classList.remove('lock')}catch(e){}</script>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="noindex" />
-<title>Yönetim Paneli | Özel Demir Emlak</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1022'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='26' fill='%2338bdf8' font-weight='800'%3EOD%3C/text%3E%3C/svg%3E" />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-<link rel="stylesheet" href="assets/css/base.css" />
-<link rel="stylesheet" href="assets/css/components.css" />
-<link rel="stylesheet" href="assets/css/editorial.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İlan Yönetimi | Özel Demir</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1E1712">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231E1712'/%3E%3Ccircle cx='16' cy='12' r='5' fill='none' stroke='%23C9A24A' stroke-width='2'/%3E%3Cpath d='M13.6 16.6 11 29h10l-2.6-12.4' fill='none' stroke='%23C9A24A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body{background:var(--bg-soft)}
-.adm{max-width:1180px;margin:0 auto;padding:0 24px}
-.admhead{border-bottom:1px solid var(--line);background:var(--bg);padding:20px 0}
-.admhead .adm{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.admhead h1{font-size:1.3rem;margin:0}
-.admhead h1 .ac{color:var(--p)}
-.grid2{display:grid;grid-template-columns:420px 1fr;gap:28px;margin:32px auto 64px;align-items:start}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px;box-shadow:var(--shadow)}
-.panel h2{font-size:1.05rem;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.panel h2 i{color:var(--p)}
-.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.thumbs img{width:64px;height:48px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
-.tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:.88rem}
-th{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
-td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
-tr:hover td{background:var(--bg-soft)}
-.src{font-size:.68rem;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.06em}
-.src.repo{background:rgba(37,99,235,.1);color:var(--p)}
-.src.yerel{background:rgba(217,119,6,.12);color:var(--warn)}
-.rowbtn{border:1px solid var(--line);background:var(--bg);color:var(--ink);width:34px;height:34px;border-radius:9px;cursor:pointer;transition:.2s}
-.rowbtn:hover{border-color:var(--p);color:var(--p)}
-.rowbtn.del:hover{border-color:var(--err);color:var(--err)}
-pre{background:#0a1022;color:#a5f3fc;border-radius:12px;padding:18px;font-size:.75rem;max-height:300px;overflow:auto;white-space:pre-wrap;word-break:break-all}
-.note{background:rgba(217,119,6,.08);border:1px solid rgba(217,119,6,.3);color:var(--warn);border-radius:12px;padding:14px 18px;font-size:.86rem;font-weight:600;margin:18px 0}
-.gate{max-width:420px;margin:12vh auto}
-@media (max-width:980px){.grid2{grid-template-columns:1fr}}
+:root{--canvas:#1E1712;--panel:#2A2019;--panel2:#33271E;--brass:#C9A24A;--brass2:#E2BE6B;--text:#F4ECDD;--sec:#C4B49B;--line:rgba(201,162,74,.16);--danger:#C97A5A;--r:10px;--sans:"Source Sans 3",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;--serif:"Fraunces",Georgia,serif}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--brass2)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px clamp(16px,4vw,40px);background:rgba(30,23,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--text)}
+.brand b{font-family:var(--serif);font-weight:400;font-size:1.25rem;letter-spacing:-.01em}
+.brand span{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sec)}
+.top-act{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2);border:1px solid rgba(201,162,74,.35);border-radius:999px;padding:5px 10px}
+.wrap{max-width:1280px;margin:0 auto;padding:clamp(24px,5vw,48px) clamp(16px,4vw,40px) 80px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.02;letter-spacing:-.02em;margin:0 0 8px}
+.lede{margin:0;color:var(--sec);max-width:60ch;font-size:.95rem}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.kpi b{display:block;font-family:var(--serif);font-weight:300;font-size:1.7rem;line-height:1;color:var(--brass)}
+.kpi span{display:block;margin-top:4px;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sec)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid transparent;background:var(--brass);color:#1E1712;font-weight:600;font-size:.86rem;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.btn:hover{background:var(--brass2)}
+.btn.ghost{background:transparent;border-color:rgba(201,162,74,.3);color:var(--text)}
+.btn.ghost:hover{border-color:var(--brass);color:var(--brass2)}
+.btn.danger{background:transparent;border-color:rgba(201,122,90,.4);color:var(--danger)}
+.btn.danger:hover{background:rgba(201,122,90,.1)}
+.btn.sm{padding:6px 11px;font-size:.74rem}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(18px,3vw,32px);align-items:start}
+.list{display:grid;gap:9px}
+.row{display:grid;grid-template-columns:74px minmax(0,1fr) auto auto;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:9px;transition:border-color .2s,background .2s}
+.row.on{border-color:rgba(201,162,74,.55);background:var(--panel2)}
+.row img{width:74px;height:54px;object-fit:cover;border-radius:6px;background:var(--panel2)}
+.row .t{min-width:0}
+.row .t b{display:block;font-weight:600;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .t small{display:block;color:var(--sec);font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+.row .p{font-family:var(--mono);font-size:.72rem;color:var(--brass2);text-align:right;white-space:nowrap}
+.row .p em{display:block;font-style:normal;color:var(--sec);font-size:.56rem;letter-spacing:.08em;margin-top:3px}
+.row-act{grid-column:auto;display:flex;gap:4px;justify-content:flex-end;align-items:center}
+.row-act .btn.sm{padding:6px 8px;min-width:30px}
+.empty{padding:40px 20px;text-align:center;color:var(--sec);border:1px dashed rgba(201,162,74,.25);border-radius:var(--r)}
+.form{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(16px,2.4vw,24px);position:sticky;top:84px;max-height:calc(100vh - 104px);overflow:auto}
+.form h2{font-family:var(--serif);font-weight:400;font-size:1.3rem;margin:0 0 4px}
+.form .hint{margin:0 0 16px;color:var(--sec);font-size:.8rem}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:5px;min-width:0}
+.f.full{grid-column:1/-1}
+.f label{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sec)}
+.f input,.f select,.f textarea{width:100%;background:#221A14;border:1px solid rgba(201,162,74,.2);border-radius:7px;padding:9px 11px;font-size:.9rem;outline:none;transition:border-color .2s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--brass)}
+.f textarea{min-height:92px;resize:vertical}
+.f input[readonly]{opacity:.6}
+.f .err{color:var(--danger);font-size:.7rem;display:none}
+.f.bad .err{display:block}
+.f.bad input,.f.bad select{border-color:var(--danger)}
+.preview{width:100%;aspect-ratio:16/10;max-height:220px;object-fit:cover;border-radius:7px;background:var(--panel2);border:1px solid rgba(201,162,74,.15);display:block}
+.imgrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.imgrow input[type=file]{display:none}
+.filebtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(201,162,74,.3);border-radius:999px;padding:6px 11px;color:var(--sec);cursor:pointer;background:transparent}
+.filebtn:hover{border-color:var(--brass);color:var(--brass2)}
+.imgnote{font-family:var(--mono);font-size:.58rem;color:var(--sec);letter-spacing:.06em}
+.form-act{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.form-act .btn{flex:1}
+details.help{border:1px solid var(--line);border-radius:var(--r);background:rgba(42,32,25,.5);padding:12px 14px;margin-top:16px}
+details.help summary{cursor:pointer;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass2)}
+details.help p,details.help ol{color:var(--sec);font-size:.82rem;margin:10px 0 0;padding-left:18px}
+details.help li{margin:5px 0}
+
+.badge.ok{color:#A8C39B;border-color:rgba(168,195,155,.35)}
+.badge.warn{color:#E2BE6B;border-color:rgba(226,190,107,.55)}
+.adv{margin:-6px 0 18px}
+.adv summary{cursor:pointer;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sec)}
+.adv .bar{margin:10px 0 0}
+dialog.pub{position:fixed;inset:0;margin:auto;width:min(660px,calc(100% - 28px));max-height:90vh;overflow:auto;border:1px solid rgba(201,162,74,.3);border-radius:14px;background:var(--panel);color:var(--text);padding:clamp(18px,3vw,26px);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+dialog.pub::backdrop{background:rgba(10,6,4,.72);backdrop-filter:blur(3px)}
+dialog.pub h2{font-family:var(--serif);font-weight:300;font-size:1.8rem;margin:0 0 4px}
+.pub-lede{margin:0 0 14px;color:var(--sec);font-size:.9rem}
+.pub-close{position:absolute;top:10px;right:12px;background:transparent;border:0;color:var(--sec);font-size:1.05rem;padding:8px;cursor:pointer}
+.pub-close:hover{color:var(--brass2)}
+.choice{border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:rgba(30,23,18,.35)}
+.choice-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+.choice-h b{font-size:.98rem}
+.choice p{margin:0 0 10px;color:var(--sec);font-size:.82rem;line-height:1.5}
+.choice code{font-family:var(--mono);font-size:.78em;color:var(--brass2)}
+.gh-fields{display:grid;gap:8px;margin:10px 0 4px}
+.gh-fields label{display:grid;gap:4px;font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sec)}
+.gh-fields input{background:#221A14;border:1px solid rgba(201,162,74,.2);border-radius:7px;padding:8px 10px;font-size:.86rem;color:var(--text);outline:none}
+.gh-fields input:focus{border-color:var(--brass)}
+.gh-fields .fine{margin:2px 0 0;font-size:.72rem;color:var(--sec);letter-spacing:0;text-transform:none;font-family:var(--sans)}
+.choice-act{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* sifre kapisi */
+.lock .top,.lock main{display:none}
+.gate{display:none;position:fixed;inset:0;z-index:50;align-items:center;justify-content:center;padding:20px;background:radial-gradient(120% 80% at 50% 0,rgba(201,162,74,.09),transparent 55%),var(--canvas)}
+.lock .gate{display:flex}
+.gate-card{width:min(400px,100%);background:var(--panel);border:1px solid rgba(201,162,74,.28);border-radius:14px;padding:clamp(22px,4vw,32px);box-shadow:0 30px 70px rgba(0,0,0,.5);text-align:center}
+.gate-card .mark{width:54px;height:54px;margin:0 auto 16px;color:var(--brass)}
+.gate-card h1{font-family:var(--serif);font-weight:300;font-size:1.9rem;margin:0 0 6px;letter-spacing:-.01em}
+.gate-card p{margin:0 0 18px;color:var(--sec);font-size:.86rem}
+.gate-card label{display:block;text-align:left;font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sec);margin-bottom:6px}
+.gate-card input{width:100%;background:#221A14;border:1px solid rgba(201,162,74,.22);border-radius:8px;padding:11px 13px;font-size:1rem;color:var(--text);outline:none;letter-spacing:.08em}
+.gate-card input:focus{border-color:var(--brass)}
+.gate-card .btn{width:100%;margin-top:12px}
+.gate-err{min-height:18px;margin:9px 0 0;color:var(--danger);font-size:.76rem}
+.gate-card .back{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sec)}
+.gate-card .back:hover{color:var(--brass2)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.gate-card.bad{animation:shake .25s}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#0F0B08;border:1px solid rgba(201,162,74,.4);color:var(--text);padding:11px 18px;border-radius:999px;font-size:.84rem;opacity:0;pointer-events:none;transition:.25s;z-index:40;max-width:92vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:980px){
+  .cols{grid-template-columns:1fr}
+  .form{position:static;max-height:none;overflow:visible}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .row{grid-template-columns:60px minmax(0,1fr)}
+  .row-act{grid-column:1/-1;justify-content:flex-end}
+  .row img{width:60px;height:46px}
+  .row .p{grid-column:2;text-align:left}
+  .fields{grid-template-columns:1fr}
+  .f.full{grid-column:auto}
+  .form-act .btn{flex:1 1 100%}
+  .top-act{width:100%}
+  .top-act .btn{flex:1}
+}
 </style>
 </head>
 <body>
 
-<header class="admhead">
-  <div class="adm">
-    <h1><span class="ac">Yönetim</span> Paneli — Özel Demir Emlak</h1>
-    <div style="display:flex;gap:10px">
-      <a class="btn btn-o btn-sm" href="index.html"><i class="fas fa-arrow-left"></i> Siteye dön</a>
-      <button class="btn btn-o btn-sm" id="resetAll" type="button"><i class="fas fa-eraser"></i> Yerel değişiklikleri sıfırla</button>
-    </div>
+
+<div class="gate" id="gate">
+  <form class="gate-card" id="gateForm" autocomplete="off">
+    <svg class="mark" viewBox="0 0 120 120" fill="none" stroke="currentColor" aria-hidden="true">
+      <circle cx="60" cy="60" r="58" stroke-width=".8" stroke-dasharray="1 4" opacity=".65"></circle>
+      <circle cx="60" cy="58" r="25" stroke-width="1.4"></circle>
+      <rect x="46" y="52" width="28" height="22" rx="4" stroke-width="1.4"></rect>
+      <path d="M52 52v-6a8 8 0 0 1 16 0v6" stroke-width="1.4"></path>
+      <circle cx="60" cy="63" r="2.2" fill="currentColor" stroke="none"></circle>
+    </svg>
+    <h1>İlan yönetimi</h1>
+    <p>Devam etmek için şifreyi girin.</p>
+    <label for="gatePass">Şifre</label>
+    <input id="gatePass" type="password" inputmode="text" autocomplete="current-password" required>
+    <p class="gate-err" id="gateErr" role="alert"></p>
+    <button class="btn" type="submit" id="gateBtn">Giriş</button>
+    <a class="back" href="index.html">← Siteye dön</a>
+  </form>
+</div>
+
+<header class="top">
+  <a class="brand" href="index.html"><b>Özel Demir</b><span>İlan yönetimi</span></a>
+  <div class="top-act">
+    <span class="badge" id="draftBadge">0 ilan</span>
+    <span class="badge ok" id="dirtyBadge">Yayında</span>
+    <a class="btn ghost sm" href="index.html#ilanlar" target="_blank" rel="noopener">Önizle</a>
+    <button class="btn ghost sm" id="lockBtn" type="button">Kilitle</button>
+    <button class="btn sm" id="publish" type="button">Siteye gönder</button>
   </div>
 </header>
 
-<!-- PIN KAPISI -->
-<div class="gate panel" id="gate">
-  <h2><i class="fas fa-lock"></i> Panel kilidi</h2>
-  <div class="field"><label for="pin">Panel şifresi</label>
-    <input id="pin" type="password" placeholder="Şifrenizi girin" /></div>
-  <button class="btn btn-p" id="pinBtn" style="margin-top:14px;width:100%">Giriş yap</button>
-  <p class="hint" style="margin-top:12px">İpucu (demo): şifre <b>ord2026</b>. Bu kilit tarayıcıdadır; gerçek koruma için GitHub Pages'te repo erişimini sınırlı tutun.</p>
-</div>
+<main class="wrap">
+  <div class="head">
+    <div>
+      <h1>İlanlar</h1>
+      <p class="lede">İlanları buradan ekle, düzenle. İşin bitince <b>Siteye gönder</b>'e bas; site kendiliğinden güncellensin.</p>
+    </div>
+  </div>
 
-<main class="adm grid2" id="app" style="display:none">
-  <!-- SOL: ilan ekleme/düzenleme formu -->
-  <section class="panel">
-    <h2><i class="fas fa-plus-circle"></i> <span id="formTitle">Yeni İlan</span></h2>
-    <form id="lForm" style="display:flex;flex-direction:column;gap:14px" novalidate>
-      <div class="field"><label for="aTitle">Başlık *</label><input id="aTitle" required placeholder="Örn: Deniz Manzaralı 3+1" /></div>
-      <div class="row2">
-        <div class="field"><label for="aStatus">Durum *</label>
-          <select id="aStatus"><option value="satilik">Satılık</option><option value="kiralik">Kiralık</option><option value="satildi">Satıldı</option></select></div>
-        <div class="field"><label for="aType">Kategori *</label>
-          <select id="aType"><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="ticari">Ticari</option></select></div>
+  <div class="kpis">
+    <div class="kpi"><b id="kTotal">0</b><span>Toplam ilan</span></div>
+    <div class="kpi"><b id="kSatilik">0</b><span>Satılık</span></div>
+    <div class="kpi"><b id="kKiralik">0</b><span>Kiralık</span></div>
+    <div class="kpi"><b id="kSatildi">0</b><span>Satıldı</span></div>
+  </div>
+
+  <div class="bar">
+    <button class="btn" id="newBtn" type="button">+ Yeni ilan</button>
+    <button class="btn ghost sm" id="pubSettings" type="button">Yayın ayarları</button>
+  </div>
+
+  <details class="adv">
+    <summary>Gelişmiş işlemler</summary>
+    <div class="bar">
+      <button class="btn ghost sm" id="importBtn" type="button">JSON yükle</button>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+      <button class="btn ghost sm" id="exportBtn" type="button">JSON indir</button>
+      <button class="btn ghost sm" id="copyBtn" type="button">JS kopyala</button>
+      <button class="btn danger sm" id="resetBtn" type="button">Dosyadaki hâline dön</button>
+      <button class="btn ghost sm" id="passBtn" type="button">Şifre değiştir</button>
+    </div>
+  </details>
+
+  <details class="help">
+    <summary>Nasıl yayınlanır?</summary>
+    <ol>
+      <li>İlanı ekle ve <b>İlanı kaydet</b>'e bas.</li>
+      <li>Üstteki <b>Siteye gönder</b>'e bas.</li>
+      <li>İlk seferde canlı site için GitHub bağlantısını bir kez kur. Sonrasında tek tuşla yayınlanır.</li>
+      <li>1-2 dakika içinde sitede görünür.</li>
+    </ol>
+    <p>GitHub istemiyorsan “Bu bilgisayar” seçeneğiyle site klasörüne doğrudan yazabilirsin. Dosya indirme seçeneği de duruyor.</p>
+  </details>
+
+  <div class="cols">
+    <section aria-label="İlan listesi">
+      <div class="list" id="list"></div>
+    </section>
+
+    <form class="form" id="form" novalidate>
+      <h2 id="formTitle">Yeni ilan</h2>
+      <p class="hint" id="formHint">Zorunlu alanlar: başlık, durum, tür, fiyat ve fotoğraf.</p>
+
+      <div class="fields">
+        <div class="f">
+          <label for="fStatus">Durum</label>
+          <select id="fStatus">
+            <option value="satilik">Satılık</option>
+            <option value="kiralik">Kiralık</option>
+            <option value="satildi">Satıldı</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="fType">Tür</label>
+          <select id="fType">
+            <option value="konut">Konut</option>
+            <option value="arsa">Arsa</option>
+            <option value="ticari">Ticari</option>
+          </select>
+        </div>
+
+        <div class="f full">
+          <label for="fTitle">Başlık</label>
+          <input id="fTitle" maxlength="90" placeholder="Deniz Manzaralı 4+1 Daire" required>
+          <span class="err">Başlık gerekli.</span>
+        </div>
+
+        <div class="f"><label for="fDistrict">İlçe / semt</label><input id="fDistrict" maxlength="60" placeholder="Altınordu"></div>
+        <div class="f"><label for="fRooms">Oda</label><input id="fRooms" maxlength="30" placeholder="4+1"></div>
+        <div class="f"><label for="fM2">m²</label><input id="fM2" type="number" min="0" step="1" placeholder="165"></div>
+        <div class="f"><label for="fFloor">Kat</label><input id="fFloor" maxlength="40" placeholder="5. kat"></div>
+        <div class="f"><label for="fAge">Bina yaşı</label><input id="fAge" type="number" min="0" step="1" placeholder="3"></div>
+        <div class="f"><label for="fHeating">Isıtma</label><input id="fHeating" maxlength="40" placeholder="Merkezi"></div>
+        <div class="f"><label for="fGoods">Eşya</label><input id="fGoods" maxlength="40" placeholder="Az eşyalı"></div>
+        <div class="f"><label for="fDate">Tarih</label><input id="fDate" type="date"></div>
+
+        <div class="f" id="priceWrap">
+          <label for="fPrice">Fiyat (TL)</label>
+          <input id="fPrice" type="number" min="0" step="1000" placeholder="5600000">
+          <span class="err">Fiyat gerekli.</span>
+        </div>
+        <div class="f" id="outcomeWrap" hidden>
+          <label for="fOutcome">Sonuç</label>
+          <input id="fOutcome" maxlength="60" placeholder="38 günde satıldı">
+        </div>
+
+        <div class="f full">
+          <label for="fImgUrl">Fotoğraf bağlantısı</label>
+          <input id="fImgUrl" placeholder="assets/img/satilik-deniz.jpg veya https://...">
+          <div class="imgrow">
+            <label class="filebtn" for="fImgFile">Görsel yükle</label>
+            <input id="fImgFile" type="file" accept="image/*">
+            <button class="filebtn" id="clearImg" type="button">Görseli kaldır</button>
+            <span class="imgnote" id="imgNote">Görsel yok</span>
+          </div>
+          <span class="err" id="imgErr">Fotoğraf gerekli.</span>
+        </div>
+
+        <div class="f full">
+          <img class="preview" id="fPreview" alt="İlan fotoğrafı önizlemesi" src="assets/img/ilan-yok.svg">
+        </div>
+
+        <div class="f full">
+          <label for="fAlt">Fotoğraf açıklaması (alt metin)</label>
+          <input id="fAlt" maxlength="120" placeholder="Boş bırakılırsa başlık kullanılır">
+        </div>
+
+        <div class="f full">
+          <label for="fFeats">Özellikler (virgülle ayırın)</label>
+          <input id="fFeats" placeholder="Deniz manzarası, Yeni bina, Otopark">
+        </div>
+
+        <div class="f full">
+          <label for="fDesc">Açıklama</label>
+          <textarea id="fDesc" maxlength="600" placeholder="Kısa, somut bir açıklama."></textarea>
+        </div>
+
+        <div class="f full">
+          <label for="fId">İlan no</label>
+          <input id="fId" readonly>
+        </div>
       </div>
-      <div class="row2">
-        <div class="field"><label for="aDist">İlçe *</label><input id="aDist" required placeholder="Fatsa" /></div>
-        <div class="field"><label for="aPrice">Fiyat (₺) *</label><input id="aPrice" type="number" min="0" required placeholder="4500000" /></div>
+
+      <div class="form-act">
+        <button class="btn" type="submit" id="saveBtn">İlanı kaydet</button>
+        <button class="btn ghost" type="button" id="cancelBtn">Vazgeç</button>
       </div>
-      <div class="row2">
-        <div class="field"><label for="aM2">m² *</label><input id="aM2" type="number" min="1" required placeholder="120" /></div>
-        <div class="field"><label for="aRooms">Oda</label><input id="aRooms" placeholder="3+1" /></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="aFloor">Kat</label><input id="aFloor" placeholder="3. kat" /></div>
-        <div class="field"><label for="aAge">Bina yaşı</label><input id="aAge" type="number" min="0" value="0" /></div>
-      </div>
-      <div class="field"><label for="aHeat">Isıtma</label><input id="aHeat" placeholder="Doğalgaz" /></div>
-      <div class="field"><label for="aFeats">Özellikler (virgülle)</label><input id="aFeats" placeholder="Balkon, Otopark, Ebeveyn banyo" /></div>
-      <div class="field"><label for="aDesc">Açıklama</label><textarea id="aDesc" placeholder="Kısa ilan açıklaması…"></textarea></div>
-      <div class="field"><label for="aImgUrl">Görsel URL (https://…)</label><input id="aImgUrl" type="url" placeholder="https://…" /></div>
-      <div class="field"><label for="aImgFile">…veya görsel yükle (otomatik sıkıştırılır)</label>
-        <input id="aImgFile" type="file" accept="image/*" multiple /></div>
-      <div class="thumbs" id="thumbs"></div>
-      <button class="btn btn-p" type="submit" id="saveBtn"><i class="fas fa-floppy-disk"></i> İlanı Kaydet</button>
-      <button class="btn btn-o" type="button" id="cancelEdit" style="display:none"><i class="fas fa-xmark"></i> Düzenlemeyi bırak</button>
-      <div class="fmsg" id="aMsg" role="status"></div>
     </form>
-  </section>
-
-  <!-- SAĞ: ilan listesi + export -->
-  <section>
-    <div class="panel" style="margin-bottom:24px">
-      <h2><i class="fas fa-list"></i> İlanlar <span class="hint" id="cnt"></span></h2>
-      <div class="tablewrap">
-        <table>
-          <thead><tr><th>Başlık</th><th>Durum</th><th>Fiyat</th><th>Kaynak</th><th style="text-align:right">İşlem</th></tr></thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
-      <div class="note"><i class="fas fa-circle-info"></i> "Yerel" ilanlar yalnızca bu tarayıcıda görünür. Kalıcı yayın için aşağıdaki JSON'ı kopyalayıp <code>assets/data/listings.js</code> içindeki <code>listings</code> dizisine ekleyip GitHub'a push'layın.</div>
-    </div>
-    <div class="panel" style="margin-bottom:24px">
-      <h2><i class="fab fa-github"></i> GitHub ile Yayınla <span class="hint">(herkese görünür yapar)</span></h2>
-      <div class="row2">
-        <div class="field"><label for="gRepo">Repo</label><input id="gRepo" value="caca1403/ozeldemirweb" /></div>
-        <div class="field"><label for="gBranch">Dal</label><input id="gBranch" value="main" /></div>
-      </div>
-      <div class="field"><label for="gTok">GitHub token (Contents: Read and write)</label>
-        <input id="gTok" type="password" placeholder="github_pat_…" /></div>
-      <button class="btn btn-p" id="pubBtn" type="button"><i class="fas fa-rocket"></i> Değişiklikleri GitHub'a Yayınla</button>
-      <div class="fmsg" id="pubMsg" role="status"></div>
-      <p class="hint" style="margin-top:12px">Token nasıl: github.com → Settings → Developer settings → <b>Fine-grained tokens</b> → sadece bu repo, izni <b>Contents: Read and write</b>. Token yalnızca sizin tarayıcınızda saklanır; ilanı ekleyen herkesin kendi token'ı olmalı. Yayın sonrası GitHub Pages 1-2 dk içinde siteyi günceller.</p>
-    </div>
-    <div class="panel">
-      <h2><i class="fas fa-code"></i> Repo JSON export <button class="btn btn-o btn-sm" id="copyBtn" style="margin-left:auto"><i class="fas fa-copy"></i> Kopyala</button></h2>
-      <pre id="exportBox">// Kaydedilen yerel ilanlar burada görünecek</pre>
-    </div>
-  </section>
+  </div>
 </main>
 
-<script src="assets/data/listings.js"></script>
-<script src="assets/js/admin.js"></script>
+
+<dialog class="pub" id="pubDialog">
+  <button class="pub-close" type="button" id="pubClose" aria-label="Kapat">✕</button>
+  <h2>Siteye gönder</h2>
+  <p class="pub-lede">İlanlar nereye yazılsın?</p>
+
+  <div class="choice">
+    <div class="choice-h"><b>Canlı site</b><span class="badge" id="ghBadge">Bağlı değil</span></div>
+    <p>GitHub deposundaki ilan dosyası güncellenir; 1-2 dakikada yayında olur. Bir kez bağlanman yeter.</p>
+    <div class="gh-fields" id="ghFields">
+      <label>Erişim anahtarı<input id="ghToken" type="password" placeholder="ghp_..." autocomplete="off"></label>
+      <p class="fine">GitHub’da <b>Settings → Developer settings → Personal access tokens → Generate new token</b> yolunu izleyip <code>repo</code> yetkisiyle bir anahtar oluştur, kopyala, buraya yapıştır. Anahtar yalnızca bu tarayıcıda saklanır. <a href="https://github.com/settings/tokens/new?scopes=repo&amp;description=Ozel%20Demir%20Panel" target="_blank" rel="noopener">Doğrudan anahtar sayfası</a></p>
+      <details class="gh-adv">
+        <summary>Depo ve dal (genelde değişmez)</summary>
+        <label>Depo<input id="ghRepo" placeholder="kullanici/depo" autocomplete="off"></label>
+        <label>Dal<input id="ghBranch" placeholder="main" autocomplete="off"></label>
+      </details>
+    </div>
+    <div class="choice-act">
+      <button class="btn" id="ghGo" type="button">Bağlan ve gönder</button>
+      <button class="btn ghost sm" id="ghForget" type="button" hidden>Bağlantıyı kaldır</button>
+    </div>
+  </div>
+
+  <div class="choice">
+    <div class="choice-h"><b>Bu bilgisayar</b><span class="badge" id="dirBadge">Klasör seçilmedi</span></div>
+    <p>Site klasörünü bir kez seç; <code>assets/listings.js</code> doğrudan güncellenir.</p>
+    <div class="choice-act"><button class="btn ghost" id="dirGo" type="button">Klasör seç ve yaz</button></div>
+  </div>
+
+  <div class="choice">
+    <div class="choice-h"><b>Dosya indir</b></div>
+    <p>Elle yükleyeceksen <code>listings.js</code> dosyasını indir.</p>
+    <div class="choice-act"><button class="btn ghost" id="dlGo" type="button">listings.js indir</button></div>
+    <p class="fine" style="margin:10px 0 0">Bu bilgisayarda terminalden <code>./yayinla.sh</code> çalıştırmak da yayınlar; GitHub anahtarı istemez.</p>
+  </div>
+
+  <div class="choice-act" style="justify-content:flex-end;margin-top:16px">
+    <button class="btn ghost" id="pubClose2" type="button">Kapat</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/listings.js"></script>
+<script>
+(() => {
+  'use strict';
+  const $ = (s) => document.querySelector(s);
+  const KEY = 'ozeldemir.listings.v1';
+  const SEED = window.OD_LISTINGS || [];
+  const STATUS = { satilik: 'Satılık', kiralik: 'Kiralık', satildi: 'Satıldı' };
+  const clone = (v) => JSON.parse(JSON.stringify(v));
+  const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const tl = (n) => (Number(n) || 0).toLocaleString('tr-TR');
+
+  let items = [];
+  let editId = null;
+  let img = '';
+  let toastT = 0;
+  let dirty = false;
+
+  function toast(msg) {
+    const el = $('#toast');
+    el.textContent = msg;
+    el.classList.add('on');
+    clearTimeout(toastT);
+    toastT = setTimeout(() => el.classList.remove('on'), 3200);
+  }
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) { items = parsed; return; }
+      }
+    } catch (e) { /* bozuk kayit: dosyadan basla */ }
+    items = clone(SEED);
+  }
+
+  function persist() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(items));
+      setDirty(true);
+      return true;
+    } catch (e) {
+      toast('Kaydedilemedi: tarayıcı depolaması dolu olabilir.');
+      return false;
+    }
+  }
+
+  function nextId() {
+    let max = 2000;
+    items.forEach((l) => {
+      const n = parseInt(String(l.id || '').replace(/\D/g, ''), 10);
+      if (n > max) max = n;
+    });
+    return 'ORN-' + (max + 1);
+  }
+
+  function stats() {
+    const c = { satilik: 0, kiralik: 0, satildi: 0 };
+    items.forEach((l) => { if (c[l.status] != null) c[l.status]++; });
+    $('#kTotal').textContent = items.length;
+    $('#kSatilik').textContent = c.satilik;
+    $('#kKiralik').textContent = c.kiralik;
+    $('#kSatildi').textContent = c.satildi;
+    paintBadges();
+  }
+
+  function priceText(l) {
+    if (l.status === 'satildi') return esc(l.outcome || 'Satıldı');
+    return tl(l.price) + ' TL' + (l.status === 'kiralik' ? ' / ay' : '');
+  }
+
+  function renderList() {
+    const list = $('#list');
+    if (!items.length) {
+      list.innerHTML = '<div class="empty">Henüz ilan yok. “+ Yeni ilan” ile başlayın.</div>';
+      return;
+    }
+    list.innerHTML = items.map((l, i) => {
+      const st = STATUS[l.status] ? l.status : 'satilik';
+      const meta = [l.district, l.m2 ? l.m2 + ' m²' : '', l.rooms || ''].filter(Boolean).map(esc).join(' · ');
+      return '<article class="row' + (l.id === editId ? ' on' : '') + '" data-id="' + esc(l.id) + '">' +
+        '<img src="' + esc(l.img) + '" alt="">' +
+        '<div class="t"><b>' + esc(l.title) + '</b><small>' + STATUS[st] + (meta ? ' · ' + meta : '') + '</small></div>' +
+        '<div class="p">' + priceText(l) + '<em>' + esc(l.id) + '</em></div>' +
+        '<div class="row-act">' +
+          '<button class="btn ghost sm" type="button" data-act="up" title="Yukarı taşı" aria-label="Yukarı taşı" ' + (i === 0 ? 'disabled' : '') + '>↑</button>' +
+          '<button class="btn ghost sm" type="button" data-act="down" title="Aşağı taşı" aria-label="Aşağı taşı" ' + (i === items.length - 1 ? 'disabled' : '') + '>↓</button>' +
+          '<button class="btn ghost sm" type="button" data-act="dup" title="Kopyala" aria-label="İlanı kopyala">⧉</button>' +
+          '<button class="btn ghost sm" type="button" data-act="edit" title="Düzenle" aria-label="İlanı düzenle">✎</button>' +
+          '<button class="btn danger sm" type="button" data-act="del" title="Sil" aria-label="İlanı sil">✕</button>' +
+        '</div></article>';
+    }).join('');
+  }
+
+  function render() {
+    stats();
+    renderList();
+  }
+
+  function setStatusUI() {
+    const sold = $('#fStatus').value === 'satildi';
+    $('#priceWrap').hidden = sold;
+    $('#outcomeWrap').hidden = !sold;
+  }
+
+  function fillForm(l) {
+    editId = l ? l.id : null;
+    img = l ? (l.img || '') : '';
+    $('#formTitle').textContent = l ? 'İlanı düzenle' : 'Yeni ilan';
+    $('#fStatus').value = l ? l.status : 'satilik';
+    $('#fType').value = l ? l.type : 'konut';
+    $('#fTitle').value = l ? l.title : '';
+    $('#fDistrict').value = l ? l.district || '' : '';
+    $('#fRooms').value = l ? l.rooms || '' : '';
+    $('#fM2').value = l ? l.m2 ?? '' : '';
+    $('#fFloor').value = l ? l.floor || '' : '';
+    $('#fAge').value = l ? l.age ?? '' : '';
+    $('#fHeating').value = l ? l.heating || '' : '';
+    $('#fGoods').value = l ? l.goods || '' : '';
+    $('#fDate').value = l ? l.date || '' : new Date().toISOString().slice(0, 10);
+    $('#fPrice').value = l ? l.price ?? '' : '';
+    $('#fOutcome').value = l ? l.outcome || '' : '';
+    $('#fImgUrl').value = l && !String(l.img || '').startsWith('data:') ? l.img || '' : '';
+    $('#fAlt').value = l ? l.alt || '' : '';
+    $('#fFeats').value = l && Array.isArray(l.feats) ? l.feats.join(', ') : '';
+    $('#fDesc').value = l ? l.desc || '' : '';
+    $('#fId').value = l ? l.id : nextId();
+    setStatusUI();
+    updatePreview();
+    document.querySelectorAll('.f.bad').forEach((el) => el.classList.remove('bad'));
+    renderList();
+  }
+
+  function updatePreview() {
+    const prev = $('#fPreview');
+    prev.src = img || 'assets/img/ilan-yok.svg';
+    const note = $('#imgNote');
+    if (!img) { note.textContent = 'Görsel yok'; return; }
+    if (img.startsWith('data:')) {
+      note.textContent = 'Yüklenen görsel · ' + Math.round(img.length * 0.75 / 1024) + ' KB';
+    } else {
+      note.textContent = 'Bağlantı kullanılıyor';
+    }
+  }
+
+  function bad(sel) {
+    const f = $(sel).closest('.f');
+    if (f) f.classList.add('bad');
+  }
+
+  function readForm() {
+    document.querySelectorAll('.f.bad').forEach((el) => el.classList.remove('bad'));
+    const status = $('#fStatus').value;
+    const type = $('#fType').value;
+    const title = $('#fTitle').value.trim();
+    const price = Number($('#fPrice').value);
+    let ok = true;
+    if (!title) { bad('#fTitle'); ok = false; }
+    if (status !== 'satildi' && (!Number.isFinite(price) || price <= 0)) { bad('#fPrice'); ok = false; }
+    if (!img) { $('#imgErr').style.display = 'block'; ok = false; }
+    if (!ok) { toast('Eksik alanları tamamlayın.'); return null; }
+    $('#imgErr').style.display = 'none';
+    const feats = $('#fFeats').value.split(',').map((s) => s.trim()).filter(Boolean);
+    const m2 = Number($('#fM2').value);
+    const age = Number($('#fAge').value);
+    const l = {
+      id: editId || $('#fId').value || nextId(),
+      status, type, title,
+      district: $('#fDistrict').value.trim() || 'Fatsa',
+      rooms: $('#fRooms').value.trim() || '—',
+      m2: Number.isFinite(m2) && m2 > 0 ? m2 : 0,
+      floor: $('#fFloor').value.trim() || '—',
+      age: Number.isFinite(age) && age >= 0 ? age : 0,
+      heating: $('#fHeating').value.trim() || '—',
+      goods: $('#fGoods').value.trim() || '—',
+      price: status === 'satildi' ? (Number.isFinite(price) && price > 0 ? price : 0) : price,
+      date: $('#fDate').value || new Date().toISOString().slice(0, 10),
+      img,
+      alt: $('#fAlt').value.trim() || title,
+      feats,
+      desc: $('#fDesc').value.trim()
+    };
+    if (status === 'satildi') l.outcome = $('#fOutcome').value.trim() || 'Satıldı';
+    return l;
+  }
+
+  function save(e) {
+    e.preventDefault();
+    const l = readForm();
+    if (!l) return;
+    if (editId) {
+      const i = items.findIndex((x) => x.id === editId);
+      if (i >= 0) items[i] = l; else items.unshift(l);
+    } else {
+      items.unshift(l);
+    }
+    if (!persist()) return;
+    editId = l.id;
+    render();
+    fillForm(l);
+    toast('İlan kaydedildi. Yayınlamak için “Yayınla”ya basın.');
+  }
+
+  function remove(id) {
+    const l = items.find((x) => x.id === id);
+    if (!l) return;
+    if (!confirm('“' + l.title + '” ilanı silinsin mi?')) return;
+    items = items.filter((x) => x.id !== id);
+    persist();
+    if (editId === id) fillForm(null);
+    render();
+    toast('İlan silindi.');
+  }
+
+  function duplicate(id) {
+    const l = items.find((x) => x.id === id);
+    if (!l) return;
+    const copy = clone(l);
+    copy.id = nextId();
+    copy.title = l.title + ' (kopya)';
+    items.unshift(copy);
+    persist();
+    render();
+    fillForm(copy);
+    toast('İlan kopyalandı.');
+  }
+
+  function move(id, dir) {
+    const i = items.findIndex((x) => x.id === id);
+    const j = i + dir;
+    if (i < 0 || j < 0 || j >= items.length) return;
+    [items[i], items[j]] = [items[j], items[i]];
+    persist();
+    render();
+  }
+
+  function jsText() {
+    return '/* İlanlar — tek kaynak. Yönetim panelinden üretildi.\n' +
+      '   status: satilik | kiralik | satildi · type: konut | arsa | ticari */\n' +
+      'window.OD_LISTINGS = ' + JSON.stringify(items, null, 2) + ';\n';
+  }
+
+  function download(name, text, type) {
+    const blob = new Blob([text], { type: type || 'text/plain;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }
+
+  function downloadJs() {
+    download('listings.js', jsText(), 'text/javascript;charset=utf-8');
+    toast('listings.js indirildi.');
+  }
+
+
+  /* sifre kapisi (istemci tarafinda; gercek sunucu guvenligi degil) */
+  const PASS_KEY = 'od.panel.hash';
+  const PASS_DEFAULT = '405368dad67d075e92deaea5ebebdf8e8bdd9f23c13c1c9cab067e87e00f3a43'; /* demir2026 */
+  const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  async function sha(text) {
+    if (!crypto.subtle) throw new Error('Bu tarayıcı şifrelemeyi desteklemiyor.');
+    return hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)));
+  }
+  function passHash() {
+    try { return localStorage.getItem(PASS_KEY) || PASS_DEFAULT; } catch (e) { return PASS_DEFAULT; }
+  }
+
+  $('#gateForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = $('#gateBtn'), err = $('#gateErr'), card = $('.gate-card');
+    const value = $('#gatePass').value;
+    btn.disabled = true; btn.textContent = 'Kontrol ediliyor…';
+    err.textContent = '';
+    try {
+      const h = await sha(value);
+      if (h !== passHash()) throw new Error('Şifre yanlış. Tekrar deneyin.');
+      sessionStorage.setItem('od.panel', '1');
+      document.documentElement.classList.remove('lock');
+      $('#gatePass').value = '';
+      btn.textContent = 'Giriş';
+      btn.disabled = false;
+      $('#newBtn').focus();
+    } catch (ex) {
+      err.textContent = ex.message || 'Giriş yapılamadı.';
+      card.classList.remove('bad');
+      void card.offsetWidth;
+      card.classList.add('bad');
+      btn.textContent = 'Giriş';
+      btn.disabled = false;
+      $('#gatePass').select();
+    }
+  });
+
+  $('#lockBtn').addEventListener('click', () => {
+    try { sessionStorage.removeItem('od.panel'); } catch (e) { /* yok */ }
+    location.reload();
+  });
+
+  $('#passBtn').addEventListener('click', async () => {
+    const a = prompt('Yeni şifre (en az 6 karakter):');
+    if (a === null) return;
+    if (a.length < 6) { toast('Şifre en az 6 karakter olmalı.'); return; }
+    const b = prompt('Yeni şifreyi tekrar girin:');
+    if (a !== b) { toast('Şifreler aynı değil.'); return; }
+    try {
+      localStorage.setItem(PASS_KEY, await sha(a));
+      toast('Şifre bu cihaz için değiştirildi.');
+    } catch (e) {
+      toast(e.message || 'Şifre değiştirilemedi.');
+    }
+  });
+
+  /* durum rozetleri */
+  function setDirty(v) {
+    dirty = !!v;
+    try { v ? localStorage.setItem(DIRTY_KEY, '1') : localStorage.removeItem(DIRTY_KEY); } catch (e) { /* depolama kapali */ }
+    paintBadges();
+  }
+
+  function paintBadges() {
+    $('#draftBadge').textContent = items.length + ' ilan';
+    const d = $('#dirtyBadge');
+    d.textContent = dirty ? 'Yayınlanmadı' : 'Yayında';
+    d.className = 'badge ' + (dirty ? 'warn' : 'ok');
+  }
+
+  /* canli yayin: GitHub */
+  const GH_KEY = 'ozeldemir.github.v1';
+  const DIRTY_KEY = 'ozeldemir.dirty.v1';
+  let ghCfg = null;
+  try { ghCfg = JSON.parse(localStorage.getItem(GH_KEY) || 'null'); } catch (e) { ghCfg = null; }
+
+  const GH_REPO_DEFAULT = (() => {
+    const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+    const p = location.pathname.split('/').filter(Boolean)[0];
+    return m && p ? m[1] + '/' + p : 'caca1403/ozeldemirweb';
+  })();
+
+  function b64(text) {
+    const bytes = new TextEncoder().encode(text);
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+
+  function paintGh() {
+    const on = !!ghCfg;
+    const b = $('#ghBadge');
+    b.textContent = on ? 'Bağlı' : 'Bağlı değil';
+    b.className = 'badge ' + (on ? 'ok' : '');
+    $('#ghFields').hidden = on;
+    $('#ghForget').hidden = !on;
+    $('#ghGo').textContent = on ? 'Canlı siteye gönder' : 'Bağlan ve gönder';
+    if (on) {
+      $('#ghRepo').value = ghCfg.repo;
+      $('#ghBranch').value = ghCfg.branch;
+    } else {
+      if (!$('#ghRepo').value) $('#ghRepo').value = GH_REPO_DEFAULT;
+      if (!$('#ghBranch').value) $('#ghBranch').value = 'main';
+    }
+  }
+
+  async function ghConnect() {
+    const repo = $('#ghRepo').value.trim();
+    const branch = $('#ghBranch').value.trim() || 'main';
+    const token = $('#ghToken').value.trim();
+    if (!/^[^/\s]+\/[^/\s]+$/.test(repo)) { toast('Depo adresi "kullanici/depo" biçiminde olmalı.'); return; }
+    if (!token) { toast('Erişim anahtarı gerekli.'); return; }
+    const btn = $('#ghGo');
+    const old = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Kontrol ediliyor…';
+    try {
+      const r = await fetch('https://api.github.com/repos/' + repo, {
+        headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json' }
+      });
+      if (!r.ok) throw new Error(r.status === 401 ? 'Anahtar geçersiz.' : r.status === 404 ? 'Depo bulunamadı.' : 'GitHub hatası: ' + r.status);
+      ghCfg = { repo, branch, token };
+      try { localStorage.setItem(GH_KEY, JSON.stringify(ghCfg)); } catch (e) { /* depolama kapali */ }
+      $('#ghToken').value = '';
+      paintGh();
+      toast('Bağlandı. Şimdi gönderiliyor…');
+      await ghPublish();
+    } catch (e) {
+      toast(e.message && e.message !== 'Failed to fetch' ? e.message : 'Bağlantı kurulamadı. Siteyi web adresinden açıp tekrar dene.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = old;
+    }
+  }
+
+  async function ghPublish() {
+    if (!ghCfg) { openPub(); return; }
+    const btn = $('#publish');
+    const old = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Gönderiliyor…';
+    try {
+      const api = 'https://api.github.com/repos/' + ghCfg.repo + '/contents/assets/listings.js';
+      const h = { Authorization: 'Bearer ' + ghCfg.token, Accept: 'application/vnd.github+json' };
+      const get = await fetch(api + '?ref=' + encodeURIComponent(ghCfg.branch), { headers: h, cache: 'no-store' });
+      if (!get.ok) throw new Error(get.status === 401 ? 'Anahtar geçersiz. Yayın ayarlarını kontrol et.' : get.status === 404 ? 'Depo veya dosya bulunamadı.' : 'GitHub hatası: ' + get.status);
+      const meta = await get.json();
+      const put = await fetch(api, {
+        method: 'PUT',
+        headers: Object.assign({ 'Content-Type': 'application/json' }, h),
+        body: JSON.stringify({ message: 'İlanlar güncellendi (panel)', content: b64(jsText()), sha: meta.sha, branch: ghCfg.branch })
+      });
+      if (!put.ok) {
+        const err = await put.json().catch(() => ({}));
+        throw new Error('Yazılamadı: ' + (err.message || put.status));
+      }
+      setDirty(false);
+      toast('Gönderildi. 1-2 dakika içinde sitede görünür.');
+    } catch (e) {
+      toast(e.message && e.message !== 'Failed to fetch' ? e.message : 'Bağlantı kurulamadı. Siteyi web adresinden açıp tekrar dene.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = old;
+    }
+  }
+
+  function forgetGh() {
+    ghCfg = null;
+    try { localStorage.removeItem(GH_KEY); } catch (e) { /* depolama kapali */ }
+    paintGh();
+    toast('GitHub bağlantısı kaldırıldı.');
+  }
+
+  /* yerel site klasoru */
+  const IDB_NAME = 'ozeldemir-panel';
+  function idbGet(k) {
+    return new Promise((res) => {
+      try {
+        const r = indexedDB.open(IDB_NAME, 1);
+        r.onupgradeneeded = () => r.result.createObjectStore('kv');
+        r.onerror = () => res(null);
+        r.onsuccess = () => {
+          const db = r.result;
+          const q = db.transaction('kv', 'readonly').objectStore('kv').get(k);
+          q.onsuccess = () => { res(q.result); db.close(); };
+          q.onerror = () => { res(null); db.close(); };
+        };
+      } catch (e) { res(null); }
+    });
+  }
+  function idbSet(k, v) {
+    return new Promise((res) => {
+      try {
+        const r = indexedDB.open(IDB_NAME, 1);
+        r.onupgradeneeded = () => r.result.createObjectStore('kv');
+        r.onerror = () => res();
+        r.onsuccess = () => {
+          const db = r.result;
+          const tx = db.transaction('kv', 'readwrite');
+          tx.objectStore('kv').put(v, k);
+          tx.oncomplete = () => { res(); db.close(); };
+          tx.onerror = () => { res(); db.close(); };
+        };
+      } catch (e) { res(); }
+    });
+  }
+
+  let dirHandle = null;
+
+  async function loadDir() {
+    try {
+      dirHandle = await idbGet('dir');
+      if (!dirHandle) return;
+      const p = await dirHandle.queryPermission({ mode: 'readwrite' });
+      const b = $('#dirBadge');
+      b.textContent = p === 'granted' ? 'Bağlı' : 'İzin gerekiyor';
+      b.className = 'badge ' + (p === 'granted' ? 'ok' : '');
+    } catch (e) { /* klasor destegi yok */ }
+  }
+
+  async function dirWrite() {
+    if (!window.showDirectoryPicker) { toast('Bu tarayıcı klasör yazmayı desteklemiyor. Dosyayı indirip kullan.'); return; }
+    const btn = $('#dirGo');
+    const old = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Yazılıyor…';
+    try {
+      if (!dirHandle) {
+        dirHandle = await showDirectoryPicker({ mode: 'readwrite' });
+        await idbSet('dir', dirHandle);
+      }
+      let p = await dirHandle.queryPermission({ mode: 'readwrite' });
+      if (p !== 'granted') p = await dirHandle.requestPermission({ mode: 'readwrite' });
+      if (p !== 'granted') throw new Error('Klasör izni verilmedi.');
+      try { await dirHandle.getFileHandle('index.html'); } catch (e) { throw new Error('Yanlış klasör: index.html olan site klasörünü seç.'); }
+      const assets = await dirHandle.getDirectoryHandle('assets');
+      const fh = await assets.getFileHandle('listings.js', { create: true });
+      const w = await fh.createWritable();
+      await w.write(jsText());
+      await w.close();
+      const b = $('#dirBadge');
+      b.textContent = 'Bağlı';
+      b.className = 'badge ok';
+      setDirty(false);
+      toast('Site klasöründeki ilan dosyası güncellendi.');
+    } catch (e) {
+      if (e && e.name === 'AbortError') return;
+      toast(e.message || 'Klasöre yazılamadı.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = old;
+    }
+  }
+
+  function openPub() {
+    const d = $('#pubDialog');
+    paintGh();
+    if (!d.open) d.showModal ? d.showModal() : d.setAttribute('open', '');
+  }
+
+  function closePub() {
+    const d = $('#pubDialog');
+    if (d.open) d.close ? d.close() : d.removeAttribute('open');
+  }
+
+  function importJson(file) {
+    const r = new FileReader();
+    r.onload = () => {
+      try {
+        const parsed = JSON.parse(String(r.result));
+        if (!Array.isArray(parsed) || !parsed.length) throw new Error('boş');
+        const clean = parsed.filter((l) => l && typeof l === 'object' && l.id && l.title && l.status);
+        if (!clean.length) throw new Error('geçersiz');
+        if (!confirm(clean.length + ' ilan yüklenecek ve mevcut taslak değişecek. Devam?')) return;
+        items = clean;
+        persist();
+        fillForm(null);
+        render();
+        toast(clean.length + ' ilan yüklendi.');
+      } catch (e) {
+        toast('Dosya okunamadı. İlan dizisi içeren bir JSON seçin.');
+      }
+    };
+    r.readAsText(file);
+  }
+
+  function resizeImage(file) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const im = new Image();
+      im.onload = () => {
+        const max = 1280;
+        const s = Math.min(1, max / Math.max(im.width, im.height));
+        const c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(im.width * s));
+        c.height = Math.max(1, Math.round(im.height * s));
+        c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        resolve(c.toDataURL('image/jpeg', 0.82));
+      };
+      im.onerror = () => { URL.revokeObjectURL(url); reject(new Error('görsel')); };
+      im.src = url;
+    });
+  }
+
+  /* olaylar */
+  $('#form').addEventListener('submit', save);
+  $('#fStatus').addEventListener('change', setStatusUI);
+  $('#fImgUrl').addEventListener('input', (e) => { img = e.target.value.trim(); updatePreview(); });
+  $('#clearImg').addEventListener('click', () => { img = ''; $('#fImgUrl').value = ''; updatePreview(); });
+  $('#fImgFile').addEventListener('change', async (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    try {
+      img = await resizeImage(f);
+      $('#fImgUrl').value = '';
+      updatePreview();
+      if (img.length * 0.75 > 420 * 1024) toast('Görsel büyük. Daha küçük bir fotoğraf yüklemeniz dosyayı hafifletir.');
+    } catch (err) {
+      toast('Görsel okunamadı.');
+    }
+    e.target.value = '';
+  });
+  $('#newBtn').addEventListener('click', () => { fillForm(null); $('#form').scrollIntoView({ block: 'start', behavior: 'smooth' }); $('#fTitle').focus(); });
+  $('#cancelBtn').addEventListener('click', () => fillForm(null));
+  $('#publish').addEventListener('click', () => { if (ghCfg) ghPublish(); else openPub(); });
+  $('#pubSettings').addEventListener('click', openPub);
+  $('#ghGo').addEventListener('click', () => { if (ghCfg) ghPublish(); else ghConnect(); });
+  $('#ghForget').addEventListener('click', forgetGh);
+  $('#dirGo').addEventListener('click', dirWrite);
+  $('#dlGo').addEventListener('click', downloadJs);
+  $('#pubClose').addEventListener('click', closePub);
+  $('#pubClose2').addEventListener('click', closePub);
+  $('#pubDialog').addEventListener('click', (e) => { if (e.target === $('#pubDialog')) closePub(); });
+  $('#exportBtn').addEventListener('click', () => { download('ilanlar-yedek.json', JSON.stringify(items, null, 2), 'application/json'); toast('JSON yedeği indirildi.'); });
+  $('#copyBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(jsText()); toast('listings.js içeriği panoya kopyalandı.'); }
+    catch (e) { toast('Panoya kopyalanamadı; dosyayı indirin.'); }
+  });
+  $('#importBtn').addEventListener('click', () => $('#importFile').click());
+  $('#importFile').addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (f) importJson(f);
+    e.target.value = '';
+  });
+  $('#resetBtn').addEventListener('click', () => {
+    if (!confirm('Bu tarayıcıdaki tüm değişiklikler silinip dosyadaki ilanlara dönülecek. Devam?')) return;
+    localStorage.removeItem(KEY);
+    localStorage.removeItem(DIRTY_KEY);
+    load();
+    setDirty(false);
+    fillForm(null);
+    render();
+    toast('Dosyadaki ilanlara dönüldü.');
+  });
+  $('#list').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-act]');
+    if (!b) return;
+    const id = b.closest('.row').dataset.id;
+    const act = b.dataset.act;
+    if (act === 'edit') { const l = items.find((x) => x.id === id); if (l) { fillForm(l); $('#form').scrollIntoView({ block: 'start', behavior: 'smooth' }); } }
+    else if (act === 'del') remove(id);
+    else if (act === 'dup') duplicate(id);
+    else if (act === 'up') move(id, -1);
+    else if (act === 'down') move(id, 1);
+  });
+  load();
+  dirty = localStorage.getItem(DIRTY_KEY) === '1' || JSON.stringify(items) !== JSON.stringify(SEED);
+  render();
+  fillForm(null);
+  paintGh();
+  loadDir();
+})();
+</script>
 </body>
 </html>
