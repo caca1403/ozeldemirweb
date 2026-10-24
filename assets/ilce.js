@@ -9,7 +9,7 @@
   var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; };
 
   /* gorunur alana girince acilma (reveal + cubuklar) */
-  var GUN = new Date().toISOString().slice(0, 10);
+  var GUN = new Date(Date.now() + 3 * 36e5).toISOString().slice(0, 10);
   var io = new IntersectionObserver(function (g) {
     g.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });

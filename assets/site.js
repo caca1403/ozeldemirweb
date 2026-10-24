@@ -368,7 +368,7 @@
         if (son) {
           const AY3 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
           const tt = new Date(son.t + 'T00:00:00');
-          note.textContent = 'Bugünkü ölçüm: ' + fmt(son.Fatsa) + ' TL/m² (' + tt.getDate() + ' ' + AY3[tt.getMonth()] + ' ' + tt.getFullYear() + ') — her sabah yenilenir. Çizgi 3. ölçümden sonra belirir; her geçen gün 12 aya bir adım daha yaklaşır.';
+          note.textContent = 'Bugünkü ölçüm: ' + tl(son.Fatsa) + ' TL/m² (' + tt.getDate() + ' ' + AY3[tt.getMonth()] + ' ' + tt.getFullYear() + ') — her sabah yenilenir. Çizgi 3. ölçümden sonra belirir; her geçen gün 12 aya bir adım daha yaklaşır.';
         }
         return;
       }
@@ -383,7 +383,7 @@
       const tr3 = (iso) => { const t = new Date(iso + 'T00:00:00'); return t.getDate() + ' ' + AY3[t.getMonth()] + ' ' + t.getFullYear(); };
       const arsiv = p.filter((e) => e.arsiv).length; const uretilme = p.some((e) => e.uretilme);
       note.textContent = p.length + ' ölçüm noktası · ' + tr3(p[0].t) + ' → ' + tr3(p[p.length - 1].t) +
-        ' · en düşük ' + fmt(mn) + ' · en yüksek ' + fmt(mx) +
+        ' · en düşük ' + tl(mn) + ' · en yüksek ' + tl(mx) +
         (arsiv ? ' · takvim noktaları Emlakjet sayfa arşivinden' : (uretilme ? ' · ilk nokta Emlakjet\'in yıllık değişim oranından hesaplandı' : ''));
     }).catch(() => {});
   }
@@ -503,7 +503,7 @@
   const FLOOR = { zemin: 0.97, '1-3': 1, '4-8': 1.02, '9+': 1.03 };
 
   /* piyasa verisi: assets/piyasa.json varsa sabit degerlerin yerine gecer */
-  var GUN = new Date().toISOString().slice(0, 10);
+  var GUN = new Date(Date.now() + 3 * 36e5).toISOString().slice(0, 10);
   fetch('assets/piyasa.json?g=' + GUN, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((d) => {
     if (!d || !d.ppm2 || !d.ppm2.Fatsa) return;
     Object.keys(d.ppm2).forEach((k) => { if (k in PPM2) PPM2[k] = d.ppm2[k]; });
@@ -513,7 +513,7 @@
     const tarih = t.getDate() + ' ' + AY[t.getMonth()] + ' ' + t.getFullYear();
     document.querySelectorAll('[data-pjdate]').forEach((el) => { el.textContent = tarih; });
     const bs = $('.bigstat-no');
-    if (bs) { bs.textContent = fmt(d.ppm2.Fatsa); bs.dataset.count = d.ppm2.Fatsa; }
+    if (bs) { bs.textContent = tl(d.ppm2.Fatsa); bs.dataset.count = d.ppm2.Fatsa; }
     const bp = $('.bigstat p');
     if (bp) bp.textContent = 'Fatsa · ' + tarih + ' · satılık daire ortalaması';
     const market = $('#market');
@@ -522,7 +522,7 @@
       const max = Math.max(...list.map((k) => d.ppm2[k]));
       market.innerHTML = list.map((k) =>
         '<div class="mrow"><span class="mname">' + k + '</span><span class="mbar"><i style="--w:' +
-        ((d.ppm2[k] / max) * 100).toFixed(1) + '%"></i></span><b>' + fmt(d.ppm2[k]) + ' TL</b></div>').join('');
+        ((d.ppm2[k] / max) * 100).toFixed(1) + '%"></i></span><b>' + tl(d.ppm2[k]) + ' TL</b></div>').join('');
     }
   }).catch(() => {});
 
@@ -531,7 +531,6 @@
     const out = $('#valRange');
     const outNote = $('#valNote');
     const outLink = $('#valLink');
-    const fmt = (n) => n.toLocaleString('tr-TR');
     const wa = (text) => 'https://wa.me/905327983352?text=' + encodeURIComponent(text);
     const syncType = () => {
       const k = form.type.value === 'konut';
@@ -568,16 +567,16 @@
       const hi = Math.round(base * 1.08 / 10000) * 10000;
       const floorText = form.floor.options[form.floor.selectedIndex].text;
 
-      out.textContent = fmt(lo) + ' - ' + fmt(hi) + ' TL';
+      out.textContent = tl(lo) + ' - ' + tl(hi) + ' TL';
       outNote.textContent = district + ' · ' + m2 + ' m² · ' + TYPE[type].label +
         (yearOk ? ' · ' + year + ' · ' + floorText + '. kat' : '') +
         (isKonut
-          ? '. Bölge ortalaması ' + fmt(PPM2[district]) + ' TL/m².' + (yearOk ? ' Yaş ve kat düzeltmesi uygulandı.' : '')
-          : '. Bölge konut ortalaması ' + fmt(PPM2[district]) + ' TL/m² üzerinden tahmin.') +
+          ? '. Bölge ortalaması ' + tl(PPM2[district]) + ' TL/m².' + (yearOk ? ' Yaş ve kat düzeltmesi uygulandı.' : '')
+          : '. Bölge konut ortalaması ' + tl(PPM2[district]) + ' TL/m² üzerinden tahmin.') +
         ' Ön hesaplama; kesin değer yerinde inceleme ile netleşir.';
       outLink.href = wa('Merhaba, ' + district + ' ilçesinde ' + m2 + ' m² ' + TYPE[type].label +
         (yearOk ? ' (' + year + ', ' + floorText + '. kat)' : '') +
-        ' için değer öğrenmek istiyorum. Sitedeki ön hesaplama ' + fmt(lo) + ' - ' + fmt(hi) + ' TL aralığı verdi.');
+        ' için değer öğrenmek istiyorum. Sitedeki ön hesaplama ' + tl(lo) + ' - ' + tl(hi) + ' TL aralığı verdi.');
       outLink.hidden = false;
     });
   }
