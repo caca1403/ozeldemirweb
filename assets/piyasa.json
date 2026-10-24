@@ -8,36 +8,255 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 19423
+  "Diğer": 24740
  },
  "ek": {
   "Fatsa": {
    "amortisman": 18,
-   "yasi": 7
+   "yasi": 7,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 34085,
+     "t": "unitPrice",
+     "r": 0.3756
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 5010495,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 21307,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   },
   "Altınordu": {
    "amortisman": 17,
-   "yasi": 5
+   "yasi": 5,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 45599,
+     "t": "unitPrice",
+     "r": 0.3248
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 5243885,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 23019,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   },
   "Ünye": {
    "amortisman": 19,
-   "yasi": 4
+   "yasi": 4,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 37173,
+     "t": "unitPrice",
+     "r": 0.404
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 4720971,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 21215,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   },
   "Perşembe": {
    "amortisman": 19,
-   "yasi": 4
+   "yasi": 4,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 47556,
+     "t": "unitPrice",
+     "r": 0.4833
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 6182280,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 24210,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   },
   "Gülyalı": {
    "amortisman": 14,
-   "yasi": 1
+   "yasi": 1,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 54722,
+     "t": "unitPrice",
+     "r": 0.3671
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 6566640,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 16804,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   },
   "Korgan": {
    "amortisman": 12,
-   "yasi": 9
+   "yasi": 9,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 23723,
+     "t": "unitPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 2894206,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 17974,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   },
   "Diğer": {
    "amortisman": 16,
-   "yasi": 5
+   "yasi": 5,
+   "istat": [
+    {
+     "l": "Ort. m² Fiyatı",
+     "a": 40020,
+     "t": "unitPrice",
+     "r": 0.2759
+    },
+    {
+     "l": "Ort. Fiyat",
+     "a": 5002500,
+     "t": "totalPrice",
+     "r": null
+    },
+    {
+     "l": "Ort. Kira",
+     "a": 23579,
+     "t": "totalPrice",
+     "r": null
+    }
+   ]
   }
+ },
+ "mahalle": {
+  "Fatsa": [
+   {
+    "ad": "Dolunay",
+    "m2": 36746,
+    "yillik": 37.1,
+    "ucuz": 2250000,
+    "pahali": 13500000,
+    "tahmin": 11
+   },
+   {
+    "ad": "Ayazlı",
+    "m2": 30855,
+    "yillik": 39.0,
+    "ucuz": 2225000,
+    "pahali": 9000000,
+    "tahmin": 11
+   },
+   {
+    "ad": "Evkaf",
+    "m2": 30081,
+    "yillik": 55.5,
+    "ucuz": 2550000,
+    "pahali": 6390000,
+    "tahmin": 9
+   },
+   {
+    "ad": "Dumlupınar",
+    "m2": 29884,
+    "yillik": 47.9,
+    "ucuz": 2450000,
+    "pahali": 7000000,
+    "tahmin": 11
+   },
+   {
+    "ad": "Hamlık",
+    "m2": 29342,
+    "yillik": 35.5,
+    "tahmin": 3
+   },
+   {
+    "ad": "Fatih",
+    "m2": 27841,
+    "yillik": 39.2,
+    "ucuz": 1900000,
+    "pahali": 9000000,
+    "tahmin": 7
+   },
+   {
+    "ad": "Kurtuluş",
+    "m2": 27445,
+    "yillik": 37.0,
+    "ucuz": 1250000,
+    "pahali": 5990000,
+    "tahmin": 7
+   },
+   {
+    "ad": "Mustafakemalpaşa",
+    "m2": 24898,
+    "yillik": 27.8,
+    "ucuz": 2550000,
+    "pahali": 4690000,
+    "tahmin": 5
+   },
+   {
+    "ad": "Sakarya",
+    "m2": 24608,
+    "yillik": 33.1,
+    "ucuz": 1425000,
+    "pahali": 10000000,
+    "tahmin": 8
+   },
+   {
+    "ad": "Yapraklı",
+    "m2": 23214,
+    "tahmin": 12
+   }
+  ]
  }
 }
