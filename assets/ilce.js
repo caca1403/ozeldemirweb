@@ -105,10 +105,10 @@
     $('#curveLine').setAttribute('points', pts.join(' '));
     var fill = document.getElementById('curveFill');
     if (fill) fill.setAttribute('points', '8,150 ' + pts.join(' ') + ' 612,150');
-    var arsiv = p.filter(function (e) { return e.arsiv; }).length;
+    var arsiv = p.filter(function (e) { return e.arsiv; }).length; var uretilme = p.some(function (e) { return e.uretilme; });
     note.textContent = p.length + ' ölçüm noktası · ' + trTarih(p[0].t) + ' → ' + trTarih(p[p.length - 1].t) +
       ' · en düşük ' + tl(mn) + ' · en yüksek ' + tl(mx) +
-      (arsiv ? ' · takvim noktaları Emlakjet sayfa arşivinden' : '');
+      (arsiv ? ' · takvim noktaları Emlakjet sayfa arşivinden' : (uretilme ? ' · ilk nokta Emlakjet\'in yıllık değişim oranından hesaplandı' : ''));
   }).catch(function () {});
 
   var tum = (window.OD_LISTINGS || []).filter(function (l) { return l.district === AD; });

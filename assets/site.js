@@ -380,10 +380,10 @@
       if (fill) fill.setAttribute('points', '8,150 ' + pts.join(' ') + ' 612,150');
       const AY3 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
       const tr3 = (iso) => { const t = new Date(iso + 'T00:00:00'); return t.getDate() + ' ' + AY3[t.getMonth()] + ' ' + t.getFullYear(); };
-      const arsiv = p.filter((e) => e.arsiv).length;
+      const arsiv = p.filter((e) => e.arsiv).length; const uretilme = p.some((e) => e.uretilme);
       note.textContent = p.length + ' ölçüm noktası · ' + tr3(p[0].t) + ' → ' + tr3(p[p.length - 1].t) +
         ' · en düşük ' + fmt(mn) + ' · en yüksek ' + fmt(mx) +
-        (arsiv ? ' · takvim noktaları Emlakjet sayfa arşivinden' : '');
+        (arsiv ? ' · takvim noktaları Emlakjet sayfa arşivinden' : (uretilme ? ' · ilk nokta Emlakjet\'in yıllık değişim oranından hesaplandı' : ''));
     }).catch(() => {});
   }
 

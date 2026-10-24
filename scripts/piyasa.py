@@ -100,7 +100,11 @@ def mahalle_verileri(html_fiyatlar, slug_onek):
             e["tahmin"] = int(m.group(2))
         sonuc.append(e)
         print(f"    + {e['ad']}: {e['m2']} TL/m\u00b2")
-    return sorted(sonuc, key=lambda x: -x["m2"])
+    tek = {}
+    for m in sonuc:
+        if m["ad"] not in tek or m["m2"] > tek[m["ad"]]["m2"]:
+            tek[m["ad"]] = m
+    return sorted(tek.values(), key=lambda x: -x["m2"])
 
 
 
@@ -199,7 +203,24 @@ def main():
     yet = {"t": bugun}
     yet.update({k: v for k, v in ppm2.items() if k != "Diğer"})
     hist.append(yet)
+    # yillik baglam noktasi: Emlakjet'in yillik degisim oranindan 12 ay onceki deger
+    if not any(e.get("uretilme") for e in hist):
+        t_yil = (datetime.date.fromisoformat(bugun) - datetime.timedelta(days=365)).isoformat()
+        e = next((x for x in hist if x.get("t") == t_yil), None)
+        if not e:
+            e = {"t": t_yil}
+            hist.append(e)
+        bulundu = False
+        for ad in ppm2:
+            kart = next((k for k in ek.get(ad, {}).get("istat", []) if k["t"] == "unitPrice" and k.get("r") is not None), None)
+            if kart:
+                e[ad] = int(round(ppm2[ad] / (1.0 + kart["r"])))
+                bulundu = True
+        if bulundu:
+            e["uretilme"] = True
+            print(f"  yil-önceki nokta {t_yil}: " + ", ".join(f"{k}:{v}" for k, v in e.items() if k not in ("t", "uretilme")))
     hist.sort(key=lambda e: e.get("t", ""))
+    hist = [e for e in hist if any(k not in ("t", "uretilme", "arsiv") for k in e)]
     json.dump(hist[-400:], open(hist_yol, "w", encoding="utf-8"), ensure_ascii=False)
     print("yazildi:", HEDEF, ("(eksik: " + ",".join(eksik) + ")") if eksik else "")
 
