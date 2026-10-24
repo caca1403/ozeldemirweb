@@ -103,6 +103,47 @@ def mahalle_verileri(html_fiyatlar, slug_onek):
     return sorted(sonuc, key=lambda x: -x["m2"])
 
 
+
+
+def arsiv_geri_dolgu(hist):
+    """Yillik gecmis noktalar: Emlakjet sayfalarinin Wayback Machine kayitlarindan olcum."""
+    if any(e.get("arsiv") for e in hist):
+        return hist
+    for ad, slug in URUMLAR.items():
+        if ad == "Diğer":
+            continue
+        try:
+            cdx = json.load(urllib.request.urlopen(
+                urllib.request.Request(
+                    f"http://web.archive.org/cdx/search/cdx?url=emlakjet.com/satilik-daire/{slug}"
+                    "&output=json&fl=timestamp&filter=statuscode:200&from=20220101",
+                    headers=UA), timeout=45))[1:]
+            yillar = {}
+            for (ts,) in cdx:
+                yillar[ts[:4]] = max(yillar.get(ts[:4], ""), ts)
+            for ts in sorted(yillar.values()):
+                try:
+                    html = urllib.request.urlopen(urllib.request.Request(
+                        f"https://web.archive.org/web/{ts}id_/https://www.emlakjet.com/satilik-daire/{slug}",
+                        headers=UA), timeout=45).read().decode("utf-8", "ignore")
+                except Exception:
+                    continue
+                m = RE_FIYAT.search(html)
+                if not m:
+                    continue
+                t = f"{ts[:4]}-{ts[4:6]}-{ts[6:8]}"
+                e = next((x for x in hist if x.get("t") == t), None)
+                if not e:
+                    e = {"t": t}
+                    hist.append(e)
+                e[ad] = sayi(m.group(1))
+                e["arsiv"] = True
+                print(f"  arşiv {ad} {t}: {e[ad]}")
+        except Exception as ex:
+            print(f"  ! arsiv {ad}: {ex}", file=sys.stderr)
+    hist.sort(key=lambda e: e.get("t", ""))
+    return hist
+
 def main():
     onceki = eski()
     ppm2, ek, eksik = dict(onceki.get("ppm2", {})), dict(onceki.get("ek", {})), []
@@ -154,6 +195,7 @@ def main():
         hist = []
     bugun = bugun_tr()
     hist = [e for e in hist if e.get("t") != bugun]
+    hist = arsiv_geri_dolgu(hist)
     yet = {"t": bugun}
     yet.update({k: v for k, v in ppm2.items() if k != "Diğer"})
     hist.append(yet)

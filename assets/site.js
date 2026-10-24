@@ -373,15 +373,17 @@
       }
       const v = p.map((e) => e.Fatsa);
       const mn = Math.min(...v), mx = Math.max(...v), ac = Math.max(1, mx - mn);
-      const pts = v.map((y, i) => ((8 + (i / (v.length - 1)) * 604).toFixed(1)) + ',' + (140 - ((y - mn) / ac) * 128).toFixed(1));
+      const t0 = Date.parse(p[0].t), tN = Math.max(1, Date.parse(p[p.length - 1].t) - t0);
+      const pts = p.map((e, i) => ((8 + ((Date.parse(e.t) - t0) / tN) * 604).toFixed(1)) + ',' + (140 - ((v[i] - mn) / ac) * 128).toFixed(1));
       $('#curveLine').setAttribute('points', pts.join(' '));
       const fill = document.getElementById('curveFill');
       if (fill) fill.setAttribute('points', '8,150 ' + pts.join(' ') + ' 612,150');
       const AY3 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
       const tr3 = (iso) => { const t = new Date(iso + 'T00:00:00'); return t.getDate() + ' ' + AY3[t.getMonth()] + ' ' + t.getFullYear(); };
-      const dv = Math.round((v[v.length - 1] / v[0] - 1) * 1000) / 10;
-      note.textContent = p.length + ' ölçüm · ' + tr3(p[0].t) + ' → ' + tr3(p[p.length - 1].t) +
-        ' · en düşük ' + fmt(mn) + ' · en yüksek ' + fmt(mx) + ' · ilkine göre %' + (dv > 0 ? '+' : '') + dv;
+      const arsiv = p.filter((e) => e.arsiv).length;
+      note.textContent = p.length + ' ölçüm noktası · ' + tr3(p[0].t) + ' → ' + tr3(p[p.length - 1].t) +
+        ' · en düşük ' + fmt(mn) + ' · en yüksek ' + fmt(mx) +
+        (arsiv ? ' · takvim noktaları Emlakjet sayfa arşivinden' : '');
     }).catch(() => {});
   }
 

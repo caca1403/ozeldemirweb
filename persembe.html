@@ -33,63 +33,63 @@
 <main>
   <section class="sec" style="padding-top:clamp(110px,16vh,170px)">
     <div class="wrap">
-      <span class="kicker">Özel Demir · Perşembe</span>
-      <h1 class="sayfa-baslik">Perşembe'da satılık daire: güncel fiyatlar ve güncel ilanlar</h1>
-      <p class="lede" id="ilcePpm">Ortalama metrekare fiyatı yükleniyor…</p>
+      <span class="kicker reveal">Özel Demir · Perşembe</span>
+      <h1 class="sayfa-baslik reveal d1">Perşembe'da satılık daire: güncel fiyatlar ve güncel ilanlar</h1>
+      <p class="lede reveal d2" id="ilcePpm">Ortalama metrekare fiyatı yükleniyor…</p>
 
-      <div class="factgrid" aria-label="Perşembe piyasa rakamları">
+      <div class="factgrid reveal" aria-label="Perşembe piyasa rakamları">
         <div class="fact"><b id="fFiyat">—</b><span>m² fiyatı · satılık daire</span></div>
         <div class="fact"><b id="fAmort">—</b><span>Amortisman süresi</span></div>
         <div class="fact"><b id="fYas">—</b><span>Ortalama bina yaşı</span></div>
         <div class="fact"><b id="fIl">—</b><span>Ordu geneli m²</span></div>
       </div>
 
-      <section id="istatSec" hidden>
+      <section id="istatSec" class="reveal" hidden>
         <h2 class="sayfa-altbaslik">Son 1 yıl · Perşembe</h2>
         <div class="istatgrid" id="istatGrid"></div>
         <p class="fine" id="istatNot"></p>
       </section>
 
-      <div class="bigstat">
+      <div class="bigstat reveal">
         <span class="bigstat-no" id="ilceNo">—</span>
         <span class="bigstat-unit">TL / m²</span>
         <p>Perşembe · her sabah otomatik ölçüm · satılık daire ilan ortalaması</p>
       </div>
 
-      <div class="market" id="ilceBars" aria-label="İlçelere göre metrekare fiyatları"></div>
+      <div class="market reveal" id="ilceBars" aria-label="İlçelere göre metrekare fiyatları"></div>
 
-      <figure class="curve" id="curve">
+      <figure class="curve reveal" id="curve">
         <figcaption><b>Perşembe</b> · kendi günlük ölçümümüz</figcaption>
         <svg viewBox="0 0 620 150" preserveAspectRatio="none" role="img" aria-label="Perşembe metrekare fiyatının zaman içinde değişimi"><polygon id="curveFill" fill="rgba(201,162,74,.09)" stroke="none"></polygon><polyline id="curveLine" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"></polyline></svg>
         <p class="curve-note" id="curveNote">İlk ölçüm toplandı — eğri yeni ölçümlerle belirir.</p>
       </figure>
 
-      <h2 class="sayfa-altbaslik">Güncel Perşembe ilanlarımız</h2>
+      <h2 class="sayfa-altbaslik reveal">Güncel Perşembe ilanlarımız</h2>
       <p class="lede" id="ilceSayi"></p>
       <div class="grid" id="ilceGrid" style="margin-top:20px"></div>
 
-      <section id="soldSec" hidden>
+      <section id="soldSec" class="reveal" hidden>
         <h2 class="sayfa-altbaslik">Perşembe'nda elimizden çıkanlar</h2>
         <p class="lede">Satışını tamamladığımız taşınmazlardan örnekler.</p>
         <div class="grid" id="ilceSold" style="margin-top:20px"></div>
       </section>
 
-      <section id="mahSec" hidden>
+      <section id="mahSec" class="reveal" hidden>
         <h2 class="sayfa-altbaslik">Perşembe mahallelerinde m² fiyatları</h2>
         <p class="lede">Şu an ilanı olan mahalleler, büyükten küçüğe. Yüzde: son bir yıldaki değişim.</p>
         <div class="market" id="mahBars"></div>
         <p class="fine" id="mahNot"></p>
       </section>
 
-      <h2 class="sayfa-altbaslik">Nasıl çalışıyoruz?</h2>
-      <div class="adimlar">
+      <h2 class="sayfa-altbaslik reveal">Nasıl çalışıyoruz?</h2>
+      <div class="adimlar reveal">
         <div class="adim"><b>01</b><h3>Doğru fiyat</h3><p>Emsal ilanlar ve m² ortalamalarıyla fiyatı birlikte belirliyoruz — internetteki rakam değil, satan rakam.</p></div>
         <div class="adim"><b>02</b><h3>Doğru alıcı</h3><p>İlanımızı ciddi alıcıyla buluşturuyoruz; gereksiz aramayla vaktinizi almıyoruz.</p></div>
         <div class="adim"><b>03</b><h3>Güvenli teslim</h3><p>Pazarlıktan tapuya kadar süreci birlikte yürütüyoruz; satış günü sürpriz yaşamazsınız.</p></div>
       </div>
 
-      <h2 class="sayfa-altbaslik">Sık sorulanlar</h2>
-      <div class="sss">
+      <h2 class="sayfa-altbaslik reveal">Sık sorulanlar</h2>
+      <div class="sss reveal">
         <details open>
           <summary>Perşembe bir metrekare ev fiyatı ne kadar?</summary>
           <p id="faqPpm">Bu sayfadaki ölçüm her sabah yeniden yapılır; en güncel rakam sayfanın başında tarihli olarak yer alır.</p>
@@ -108,7 +108,7 @@
         </details>
       </div>
 
-      <p class="note" style="margin-top:40px">Bu sayfadaki metrekare fiyatı, amortisman süresi ve bina yaşı, Emlakjet satılık daire ilan ortalamalarından her gün otomatik ölçülür; eğri kendi günlük ölçümlerimizden oluşur. İlanlar ve satış örnekleri Özel Demir portföyüdür. Kesin değer, yerinde inceleme ile netleşir.</p>
+      <p class="note reveal" style="margin-top:40px">Bu sayfadaki metrekare fiyatı, amortisman süresi ve bina yaşı, Emlakjet satılık daire ilan ortalamalarından her gün otomatik ölçülür; eğri kendi günlük ölçümlerimizden oluşur. İlanlar ve satış örnekleri Özel Demir portföyüdür. Kesin değer, yerinde inceleme ile netleşir.</p>
       <div class="actions" style="margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 16px">
         <a class="btn" href="https://wa.me/905327983352?text=Merhaba%2C%20Perşembe%27da%20ev%20almak%20i%C3%A7in%20dan%C4%B1%C5%9Fmak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yaz</a>
         <a class="btn ghost" href="index.html#deger">Evimin değerini hesapla</a>
@@ -141,6 +141,6 @@
   </div>
 </footer>
 <script src="assets/listings.js"></script>
-<script src="assets/ilce.js?v=4"></script>
+<script src="assets/ilce.js?v=5"></script>
 </body>
 </html>
