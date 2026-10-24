@@ -467,6 +467,29 @@
   const AGE = [[1, 1.08], [5, 1.04], [10, 1], [20, 0.94], [30, 0.88], [40, 0.82], [999, 0.76]];
   const FLOOR = { zemin: 0.97, '1-3': 1, '4-8': 1.02, '9+': 1.03 };
 
+  /* piyasa verisi: assets/piyasa.json varsa sabit degerlerin yerine gecer */
+  fetch('assets/piyasa.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((d) => {
+    if (!d || !d.ppm2 || !d.ppm2.Fatsa) return;
+    Object.keys(d.ppm2).forEach((k) => { if (k in PPM2) PPM2[k] = d.ppm2[k]; });
+    if (!d.guncellendi) return;
+    const AY = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    const t = new Date(d.guncellendi + 'T00:00:00');
+    const tarih = t.getDate() + ' ' + AY[t.getMonth()] + ' ' + t.getFullYear();
+    document.querySelectorAll('[data-pjdate]').forEach((el) => { el.textContent = tarih; });
+    const bs = $('.bigstat-no');
+    if (bs) { bs.textContent = fmt(d.ppm2.Fatsa); bs.dataset.count = d.ppm2.Fatsa; }
+    const bp = $('.bigstat p');
+    if (bp) bp.textContent = 'Fatsa · ' + tarih + ' · satılık daire ortalaması';
+    const market = $('#market');
+    if (market) {
+      const list = ['Fatsa', 'Altınordu', 'Ünye', 'Perşembe', 'Gülyalı', 'Korgan'].filter((k) => d.ppm2[k]);
+      const max = Math.max(...list.map((k) => d.ppm2[k]));
+      market.innerHTML = list.map((k) =>
+        '<div class="mrow"><span class="mname">' + k + '</span><span class="mbar"><i style="--w:' +
+        ((d.ppm2[k] / max) * 100).toFixed(1) + '%"></i></span><b>' + fmt(d.ppm2[k]) + ' TL</b></div>').join('');
+    }
+  }).catch(() => {});
+
   const form = $('#valForm');
   if (form) {
     const out = $('#valRange');
