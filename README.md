@@ -37,7 +37,7 @@ ozeldemirweb/
 ```
 
 ## Yeni ilan ekleme
-**Yönetim Paneli + GitHub token (kalıcı, herkese görünür):** `yonetim.html` → şifre `ord2026`
+**Yönetim Paneli + GitHub token (kalıcı, herkese görünür):** `yonetim.html` → şifre 
 → ilanı ekle → "GitHub ile Yayınla" kutusuna token gir (fine-grained, bu repo,
 Contents: Read and write) → **Yayınla**. Panel dosyaları repoya yazar; GitHub Pages
 1-2 dk içinde siteyi günceller. Token yalnızca yayınlayan kişinin tarayıcısında durur.
