@@ -8,7 +8,10 @@
     const t = clamp((p - e0) / (e1 - e0), 0, 1);
     return t * t * (3 - 2 * t);
   };
-  const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* mobilde efektler her zaman acik; hareket kisitliligi yalniz masaustunde dikkate alinir */
+  const forceMq = matchMedia('(max-width:900px),(orientation:portrait) and (max-width:1024px)');
+  const mqR = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = () => mqR.matches && !forceMq.matches;
 
   /* ilanlar: assets/listings.js tek kaynak, yonetim paneli localStorage taslagi */
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -86,11 +89,10 @@
   const hsec = $('#hizmetler');
   const htrack = $('#hTrack');
   const hbar = $('#hBar');
-  const hMq = matchMedia('(prefers-reduced-motion: no-preference)');
   let hMax = 0, hLast = -1;
 
   function hMeasure() {
-    if (!hMq.matches || !htrack) return;
+    if (reduced() || !htrack) return;
     const first = htrack.firstElementChild;
     const last = htrack.lastElementChild;
     if (!first || !last) return;
@@ -104,7 +106,7 @@
     hLast = -1;
   }
   function hUpdate() {
-    if (!hMq.matches || !hsec || !htrack) return;
+    if (reduced() || !hsec || !htrack) return;
     const total = hsec.offsetHeight - innerHeight;
     if (total <= 0) return;
     const p = clamp(-hsec.getBoundingClientRect().top / total, 0, 1);
@@ -114,7 +116,7 @@
     if (hbar) hbar.style.transform = 'scaleX(' + p.toFixed(3) + ')';
   }
   function hMode() {
-    if (!hMq.matches) {
+    if (reduced()) {
       if (htrack) htrack.style.transform = '';
       if (hbar) hbar.style.transform = '';
       hLast = -1;
@@ -122,6 +124,18 @@
       hMeasure();
       hUpdate();
     }
+  }
+
+  function syncMotion() {
+    const off = reduced();
+    document.documentElement.classList.toggle('reduced', off);
+    if (wordsP) {
+      wordsP.classList.toggle('dim', !off);
+      if (off) words.forEach((w) => w.classList.add('lit'));
+    }
+    hMode();
+    applyHeroMode();
+    if (off) pinFinal();
   }
 
   /* hafif paralaks */
@@ -144,8 +158,6 @@
   }
 
   /* hero */
-  const GATES = ['(prefers-reduced-motion: reduce)'];
-  const MQLS = GATES.map((q) => matchMedia(q));
   const hero = $('#hero');
   const stage = $('.stage');
   const video = $('#heroVideo');
@@ -292,7 +304,7 @@
   }
 
   function applyHeroMode() {
-    if (MQLS.some((m) => m.matches)) disableScrub();
+    if (reduced()) disableScrub();
     else enableScrub();
   }
 
@@ -302,11 +314,8 @@
   }, { rootMargin: '200px 0px' });
   heroIO.observe(hero);
 
-  MQLS.forEach((m) => m.addEventListener('change', applyHeroMode));
-  matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
-    if (e.matches) pinFinal();
-    applyHeroMode();
-  });
+  mqR.addEventListener('change', syncMotion);
+  forceMq.addEventListener('change', syncMotion);
   if (reduced()) pinFinal();
   applyHeroMode();
   onScroll();
@@ -430,12 +439,6 @@
     });
     if (!reduced()) wordsP.classList.add('dim');
   }
-  const rmMq = matchMedia('(prefers-reduced-motion: reduce)');
-  rmMq.addEventListener('change', () => {
-    if (!wordsP) return;
-    wordsP.classList.toggle('dim', !rmMq.matches);
-    if (rmMq.matches) words.forEach((w) => w.classList.add('lit'));
-  });
   function wordsUpdate() {
     if (!words.length || !wordsP.classList.contains('dim')) return;
     const r = wordsP.getBoundingClientRect();
@@ -544,7 +547,6 @@
   }
   addEventListener('scroll', onScrollGlobal, { passive: true });
   addEventListener('resize', () => { hMeasure(); hUpdate(); sUpdate(); mfUpdate(); rUpdate(); parallax(); }, { passive: true });
-  hMq.addEventListener('change', hMode);
   addEventListener('load', () => { hMeasure(); hUpdate(); }, { once: true });
 
 
@@ -646,7 +648,7 @@
     });
   }
 
-  hMode();
+  syncMotion();
   sUpdate();
   mfUpdate();
   onScrollGlobal();

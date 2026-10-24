@@ -107,13 +107,13 @@ footer .loc{display:inline-flex;align-items:center;gap:7px}
 .tip{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);z-index:5;background:#0F0B08;border:1px solid rgba(201,162,74,.45);color:var(--text);padding:10px 17px;border-radius:999px;font-size:.82rem;opacity:0;pointer-events:none;transition:.25s var(--ease);max-width:92vw;text-align:center}
 .tip.on{opacity:1;transform:translate(-50%,0)}
 
-@media (prefers-reduced-motion:reduce){
-  .bg video{display:none}
-  .bg .poster{transform:none}
-  .seal .ring,.rule span{animation:none}
-  .rv{animation:none;opacity:1;transform:none}
-  .cta,.row{transition:none}
-}
+/* hareket kisitliligi yalniz masaustunde */
+
+  html.reduced .bg video{display:none}
+  html.reduced .bg .poster{transform:none}
+  html.reduced .seal .ring, html.reduced .rule span{animation:none}
+  html.reduced .rv{animation:none;opacity:1;transform:none}
+  html.reduced .cta, html.reduced .row{transition:none}
 </style>
 </head>
 <body>
@@ -226,7 +226,9 @@ footer .loc{display:inline-flex;align-items:center;gap:7px}
 (() => {
   'use strict';
   const $ = (s) => document.querySelector(s);
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MOBIL = matchMedia('(max-width:900px),(orientation:portrait) and (max-width:1024px)').matches;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches && !MOBIL;
+  document.documentElement.classList.toggle('reduced', reduced);
 
   /* arka plan videosu: hareket tercihine gore */
   const v = $('#bgv');
