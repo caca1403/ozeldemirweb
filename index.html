@@ -1,882 +1,546 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="light">
+<html lang="tr" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Özel Demir | Gayrimenkul Danışmanı</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Özel Demir | Gayrimenkul Danışmanı — Ordu</title>
+<meta name="description" content="Ordu gayrimenkul danışmanı Özel Demir: satılık/kiralık ilanlar, ücretsiz mülk değerleme, piyasa analizi, stratejik pazarlama ve güçlü müzakere. 30 yıllık sektör tecrübesi." />
+<meta property="og:title" content="Özel Demir | Gayrimenkul Danışmanı — Ordu" />
+<meta property="og:description" content="Ordu'dan emlak hayallerinize açılan kapı. İlanlar, ücretsiz değerleme ve piyasa analizi." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://caca1403.github.io/ozeldemirweb/" />
+<meta property="og:image" content="https://caca1403.github.io/ozeldemirweb/assets/video/hero-poster.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://caca1403.github.io/ozeldemirweb/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2308090a'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='24' fill='%235ecfc0'%3EOD%3C/text%3E%3C/svg%3E" />
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
 
-  <style>
-    :root{
-      --primary-color:#005A9E;
-      --secondary-color:#E87722;
-      --whatsapp-color:#25D366;
-      --dark-color:#2c3e50;
-      --light-color:#f4f4f4;
-      --white-color:#ffffff;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    html,body{max-width:100%;overflow-x:hidden} /* mobilde yana kaymayı engelle */
-    body{font-family:'Poppins',sans-serif;line-height:1.6;color:var(--dark-color);background:#fff}
-    body.no-scroll{overflow:hidden}
-    img{max-width:100%;height:auto;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    h1,h2,h3{margin-bottom:1rem;font-weight:600}
-    section{padding:4rem 0;opacity:0;transition:opacity .8s ease-in-out}
-    section.is-visible{opacity:1}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;background:var(--secondary-color);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;transition:.25s;border:none;cursor:pointer;gap:10px}
-    .btn:hover{opacity:.95;transform:translateY(-1px)}
-    .btn-primary{background:var(--primary-color)}
-    .btn-outline{background:transparent;border:2px solid var(--primary-color);color:var(--primary-color)}
-    .text-center{text-align:center}
-
-    /* NAVBAR */
-    .navbar{background:#fff;padding:.75rem 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,.08)}
-    .navbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .navbar .left{display:flex;align-items:center;gap:12px}
-    .navbar .logo{font-size:1.4rem;font-weight:700;color:var(--primary-color);text-decoration:none;white-space:nowrap}
-    .navbar .nav-links{list-style:none;display:flex;flex-wrap:wrap;gap:12px;overflow:auto;max-width:60%;padding-bottom:2px}
-    .navbar .nav-links a{color:var(--dark-color);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap;padding:6px 10px;border-radius:6px}
-    .navbar .nav-links a:hover{color:#fff;background:var(--primary-color)}
-    .theme-toggle{white-space:nowrap}
-
-    /* HAMBURGER - Mobil menü */
-    .nav-toggle{
-      display:none; width:42px;height:36px;border:0;background:transparent;cursor:pointer;
-      position:relative; z-index:1001;
-    }
-    .nav-toggle span{
-      display:block;height:3px;width:90%;background:var(--dark-color);border-radius:3px;
-      margin:6px 0; transition:transform .25s, opacity .25s, background .25s;
-    }
-    @media (max-width: 992px){
-      .nav-toggle{display:block}
-      .navbar .nav-links{
-        position:fixed; inset:64px 12px auto 12px;
-        background:#151515; border:1px solid rgba(255, 255, 255, 0.08); border-radius:12px;
-        padding:10px; display:flex; flex-direction:column; gap:4px;
-        max-height:70vh; overflow:auto; box-shadow:0 12px 30px rgba(0,0,0,.12);
-        transform:translateY(-12px); opacity:0; pointer-events:none; transition:.2s ease;
-      }
-      .navbar .nav-links.is-open{opacity:1; transform:none; pointer-events:auto}
-      .navbar .nav-links a{padding:10px 12px; font-size:1rem; color:#e5e7eb}
-      .navbar .nav-links a:hover{background:#1f2937}
-      .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
-      .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-      .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
-    }
-
-    /* HERO */
-    #hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center/cover;color:#fff;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1rem}
-    #hero .hero-content{max-width:820px;margin-inline:auto}
-    #hero h1{font-size:3rem;line-height:1.15;margin-bottom:.5rem}
-    #hero p{font-size:1.1rem;margin-bottom:1.75rem;font-weight:300;opacity:.95}
-    #hero .cta-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-    #hero.is-visible{opacity:1}
-
-    /* ABOUT */
-    #about .about-content{display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:center}
-    #about img{width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    #about h2{color:var(--primary-color)}
-    .expertise-box{background:#eaf3ff;border-left:5px solid var(--primary-color);padding:1.25rem 1.5rem;margin-top:1.25rem;border-radius:10px;min-height:120px;position:relative;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-    .expertise-box h4{font-weight:700;color:var(--primary-color);margin-bottom:8px}
-    .expertise-text{font-size:1.05rem;font-weight:600;color:var(--dark-color);position:absolute;top:50%;left:1.5rem;right:1.5rem;transform:translateY(-50%);opacity:0;transition:.45s}
-    .expertise-text.active{opacity:1;transform:translateY(-50%);margin-top: 15px;}
-
-    /* STATS */
-    #stats{background:var(--primary-color);color:#fff;padding:2rem 0}
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));text-align:center;gap:1rem}
-    .stats-grid .stat h3{font-size:2.2rem;margin:0}
-    .stats-grid .stat p{font-size:.95rem;font-weight:300;opacity:.9}
-
-    /* SERVICES */
-    #services{background:var(--light-color)}
-    #services h2{text-align:center;margin-bottom:2rem;color:var(--primary-color)}
-    #services .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;text-align:center}
-    #services .service-box{background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.05)}
-    #services .service-box i{font-size:2.25rem;color:var(--secondary-color);margin-bottom:.75rem}
-
-    /* PORTFOLIO */
-    #portfolio h2{text-align:center;margin-bottom:2rem;color:var(--primary-color)}
-    #portfolio .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-    #portfolio .portfolio-item{position:relative;overflow:hidden;border-radius:12px}
-    #portfolio .portfolio-item img{width:100%;height:200px;object-fit:cover;display:block;transition:transform .4s}
-    #portfolio .portfolio-item:hover img{transform:scale(1.055)}
-    #portfolio .portfolio-item .sold-banner{position:absolute;top:16px;left:-35px;background:var(--secondary-color);color:#fff;padding:5px 30px;transform:rotate(-45deg);font-weight:700;box-shadow:0 0 10px rgba(0,0,0,.25);letter-spacing:.5px}
-
-    /* CERTIFICATES */
-    #certificates{background:var(--light-color); opacity:1 !important;} /* her zaman görünür */
-    #certificates h2{text-align:center;margin-bottom:2rem;color:var(--primary-color)}
-    .certificates-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;justify-items:center}
-    .certificate-item{cursor:pointer;transition:transform .25s}
-    .certificate-item:hover{transform:scale(1.03)}
-    .certificate-item img{width:100%;height:250px;object-fit:cover;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.08)}
-
-    /* MODALS */
-    .modal{display:none;position:fixed;z-index:2000;inset:0;overflow:auto;background:rgba(0,0,0,.88);backdrop-filter:blur(4px);padding:6vh 2vw 4vh 2vw}
-    .modal img.modal-content{margin:auto;display:block;max-width:100%;max-height:88vh;object-fit:contain;border-radius:10px}
-    .close{
-      position:fixed;
-      top:calc(10px + env(safe-area-inset-top, 0px));
-      right:calc(14px + env(safe-area-inset-right, 0px));
-      color:#fff;
-      font-size:26px;
-      font-weight:800;
-      line-height:1;
-      transition:.2s;
-      width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-      background:rgba(0,0,0,.55);
-      border-radius:999px;
-      box-shadow:0 2px 8px rgba(0,0,0,.35);
-      z-index:2100;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .close:hover,.close:focus{background:rgba(255,255,255,.2);cursor:pointer}
-
-    /* BLOG */
-    #blog{background:#fff}
-    #blog h2{text-align:center;margin-bottom:2rem;color:var(--primary-color)}
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-    .blog-post{background:var(--light-color);border-radius:12px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.05)}
-    .blog-content{padding:1.25rem}
-    .blog-content h3{font-size:1.15rem;margin-bottom:.4rem}
-    .blog-content p{font-size:.92rem;color:#555}
-    .read-more{display:inline-flex;margin-top:.8rem;color:var(--primary-color);text-decoration:none;font-weight:700;cursor:pointer}
-
-    /* Blog Modal (metin kutusu) */
-    #blogModal .article-box{margin:0 auto;background:#fff;color:var(--dark-color);max-width:900px;max-height:80vh;overflow:auto;border-radius:12px;padding:1.5rem 1.25rem;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-    #blogModal .article-box h3{margin-bottom:1rem;color:var(--primary-color)}
-    #blogModal .article-box p{margin-bottom:1rem}
-
-    /* TESTIMONIALS */
-    #testimonials{background:var(--light-color);text-align:center}
-    #testimonials .testimonial-container{position:relative}
-    #testimonials .testimonial-slider{
-      display:flex;overflow-x:auto;scroll-behavior:smooth;gap:20px;
-      scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
-    }
-    #testimonials .testimonial-card{
-      flex:0 0 100%;background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.05);
-      scroll-snap-align:start;
-    }
-    #testimonials .testimonial-card i{font-size:2rem;color:var(--primary-color);margin-bottom:.75rem}
-    #testimonials .testimonial-card p{font-style:italic;font-size:1rem;margin-bottom:1.1rem}
-    #testimonials .testimonial-card .customer-info{font-weight:700}
-    #testimonials .slider-nav{position:absolute;top:50%;width:100%;display:flex;justify-content:space-between;transform:translateY(-50%);padding:0 8px;pointer-events:none}
-    #testimonials .slider-nav button{background:rgba(255,255,255,.75);border:none;border-radius:50%;width:40px;height:40px;font-size:1.3rem;color:var(--dark-color);cursor:pointer;pointer-events:auto;box-shadow:0 2px 5px rgba(0,0,0,.2);transition:.2s}
-    #testimonials .slider-nav button:hover{background:#fff;transform:scale(1.06)}
-
-    /* FAQ */
-    #faq{background:#fff}
-    #faq h2{text-align:center;margin-bottom:2rem;color:var(--primary-color)}
-    .faq-item{border-bottom:1px solid #ddd;margin-bottom:1rem}
-    .faq-question{background:var(--light-color);padding:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;border-radius:8px}
-    .faq-answer{padding:1rem;display:none}
-    .faq-question i{transition:transform .25s}
-    .faq-question.active i{transform:rotate(180deg)}
-
-    /* CONTACT */
-    #contact{background:var(--dark-color);color:#fff;text-align:center}
-    #contact h2{margin-bottom:1.25rem}
-    #contact p{margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto;opacity:.95}
-    .contact-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-    .contact-buttons .btn{min-width:220px}
-    .btn-whatsapp{background:var(--whatsapp-color)}
-    .btn-whatsapp:hover{background:#1EBE57}
-
-    /* FAB */
-    .whatsapp-fab{position:fixed;bottom:20px;right:20px;background:var(--whatsapp-color);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:999;transition:transform .25s}
-    .whatsapp-fab:hover{transform:scale(1.06);background:#1EBE57}
-
-    /* FOOTER */
-    footer{background:#1e2a36;color:#ccc;text-align:center;padding:1.5rem 0}
-
-    /* RESPONSIVE TWEAKS */
-    @media (max-width:992px){
-      #about .about-content{grid-template-columns:1fr;gap:1.25rem}
-      #hero h1{font-size:2.5rem}
-      .navbar .nav-links{max-width:100%}
-    }
-    @media (max-width:768px){
-      #hero{padding:4.5rem 1rem;min-height:64vh}
-      #hero h1{font-size:2.15rem}
-      #hero p{font-size:1rem}
-      .contact-buttons .btn{width:100%;max-width:340px}
-      .modal{padding-top:9vh}
-      .modal img.modal-content{max-height:76vh}
-      section{opacity:1 !important} /* mobilde reveal takılmasın */
-    }
-    @media (max-width:480px){
-      .navbar .logo{font-size:1.2rem}
-      .navbar .nav-links a{font-size:.9rem;padding:5px 8px}
-      #hero h1{font-size:1.85rem}
-      .close{top:calc(8px + env(safe-area-inset-top, 0px));right:calc(10px + env(safe-area-inset-right, 0px));width:40px;height:40px;font-size:24px}
-    }
-
-    /* DARK THEME (toggle ile) */
-    html[data-theme="dark"]{
-      --primary-color:#60a5fa;
-      --secondary-color:#f59e0b;
-      --whatsapp-color:#25D366;
-      --dark-color:#e5e7eb;
-      --light-color:#0f172a;
-      --white-color:#0b1220;
-      color-scheme: dark;
-    }
-    html[data-theme="dark"] body{background:#0b1220;color:var(--dark-color)}
-    html[data-theme="dark"] .navbar,
-    html[data-theme="dark"] .service-box,
-    html[data-theme="dark"] .blog-post,
-    html[data-theme="dark"] .testimonial-card,
-    html[data-theme="dark"] #blogModal .article-box{background:#111827;color:#e5e7eb;box-shadow:none}
-    html[data-theme="dark"] .navbar .nav-links a:hover{background:var(--primary-color);color:#0b1220}
-    html[data-theme="dark"] #services,
-    html[data-theme="dark"] #testimonials,
-    html[data-theme="dark"] #certificates{background:#0f172a}
-    html[data-theme="dark"] #faq,
-    html[data-theme="dark"] #blog{background:#0b1220}
-    html[data-theme="dark"] #portfolio h2,
-    html[data-theme="dark"] #services h2,
-    html[data-theme="dark"] #certificates h2,
-    html[data-theme="dark"] #blog h2,
-    html[data-theme="dark"] #faq h2{color:var(--primary-color)}
-    html[data-theme="dark"] .expertise-box{background:#0f1b2e;border-color:var(--primary-color)}
-    html[data-theme="dark"] footer{background:#0b1120;color:#9ca3af}
-    html[data-theme="dark"] #contact{background:#0b1220}
-    html[data-theme="dark"] .btn-outline{border-color:#93c5fd;color:#93c5fd}
-    html[data-theme="dark"] .faq-question{background:#0f172a}
-
-    /* Zengin koyu palet (Services & Testimonials) */
-    html[data-theme="dark"] {
-      --card-bg: #0f172a;
-      --card-elev: #111827;
-      --card-border: rgba(148,163,184,.18);
-      --muted: #9ca3af;
-      --muted-2: #cbd5e1;
-      --accent-1: #60a5fa;
-      --accent-2: #f59e0b;
-      --accent-3: #22d3ee;
-      --shadow-strong: 0 8px 30px rgba(2,6,23,.45);
-    }
-    html[data-theme="dark"] #services {
-      background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
-    }
-    html[data-theme="dark"] #services h2 { color: var(--accent-1); text-shadow: 0 0 18px rgba(96,165,250,.15); }
-    html[data-theme="dark"] #services .service-box{
-      background: linear-gradient(180deg, var(--card-bg), var(--card-elev));
-      border:1px solid var(--card-border); box-shadow: var(--shadow-strong);
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    html[data-theme="dark"] #services .service-box:hover{
-      transform: translateY(-2px); border-color: rgba(96,165,250,.35);
-      box-shadow: 0 10px 34px rgba(2,6,23,.6);
-    }
-    html[data-theme="dark"] #services .service-box h3{ color: var(--muted-2); }
-    html[data-theme="dark"] #services .service-box p{ color: var(--muted); }
-    html[data-theme="dark"] #services .service-box i{
-      background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow:0 0 12px rgba(34,211,238,.18);
-    }
-    html[data-theme="dark"] #testimonials{
-      background: radial-gradient(1200px 600px at 10% 0%, rgba(2,132,199,.07), transparent 60%),
-                  radial-gradient(900px 500px at 90% 20%, rgba(99,102,241,.07), transparent 60%),
-                  #0f172a;
-    }
-    html[data-theme="dark"] #testimonials h2{ color: var(--accent-2); text-shadow:0 0 18px rgba(245,158,11,.12); }
-    html[data-theme="dark"] #testimonials .testimonial-card{
-      background: linear-gradient(180deg, var(--card-bg), var(--card-elev));
-      border:1px solid var(--card-border); box-shadow: var(--shadow-strong); color: var(--muted-2);
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    html[data-theme="dark"] #testimonials .testimonial-card:hover{
-      transform: translateY(-2px); border-color: rgba(245,158,11,.35);
-      box-shadow: 0 10px 34px rgba(2,6,23,.6);
-    }
-    html[data-theme="dark"] #testimonials .testimonial-card i{
-      background: linear-gradient(135deg, var(--accent-2), #fbbf24);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow: 0 0 10px rgba(251,191,36,.18);
-    }
-    html[data-theme="dark"] #testimonials .testimonial-card p{ color: var(--muted); }
-    html[data-theme="dark"] #testimonials .testimonial-card .customer-info{ color: var(--muted-2); }
-    html[data-theme="dark"] #testimonials .slider-nav button{
-      background: rgba(255,255,255,.08); color:#e5e7eb;
-      border:1px solid rgba(148,163,184,.18); box-shadow:0 4px 14px rgba(2,6,23,.5);
-    }
-    html[data-theme="dark"] #testimonials .slider-nav button:hover{ background: rgba(96,165,250,.15); }
-    html[data-theme="dark"] #testimonials .testimonial-slider{ gap:22px; }
-    html[data-theme="dark"] #testimonials .testimonial-slider::before,
-    html[data-theme="dark"] #testimonials .testimonial-slider::after{ content:''; flex:0 0 8px; }
-    @media (max-width: 768px){
-      html[data-theme="dark"] #services .service-box,
-      html[data-theme="dark"] #testimonials .testimonial-card{ border-radius:14px; }
-    }
-  </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"RealEstateAgent",
+  "name":"Özel Demir Gayrimenkul Danışmanlığı",
+  "telephone":"+905327983352",
+  "url":"https://caca1403.github.io/ozeldemirweb/",
+  "areaServed":{"@type":"City","name":"Ordu"},
+  "address":{"@type":"PostalAddress","addressLocality":"Fatsa","addressRegion":"Ordu","addressCountry":"TR"},
+  "sameAs":["https://www.instagram.com/ozel.demir.737","https://www.facebook.com/share/1CXTdbtjbb/"]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#ilanlar">İlanlara atla</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-  <header class="navbar" role="navigation" aria-label="Ana menü">
-    <div class="container">
-      <div class="left">
-        <a href="#hero" class="logo">Özel Demir</a>
-      </div>
-
-      <!-- HAMBURGER BUTTON -->
-      <button class="nav-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul id="primary-nav" class="nav-links">
-        <li><a href="#hero">Anasayfa</a></li>
-        <li><a href="#about">Hakkımda</a></li>
-        <li><a href="#services">Hizmetlerim</a></li>
-        <li><a href="#portfolio">Portföyüm</a></li>
-        <li><a href="#certificates">Sertifikalar</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">İletişim</a></li>
-      </ul>
-
-      <button id="themeToggle" class="btn btn-outline theme-toggle" aria-label="Tema değiştir (Açık/Koyu)">
-        <i class="fas fa-moon"></i> Tema
-      </button>
-    </div>
-  </header>
-
-  <main>
-    <section id="hero" class="is-visible" aria-label="Hero">
-      <div class="hero-content">
-        <h1>Ordu'dan Emlak Hayallerinize Açılan Kapı</h1>
-        <p>5 yılı aşkın tecrübe, yüzlerce mutlu aile bir telefon kadar yakın. Hemen iletişime geçin!</p>
-        <div class="cta-buttons">
-          <a href="#contact" class="btn">BENİMLE ÇALIŞIN</a>
-          <a href="#contact" class="btn btn-primary">ÜCRETSİZ MÜLK DEĞERLEME</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container about-content">
-        <img src="bio.png" alt="Özel Demir portre">
-        <div>
-          <h2>Merhaba, Ben Özel Demir</h2>
-          <p>Yaklaşık <strong>30 yıldır inşaat sektörünün</strong> içindeyim; bunun <strong>10 yılı müteahhitlik</strong> tecrübesiyle sahada, şantiyede ve masada uçtan uca süreç yönettim. <strong>16 yıl yurt dışı</strong> projelerinde farklı standartlar ve kültürel iş yapış biçimleriyle çalışarak global bakış kazandım. Son <strong>5 yıldır</strong> ise gayrimenkul danışmanlığı ile birlikte <strong>oto alım-satım</strong> faaliyetlerini yürütüyor, yatırım kararlarınıza <em>çok yönlü</em> bir perspektifle eşlik ediyorum.</p>
-          <p>Hedefim; alım-satım sürecini şeffaf, stressiz ve kârlı bir deneyime dönüştürmek. Yalnızca bir danışman değil, sürecin her adımında yanınızda olan güvenilir bir iş ortağıyım.</p>
-
-          <div class="expertise-box">
-            <h4>Uzmanlık Alanlarım:</h4>
-            <div id="expertise-text" class="expertise-text" aria-live="polite"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="stats" class="stats" aria-label="İstatistikler">
-      <div class="container stats-grid">
-        <div class="stat">
-          <h3 class="counter" data-target="30">0</h3>
-          <p>Yıllık Sektör Deneyimi</p>
-        </div>
-        <div class="stat">
-          <h3 class="counter" data-target="16">0</h3>
-          <p>Yurtdışı Tecrübe (Yıl)</p>
-        </div>
-        <div class="stat">
-          <h3 class="counter" data-target="5">0</h3>
-          <p>Oto Alım-Satımı (Yıl)</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <h2>Size Nasıl Yardım Edebilirim?</h2>
-        <div class="service-grid">
-          <div class="service-box">
-            <i class="fas fa-chart-line" aria-hidden="true"></i>
-            <h3>Piyasa Analizi</h3>
-            <p>Bölgesel piyasa dinamiklerini, en güncel trendleri ve mülkünüzün gerçek değerini detaylı olarak analiz ediyorum.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-bullhorn" aria-hidden="true"></i>
-            <h3>Stratejik Pazarlama</h3>
-            <p>Profesyonel fotoğraf, video ve dijital reklamlarla mülkünüzü en doğru alıcılara ulaştırıyorum.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-handshake" aria-hidden="true"></i>
-            <h3>Güçlü Müzakere</h3>
-            <p>Sizin için en avantajlı koşulları ve en iyi fiyatı elde etmek için tüm tecrübemle süreci yönetiyorum.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <div class="container">
-        <h2>Başarı Hikayelerimden Bazıları</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <div class="sold-banner">SATILDI</div>
-            <img src="1.jpg" alt="Satılan Ev 1">
-          </div>
-          <div class="portfolio-item">
-            <div class="sold-banner">SATILDI</div>
-            <img src="2.jpg" alt="Satılan Ev 2">
-          </div>
-          <div class="portfolio-item">
-            <div class="sold-banner">SATILDI</div>
-            <img src="3.jpg" alt="Satılan Ev 3">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sertifikalar -->
-    <section id="certificates">
-      <div class="container">
-        <h2>Sertifikalarım ve Belgelerim</h2>
-        <div class="certificates-grid">
-          <div class="certificate-item" onclick="openImage('belge1.jpg')">
-            <img src="belge1.jpg" alt="Sertifika 1">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge2.jpg')">
-            <img src="belge2.jpg" alt="Sertifika 2">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge3.jpg')">
-            <img src="belge3.jpg" alt="Sertifika 3">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge4.jpg')">
-            <img src="belge4.jpg" alt="Sertifika 4">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge5.jpg')">
-            <img src="belge5.jpg" alt="Sertifika 5">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge6.jpg')">
-            <img src="belge6.jpg" alt="Sertifika 6">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge7.jpg')">
-            <img src="belge7.jpg" alt="Sertifika 7">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge8.jpg')">
-            <img src="belge8.jpg" alt="Sertifika 8">
-          </div>
-          <div class="certificate-item" onclick="openImage('belge9.jpg')">
-            <img src="belge9.jpg" alt="Sertifika 9">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG (popup ile) -->
-    <section id="blog">
-      <div class="container">
-        <h2>Blog & Güncel Haberler</h2>
-        <div class="blog-grid">
-          <div class="blog-post">
-            <div class="blog-content">
-              <h3>2025 Emlak Piyasası Trendleri</h3>
-              <p>Ordu ve çevresinde yatırımcıları ilgilendiren makro ve mikro trendler...</p>
-              <a class="read-more" data-article="trendler-2025">Devamını Oku →</a>
-            </div>
-          </div>
-          <div class="blog-post">
-            <div class="blog-content">
-              <h3>Doğru Emlak Danışmanı Nasıl Seçilir?</h3>
-              <p>Şeffaflık, yerel uzmanlık ve pazarlama gücü neden belirleyici?...</p>
-              <a class="read-more" data-article="danisman-secimi">Devamını Oku →</a>
-            </div>
-          </div>
-          <div class="blog-post">
-            <div class="blog-content">
-              <h3>Ev Satarken Değeri Artırmanın Yolları</h3>
-              <p>Küçük dokunuşlarla büyük fark yaratmanın pratik yolları...</p>
-              <a class="read-more" data-article="deger-arttirma">Devamını Oku →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials">
-      <div class="container testimonial-container">
-        <h2 class="text-center">Bazı Müşterilerimden Gelenler</h2>
-
-        <div id="testimonial-slider" class="testimonial-slider" aria-live="polite">
-          <div class="testimonial-card">
-            <i class="fas fa-quote-left" aria-hidden="true"></i>
-            <p>Özel Bey, evimizi satma sürecimizde bize olağanüstü destek oldu. Uzmanlığı ve samimiyeti sayesinde her şey sorunsuz ilerledi. Ordu'da emlak denilince aklımıza gelen ilk isim!</p>
-            <div class="customer-info">Ayşe Yılmaz</div>
-          </div>
-          <div class="testimonial-card">
-            <i class="fas fa-quote-left" aria-hidden="true"></i>
-            <p>İhtiyaçlarımızı dinleyerek bize tam da hayalimizdeki evi buldu. Süreçle ilgili her sorumuza sabırla yanıt verdi. Kendisine güvenimiz tam!</p>
-            <div class="customer-info">Mehmet Demir</div>
-          </div>
-          <div class="testimonial-card">
-            <i class="fas fa-quote-left" aria-hidden="true"></i>
-            <p>Profesyonel yaklaşımı ve pazarlık becerileri sayesinde arsamı beklediğimden daha iyi bir fiyata sattım. Çok teşekkür ederim.</p>
-            <div class="customer-info">Selin Arslan</div>
-          </div>
-          <div class="testimonial-card">
-            <i class="fas fa-quote-left" aria-hidden="true"></i>
-            <p>Kiralama sürecimizi o kadar kolaylaştırdı ki, sanki hiçbir şey yapmamıza gerek kalmadı. Her aşamada yanımızda oldu.</p>
-            <div class="customer-info">Emre Karaca</div>
-          </div>
-          <div class="testimonial-card">
-            <i class="fas fa-quote-left" aria-hidden="true"></i>
-            <p>Doğru yatırım için doğru kişiyi bulduğumuzu anladık. Tavsiyeleriyle kısa sürede yüksek kazanç elde ettik.</p>
-            <div class="customer-info">Burcu Aksoy</div>
-          </div>
-          <div class="testimonial-card">
-            <i class="fas fa-quote-left" aria-hidden="true"></i>
-            <p>Sadece bir gayrimenkul danışmanı değil, aynı zamanda bir dost. Her zaman ulaşılabilir ve yardımcı. Kesinlikle tavsiye ederim.</p>
-            <div class="customer-info">Kemal Doğan</div>
-          </div>
-        </div>
-
-        <div class="slider-nav">
-          <button id="prevBtn" aria-label="Önceki yorum">&#10094;</button>
-          <button id="nextBtn" aria-label="Sonraki yorum">&#10095;</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <h2>Sıkça Sorulan Sorular</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-question">
-              Gayrimenkulümü neden sizinle satmalıyım?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="faq-answer">
-              <p>Stratejik pazarlama, güçlü müzakere ve şeffaf iletişimle en doğru fiyattan hızlı satış hedeflerim.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              Ücretsiz mülk değerlemesi yapıyor musunuz?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="faq-answer">
-              <p>Evet. Bölgesel piyasa analizleriyle ücretsiz ve profesyonel değerleme sağlıyorum.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              Sadece konut satışıyla mı ilgileniyorsunuz?
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="faq-answer">
-              <p>Hayır. Arsa, ticari gayrimenkul ve farklı yatırım fırsatları da uzmanlık alanımda.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <h2>Emlak Yolculuğunuza Birlikte Başlayalım</h2>
-        <p>Aklınızdaki soruları sormak, mülkünüzün değerini öğrenmek veya yeni yatırım fırsatlarını keşfetmek için benimle hemen iletişime geçin.</p>
-        <div class="contact-buttons">
-          <a href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum%20ve%20bir%20sorum%20vardı." class="btn btn-whatsapp" target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp'tan Yazın
-          </a>
-          <a href="tel:+905327983352" class="btn btn-primary">
-            <i class="fas fa-phone-alt" aria-hidden="true"></i> Hemen Arayın
-          </a>
-          <a href="https://www.facebook.com/share/1CXTdbtjbb/" class="btn" target="_blank" rel="noopener" style="background:#1877F2">
-            <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook'tan Ulaşın
-          </a>
-          <a href="https://www.instagram.com/ozel.demir.737?igsh=MXA5dW56YzA2MTB2NQ==" class="btn" target="_blank" rel="noopener" style="background:#E1306C">
-            <i class="fab fa-instagram" aria-hidden="true"></i> Instagram DM
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- WhatsApp FAB -->
-  <a href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum%20ve%20bir%20sorum%20vardı." class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-  </a>
-
-  <footer>
-    <div class="container text-center">
-      <p>&copy; 2025 Özel Demir. Tüm Hakları Saklıdır.</p>
-    </div>
-  </footer>
-
-  <!-- Görsel Modal (Sertifikalar) -->
-  <div id="certificateModal" class="modal" role="dialog" aria-modal="true" aria-label="Sertifika görüntüleme">
-    <span class="close" id="modalCloseImg" aria-label="Kapat">&times;</span>
-    <img class="modal-content" id="imgModal" alt="Sertifika görseli">
-  </div>
-
-  <!-- Blog Modal (Metin) -->
-  <div id="blogModal" class="modal" role="dialog" aria-modal="true" aria-label="Blog yazısı">
-    <span class="close" id="modalCloseBlog" aria-label="Kapat">&times;</span>
-    <div class="article-box" id="blogArticleBox">
-      <!-- Başlık + İçerik JS ile gelecek -->
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Ana menü">
+  <div class="in">
+    <a href="#" class="logo"><span class="lm photo"><img src="assets/img/od-avatar.jpg" alt="" width="32" height="32" /></span>Özel Demir</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#ilanlar">İlanlar</a></li>
+      <li><a href="#about">Hakkımda</a></li>
+      <li><a href="#services">Hizmetler</a></li>
+      <li><a href="#portfolio">Portföy</a></li>
+      <li><a href="#hesapla">Değerleme</a></li>
+      <li><a href="#certificates">Sertifikalar</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">İletişim</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#ilanlar" class="iconbtn favbtn" id="favBtn" aria-label="Favori ilanlar" style="display:none"><i class="fas fa-heart"></i><span class="cnt" id="favCount">0</span></a>
+      <button class="iconbtn" id="tgl" aria-label="Tema değiştir"><i class="fas fa-moon"></i></button>
+      <button class="iconbtn burger" id="burger" aria-label="Menüyü aç/kapat" aria-expanded="false" style="display:none"><i class="fas fa-bars"></i></button>
     </div>
   </div>
+</nav>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // ===== Tema Toggle =====
-    const root = document.documentElement;
-    const toggleBtn = document.getElementById('themeToggle');
-    const THEME_KEY = 'ozelDemirTheme';
-    const savedTheme = localStorage.getItem(THEME_KEY);
-    if(savedTheme){ root.setAttribute('data-theme', savedTheme); }
-    toggleBtn.innerHTML = (root.getAttribute('data-theme')==='dark')
-      ? '<i class="fas fa-sun"></i> Tema' : '<i class="fas fa-moon"></i> Tema';
-    toggleBtn.addEventListener('click', ()=>{
-      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', current);
-      localStorage.setItem(THEME_KEY, current);
-      toggleBtn.innerHTML = current==='dark' ? '<i class="fas fa-sun"></i> Tema' : '<i class="fas fa-moon"></i> Tema';
-    });
+<main>
+<!-- ============ HERO · VİDEO ============ -->
+<header class="hero" id="hero">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="assets/video/hero-poster.jpg" preload="metadata" aria-hidden="true">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+      <img src="assets/video/hero-poster.jpg" alt="" />
+    </video>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
 
-    // ===== Mobil Nav (Hamburger) =====
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu   = document.getElementById('primary-nav');
-    const lockBody = (on)=> document.body.classList.toggle('no-scroll', !!on);
-    if (navToggle && navMenu){
-      const setOpen = (open) => {
-        navToggle.setAttribute('aria-expanded', String(open));
-        navMenu.classList.toggle('is-open', open);
-        lockBody(open);
-      };
-      navToggle.addEventListener('click', ()=> setOpen(navToggle.getAttribute('aria-expanded')!=='true'));
-      navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> setOpen(false)));
-      window.addEventListener('resize', ()=>{ if(window.innerWidth>992) setOpen(false); });
-    }
+  <div class="wrap">
+    <span class="hero-kicker"><span class="dot"></span>Ordu · Gayrimenkul Danışmanlığı</span>
+    <h1><span class="grad">Doğru adres,<br>doğru zamanda.</span></h1>
+    <p class="sub">30 yıllık inşaat, 10 yıllık müteahhitlik ve 16 yıl yurtdışı tecrübesiyle alım–satım sürecinizi şeffaf, stressiz ve kârlı bir deneyime dönüştürüyorum.</p>
 
-    // ===== Sertifika modal =====
-    const certModal = document.getElementById('certificateModal');
-    const certImg = document.getElementById('imgModal');
-    const closeImg = document.getElementById('modalCloseImg');
+    <label class="qsearch"><i class="fas fa-magnifying-glass"></i>
+      <input id="heroQ" type="search" placeholder="İlan ara: bölge, oda, anahtar kelime… (Enter)" aria-label="İlan ara" />
+    </label>
 
-    function openModalCommon(modal){
-      modal.style.display='block';
-      document.body.classList.add('no-scroll');
-    }
-    function closeModalCommon(modal){
-      modal.style.display='none';
-      document.body.classList.remove('no-scroll');
-    }
-    window.openImage = function (src){
-      certImg.src = src;
-      openModalCommon(certModal);
-    };
-    closeImg.onclick = () => closeModalCommon(certModal);
-    certModal.addEventListener('click', (e)=>{ if(e.target===certModal) closeModalCommon(certModal); });
+    <div class="hero-actions">
+      <a href="#ilanlar" class="btn btn-p">İlanları İncele <i class="fas fa-arrow-right"></i></a>
+      <a href="#hesapla" class="btn btn-g"><i class="fas fa-calculator"></i> Hızlı Değerleme</a>
+    </div>
 
-    // Swipe-down ile kapat (mobil)
-    let touchStartY=null;
-    certModal.addEventListener('touchstart', e=>{ touchStartY = e.changedTouches[0].clientY; }, {passive:true});
-    certModal.addEventListener('touchend', e=>{
-      if(touchStartY===null) return;
-      const diff = e.changedTouches[0].clientY - touchStartY;
-      if(diff > 60) closeModalCommon(certModal);
-      touchStartY=null;
-    });
+    <div class="herometa">
+      <span><i class="fas fa-check"></i>24 saatte geri dönüş</span>
+      <span><i class="fas fa-check"></i>Taahhütsüz değerleme</span>
+      <span><i class="fas fa-check"></i>Tapuya kadar tek muhatap</span>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span></span>Aşağı kaydır</div>
+</header>
 
-    // ===== Blog modal =====
-    const blogModal = document.getElementById('blogModal');
-    const blogBox = document.getElementById('blogArticleBox');
-    const closeBlog = document.getElementById('modalCloseBlog');
-    closeBlog.onclick = () => closeModalCommon(blogModal);
-    blogModal.addEventListener('click', (e)=>{ if(e.target===blogModal) closeModalCommon(blogModal); });
-    blogModal.addEventListener('touchstart', e=>{ touchStartY = e.changedTouches[0].clientY; }, {passive:true});
-    blogModal.addEventListener('touchend', e=>{
-      if(touchStartY===null) return;
-      const diff = e.changedTouches[0].clientY - touchStartY;
-      if(diff > 60) closeModalCommon(blogModal);
-      touchStartY=null;
-    });
+<!-- marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="mtrack">
+    <span>Satılık Daire</span><i class="fas fa-circle"></i><span>Kiralık Daire</span><i class="fas fa-circle"></i><span>Arsa</span><i class="fas fa-circle"></i><span>Ticari Mülk</span><i class="fas fa-circle"></i><span>Ücretsiz Değerleme</span><i class="fas fa-circle"></i><span>Yatırım Danışmanlığı</span><i class="fas fa-circle"></i><span>Kiralama Yönetimi</span><i class="fas fa-circle"></i><span>Ordu</span><i class="fas fa-circle"></i>
+    <span>Satılık Daire</span><i class="fas fa-circle"></i><span>Kiralık Daire</span><i class="fas fa-circle"></i><span>Arsa</span><i class="fas fa-circle"></i><span>Ticari Mülk</span><i class="fas fa-circle"></i><span>Ücretsiz Değerleme</span><i class="fas fa-circle"></i><span>Yatırım Danışmanlığı</span><i class="fas fa-circle"></i><span>Kiralama Yönetimi</span><i class="fas fa-circle"></i><span>Ordu</span><i class="fas fa-circle"></i>
+  </div>
+</div>
 
-    // ESC ile tüm modalları kapat
-    document.addEventListener('keydown',(e)=>{
-      if(e.key==='Escape'){
-        closeModalCommon(certModal);
-        closeModalCommon(blogModal);
-      }
-    });
+<!-- ============ METRİK ============ -->
+<section class="mband" aria-label="Rakamlarla">
+  <div class="wrap">
+    <div><div class="mnum"><span class="counter" data-t="30">0</span><em>+</em></div><div class="mlab">Yıl sektör deneyimi</div></div>
+    <div><div class="mnum"><span class="counter" data-t="10">0</span><em>+</em></div><div class="mlab">Yıl müteahhitlik</div></div>
+    <div><div class="mnum"><span class="counter" data-t="16">0</span></div><div class="mlab">Yıl yurtdışı proje</div></div>
+    <div><div class="mnum"><span class="counter" data-t="5">0</span><em>+</em></div><div class="mlab">Yıl emlak danışmanlığı</div></div>
+  </div>
+</section>
 
-    // 500+ kelimelik makaleler
-    const articles = {
-      "trendler-2025": {
-        title: "2025 Emlak Piyasası Trendleri: Ordu ve Çevresinde Yol Haritası",
-        content: `
-2025 yılı, gayrimenkul piyasasında hem küresel ölçekte hem de Ordu ve çevresinde belirleyici olacak çok boyutlu değişimlerin yaşandığı bir dönem olarak öne çıkıyor. Makro tarafta enflasyon, faiz politikaları ve konut arz-talep dengesi; mikro tarafta ise ilçeler arası ulaşım yatırımları, kentsel dönüşüm projeleri ve yerel demografi hareketliliği yatırım kararlarını doğrudan etkiliyor. Özellikle sahil hattı boyunca ikinci konut eğiliminin güçlenmesi, kısa süreli kiralamaların mevzuata uygun şekilde profesyonelleşmesi ve enerji verimli projelere ilginin artması, 2025’in ayırt edici temaları arasında yer alıyor.
-  
-Kredi maliyetlerinin seyrine ilişkin belirsizlik devam ederken, yatırımcıların nakit akışını öngörülebilir kılacak hibrit stratejilere yöneldiği görülüyor. Örneğin, arsa + prefabrik/çelik konstrüksiyon birleşik yatırımlar ya da konut + alt kat ticari bağımsız bölüm kombinasyonları, hem kira getirisi hem de sermaye kazancı potansiyeli sunabiliyor. Ordu özelinde, çevre yolu bağlantıları ve yeni çekim noktaları (alışveriş, sağlık ve eğitim kampüsleri) konut değerlerini mikro bölgeler arasında farklılaştırıyor. Bu nedenle, 2025’te “tek fiyat, tek strateji” yerine mahalle bazlı konumlandırma kritik önem taşıyor.
+<!-- ============ 01 · İLANLAR ============ -->
+<section class="sec" id="ilanlar">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">01</span> İlanlar</span>
+        <h2>Güncel <span class="ac">satılık &amp; kiralık</span><br>portföy</h2>
+      </div>
+      <p>Ara, filtrele, favorilerine ekle; detayda fotoğrafları gez ve tek dokunuşla WhatsApp'tan sor.</p>
+    </div>
 
-Kentsel dönüşüm, deprem güvenliği ve yapı stoğunun yenilenmesi bağlamında yalnızca estetik değil, sigorta ve finansmana erişim avantajı da getiriyor. Enerji kimlik belgesi yüksek projeler, ısı yalıtımı ve yenilenebilir enerji entegrasyonuyla hem aylık giderleri azaltıyor hem de çevresel sürdürülebilirliği destekliyor. Bu yönelim, özellikle genç ve bilinçli alıcı profilinde tercih sebebi. Aynı zamanda, dijital pazarlama araçlarının olgunlaşması—sanal tur, 3D plan, drone videosu ve hedefli sosyal medya kampanyaları—pazara çıkış hızını artırırken, doğru alıcı segmentine ulaşma maliyetini düşürüyor.
+    <div class="searchbar" role="search">
+      <div class="field"><label for="q">Anahtar kelime</label>
+        <input id="q" type="search" placeholder="Örn: deniz manzarası, arsa, Boztepe…" /></div>
+      <div class="field"><label for="fTypeSel">Kategori</label>
+        <select id="fTypeSel"><option value="all">Tümü</option><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="ticari">Ticari</option></select></div>
+      <div class="field"><label for="fDistrict">İlçe</label>
+        <select id="fDistrict"><option value="all">Tüm ilçeler</option></select></div>
+      <button class="btn btn-p reset" type="button"><i class="fas fa-rotate-left"></i> Temizle</button>
+    </div>
 
-Arsa ve tarla yatırımlarında ise imar planı okumaları, jeolojik etütler, yol-su-elektrik altyapı erişimi ve orta vadede planlanan kamu yatırımları belirleyici oluyor. 2025’te yatırımcıların daha sabırlı fakat veriye dayalı hareket ettiği; kısa vadeli spekülasyon yerine orta-uzun vadeli değer oluşumuna odaklandığı gözlemleniyor. Bu çerçevede, Ordu’da sanayi ve lojistik akslarına yakın parsellere, turizm ve kıyı şeridinde planlı gelişim öngörülen bölgelere, üniversite ve sağlık yatırımlarının çevresindeki konut projelerine talep artıyor.
+    <div class="filters" role="group" aria-label="Durum filtreleri">
+      <button class="fchip on" data-status="all">Tümü <span class="n"></span></button>
+      <button class="fchip" data-status="satilik">Satılık</button>
+      <button class="fchip" data-status="kiralik">Kiralık</button>
+      <button class="fchip" data-status="satildi">Satılanlar</button>
+      <button class="fchip" id="favOnly"><i class="fas fa-heart"></i> Favoriler <span class="n">0</span></button>
+      <span style="margin-left:auto">
+        <select class="sortsel" id="sort" aria-label="Sıralama">
+          <option value="new">En yeni</option><option value="price-asc">Fiyat (artan)</option>
+          <option value="price-desc">Fiyat (azalan)</option><option value="m2-desc">m² (büyük)</option>
+        </select>
+      </span>
+    </div>
 
-Sonuç olarak, 2025’te başarılı bir strateji; (1) mikro lokasyon analizi, (2) finansman senaryolarının stres testleri, (3) enerji verimliliği ve sigorta uygunluğu, (4) dijital pazarlama görünürlüğü ve (5) hukuki/teknik kontrollerin eksiksiz yapılması üzerine kurulmalı. Profesyonel bir danışmanla çalışmak, yalnızca “fiyat bulmaktan” öte; riskleri erken teşhis etmek, fırsat pencerelerini zamanında yakalamak ve işlemleri şeffaf biçimde sonuçlandırmak anlamına geliyor.`
-      },
-      "danisman-secimi": {
-        title: "Doğru Emlak Danışmanı Nasıl Seçilir? 7 Somut Kriter",
-        content: `
-Gayrimenkul alım-satımı, finansal yaşamınızın en kritik kararlarından biridir ve doğru danışmanla çalışmak sürecin seyrini tamamen değiştirebilir. İlk kriter, yerel uzmanlıktır. Danışmanın mahalle bazlı metrekare fiyatlarını, yakın dönem işlem örneklerini, emsal kiraları ve belediye-imar süreçlerini bilmesi, doğru fiyatlandırma ve doğru pazarlama stratejisinin temelini oluşturur. İkinci kriter, şeffaf iletişimdir. Düzenli raporlama, açık geri bildirim ve net yol haritası; sürpriz maliyetlerin, gecikmelerin ve yanlış beklentilerin önüne geçer.
-  
-Üçüncü kriter, pazarlama gücü. Profesyonel fotoğrafçılık, 3D kat planı, sanal tur, drone çekimi ve hedefli dijital reklamlar; ilanınızın doğru kitleye, doğru mesajla ulaşmasını sağlar. Dördüncü kriter, müzakere yetkinliğidir. Tekliflerin finansal yeterliliğinin kontrolü, kapora ve sözleşme şartlarının doğru kurgulanması, teslim ve tapu takviminin koordinasyonu; satış değerini ve işlem güvenliğini doğrudan etkiler. Beşinci kriter, referans ve itibar yönetimidir. Önceki müşteri geri bildirimleri, çözülmüş uyuşmazlıklar ve sürdürülebilir memnuniyet önemli bir sınavdır.
+    <div class="resultbar"><span id="resultCount">—</span><span class="reset">Filtreleri sıfırla ↺</span></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="loadmore"><button class="btn" id="loadMore" type="button">Daha fazla ilan <i class="fas fa-chevron-down"></i></button></div>
+  </div>
+</section>
 
-Altıncı kriter, hukuki-teknik farkındalık. Tapu kayıtları, takyidat, iskan, kat mülkiyeti, cins tashihi, DASK, enerji kimlik belgesi ve ekspertiz raporları konusunda danışmanın doğru yönlendirmesi; riskleri en baştan azaltır. Yedinci kriter ise süreç yönetimidir. Zaman planı, açık kilometre taşları, evrak listeleri ve çok taraflı koordinasyon (alıcı, satıcı, banka, ekspertiz, noter, tapu) profesyonel bir danışmanın fark yarattığı yerlerdir.
+<!-- ============ 02 · HAKKIMDA ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="rv">
+        <figure class="portrait">
+          <img src="assets/img/bio.png" alt="Özel Demir" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+      <div>
+        <span class="kicker"><span class="idx">02</span> Hakkımda</span>
+        <h2 style="font-size:clamp(1.9rem,3.8vw,3.4rem)">Merhaba, ben<br><span class="ac">Özel Demir</span></h2>
+        <p class="lead" style="margin-top:24px">Yaklaşık 30 yıldır inşaat sektörünün içindeyim; 10 yılı müteahhitlikle sahada, şantiyede ve masada uçtan uca süreç yönettim. 16 yıl yurtdışı projelerinde farklı standartlarla çalışarak global bir bakış kazandım. Son 5 yıldır gayrimenkul danışmanlığı ile oto alım–satım faaliyetlerini birlikte yürütüyorum.</p>
 
-Doğru danışman; yalnızca ilan giren biri değil, veriye dayalı düşünen, dürüst iletişim kuran, krizleri fırsata çeviren ve işlem sonrasında da ilişkiyi sürdüren kişidir. Bu yaklaşım, satış süresini kısaltır, değer kaybını önler ve en önemlisi, kararlarınızı güvenle almanızı sağlar.`
-      },
-      "deger-arttirma": {
-        title: "Ev Satarken Değeri Artırmanın Yolları: Küçük Dokunuşlarla Büyük Fark",
-        content: `
-Bir evi piyasa ile buluştururken, ilk izlenim ve algılanan kalite çoğu zaman nihai fiyattan daha hızlı belirleyici olur. Dış cephe ve peyzaj düzeniyle başlayan yolculuk; giriş holündeki aydınlık, kokusuz ve derli toplu atmosferle devam eder. Boyası yenilenmiş bir kapı, temiz bir arka bahçe ve bakımlı bir çit; satın alma arzusunu tetikleyen psikolojik sinyaller gönderir. İç mekânda ise fazlalık eşyaların kaldırılması, nötr renk paleti ve doğru yerleşimle ferahlık hissi artırılır. Özellikle salon ve mutfakta gün ışığının maksimum kullanımı, enerji verimliliği algısını da güçlendirir.
-  
-Küçük bütçeli dokunuşlar büyük sonuçlar doğurabilir: Kapak kulplarının modernleştirilmesi, silikon ve derz yenileme, sızdırmazlık ve menteşe ayarları, banyoda parlatılmış armatürler gibi basit müdahaleler; fotoğraf ve gösterim performansını belirgin biçimde yükseltir. Koku yönetimi, profesyonel temizlik ve halı-koltuk yıkama; “bakımlı ev” algısını destekler. Enerji kimlik belgesi ve faturalarla doğrulanan ısı yalıtımı, yeni nesil camlar ve verimli cihazlar; alıcının uzun vadeli maliyetlerini düşürdüğü mesajını verir.
+        <div class="expertise">
+          <span class="mono">Uzmanlık</span>
+          <div id="et" aria-live="polite">Gayrimenkul Değerleme ve Yatırım Uzmanlığı</div>
+        </div>
 
-Pazarlama tarafında, yüksek çözünürlüklü fotoğraflar, 3D sanal tur ve kat planı, ilanlarınızın daha çok tıklanmasını sağlar. Drone ile çekilmiş çevre görüntüleri, okul/sağlık/alışveriş/lokasyon avantajlarını hızla anlatır. Gösterim günleri için ışık planı, güzel bir karşılama ve kısa bir bilgilendirme dokümanı (metrekareler, aidat, ısınma tipi, tadilat listesi) profesyonellik seviyenizi ortaya koyar. Son olarak, fiyatlandırma stratejisi: Emsal analizlerini güncel tutmak, fiyatı pazarlık bandına göre akıllıca konumlandırmak ve teklif yönetimini disiplinle yürütmek, satış süresini kısaltır.
+        <dl class="meta">
+          <div><dt>Konum</dt><dd>Fatsa / Ordu</dd></div>
+          <div><dt>Deneyim</dt><dd>30+ yıl sektör</dd></div>
+          <div><dt>Uzmanlık</dt><dd>Konut · Arsa · Ticari</dd></div>
+          <div><dt>Hizmet</dt><dd>Satış · Kiralama · Değerleme</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
 
-Özetle; hazırlık, sunum ve fiyatlandırma üçlüsünün iyi yönetildiği her dosya, piyasada bir adım öne geçer. Profesyonel dokunuşlar, kontrol listeleri ve şeffaf süreç yönetimi, evinizin değerini hissedilir biçimde artırır.`
-      }
-    };
+<!-- ============ 03 · HİZMETLER ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">03</span> Hizmetler</span>
+        <h2>İhtiyacınıza göre<br><span class="ac">uçtan uca</span> destek</h2>
+      </div>
+      <p>Fiyat bulmaktan öte: riskleri erken gören, fırsatı zamanında yakalatan bir süreç yönetimi.</p>
+    </div>
 
-    // Blog "Devamını Oku" tetikleyicileri
-    document.querySelectorAll('.read-more').forEach(link=>{
-      link.addEventListener('click', ()=>{
-        const id = link.getAttribute('data-article');
-        const a = articles[id];
-        if(!a) return;
-        blogBox.innerHTML = `<h3>${a.title}</h3>${a.content.split('\n').map(p=>p.trim()?`<p>${p.trim()}</p>`:'').join('')}`;
-        openModalCommon(blogModal);
-        blogModal.scrollTop = 0;
-      });
-    });
+    <div class="srows">
+      <div class="srow rv">
+        <span class="n">01</span>
+        <h3>Piyasa Analizi &amp; Değerleme</h3>
+        <p>Mahalle bazlı emsal incelemesi, güncel trendler ve mülkünüzün gerçek değeri. Veriye dayalı konumlandırma ile satışı hızlandırıyorum.</p>
+        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+      <div class="srow rv">
+        <span class="n">02</span>
+        <h3>Stratejik Pazarlama</h3>
+        <p>Profesyonel fotoğraf, video ve hedefli dijital reklamlarla doğru alıcıya hızlı ulaşım.</p>
+        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+      <div class="srow rv">
+        <span class="n">03</span>
+        <h3>Güçlü Müzakere</h3>
+        <p>Teklif yönetimi, sözleşme ve teslim takvimi dahil masada sizi en avantajlı koşullarla temsil ediyorum.</p>
+        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+      <div class="srow rv">
+        <span class="n">04</span>
+        <h3>Hukuki &amp; Teknik Kontrol</h3>
+        <p>Tapu, takyidat, iskan, DASK ve imar kontrolleriyle sürprizsiz, güvenli işlem.</p>
+        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+      <div class="srow rv">
+        <span class="n">05</span>
+        <h3>Yatırım &amp; Geliştirme Danışmanlığı</h3>
+        <p>Arsa, ticari ve karma yatırımlarda imar okumaları, altyapı erişimi ve kamu yatırımlarını gözeterek orta–uzun vadeli değer odaklı yatırım kurgusu.</p>
+        <span class="ar"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // FAQ akordiyon
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question=>{
-      question.addEventListener('click', ()=>{
-        const answer = question.nextElementSibling;
-        const icon = question.querySelector('i');
-        faqQuestions.forEach(other=>{
-          if(other!==question){
-            other.classList.remove('active');
-            other.nextElementSibling.style.display='none';
-            const ic=other.querySelector('i'); if(ic) ic.style.transform='rotate(0deg)';
-          }
-        });
-        const isOpen = answer.style.display==='block';
-        question.classList.toggle('active', !isOpen);
-        answer.style.display = isOpen ? 'none' : 'block';
-        if(icon) icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-      });
-    });
+<!-- ============ 04 · SÜREÇ ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">04</span> Nasıl çalışırım</span>
+        <h2>Dört adımda<br><span class="ac">şeffaf süreç</span></h2>
+      </div>
+      <p>Baştan sona ne olduğunu bildiğiniz, takvimli ve raporlu bir yol haritası.</p>
+    </div>
 
-    // === TESTIMONIAL SLIDER ===
-    const slider = document.getElementById('testimonial-slider');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const cards = Array.from(slider.querySelectorAll('.testimonial-card'));
-    let currentIndex = 0;
-    function updateSlider(){
-      const target = cards[currentIndex];
-      if (!target) return;
-      slider.scrollTo({ left: target.offsetLeft, behavior: 'smooth' }); // gap'li yapıda tam hizalama
-    }
-    nextBtn.addEventListener('click', ()=>{ currentIndex=(currentIndex+1)%cards.length; updateSlider(); });
-    prevBtn.addEventListener('click', ()=>{ currentIndex=(currentIndex-1+cards.length)%cards.length; updateSlider(); });
-    window.addEventListener('resize', updateSlider);
+    <div class="tl" aria-hidden="true">
+      <div><b>Gün 1</b><span>Keşif &amp; değerleme</span></div>
+      <div><b>Gün 3</b><span>Fotoğraf, video &amp; ilana çıkış</span></div>
+      <div><b>Gün 7</b><span>Filtrelenmiş alıcı görüşmeleri</span></div>
+      <div><b>Gün 10+</b><span>Müzakere, tapu &amp; teslim</span></div>
+    </div>
 
-    // Uzmanlık alanı döngüsü
-    const expertiseTextElement = document.getElementById('expertise-text');
-    const expertiseTexts = [
-      "Gayrimenkul Değerleme ve Yatırım Uzmanlığı",
-      "Mortgage Brokerliği",
-      "Müteahhitlik",
-      "Emlak Danışmanlığı İş Analizi ve İş Takibi",
-      "Emlak Danışmanlığı Komisyonculuğu",
-      "Oto Alım Satım Galericiliği",
-      "Tehlikeli/Çok Tehlikeli İşlerde Betonarme Demir, Kalıpçılık ve Çatıcılık",
-      "Tarımsal Danışmanlık ve Yatırım Uzmanlığı",
-      "Konut ve Ticari Gayrimenkul Yönetimi"
-    ];
-    let currentTextIndex = 0;
-    function changeExpertiseText(){
-      expertiseTextElement.classList.remove('active');
-      setTimeout(()=>{
-        expertiseTextElement.textContent = expertiseTexts[currentTextIndex];
-        expertiseTextElement.classList.add('active');
-        currentTextIndex = (currentTextIndex + 1) % expertiseTexts.length;
-      }, 450);
-    }
-    setInterval(changeExpertiseText, 3800);
-    changeExpertiseText();
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h4>Keşif &amp; Değerleme</h4><p>Mülkünüzü yerinde inceler, emsal analiziyle gerçek değeri netleştiririm.</p></div>
+      <div class="step rv"><div class="n">02</div><h4>Konumlandırma</h4><p>Hedef alıcı profili, fiyat stratejisi ve pazara çıkış takvimi belirlenir.</p></div>
+      <div class="step rv"><div class="n">03</div><h4>Pazarlama &amp; Görüşme</h4><p>Profesyonel sunum, ilan yönetimi ve filtrelenmiş alıcı görüşmeleri yürütülür.</p></div>
+      <div class="step rv"><div class="n">04</div><h4>Müzakere &amp; Tapu</h4><p>Teklifler optimize edilir; sözleşme, banka ve tapu süreci koordineli kapanır.</p></div>
+    </div>
+  </div>
+</section>
 
-    // === Sayaçlar (idempotent) ===
-    function animateCounters(){
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter=>{
-        if (counter.dataset.animated === 'true') return;   // zaten çalıştıysa atla
-        counter.dataset.animated = 'true';
-        const target = +counter.getAttribute('data-target');
-        const duration = 1800;
-        const step = Math.max(1, Math.floor(target / (duration / 16)));
-        let current = 0;
-        const timer = setInterval(()=>{
-          current += step;
-          if(current >= target){
-            clearInterval(timer);
-            current = target;
-          }
-          counter.textContent = current;
-        }, 16);
-      });
-    }
+<!-- ============ 05 · PORTFÖY ============ -->
+<section class="sec" id="portfolio">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">05</span> Portföy</span>
+        <h2>Satışı tamamlanan<br><span class="ac">mülkler</span></h2>
+      </div>
+      <p>Döndürerek inceleyin — her satışta stratejik pazarlama ve doğru müzakere var.</p>
+    </div>
+    <div class="stage" id="stage" aria-label="Portföy galerisi"></div>
+    <div class="pnav">
+      <button id="pvPrev" aria-label="Önceki"><i class="fas fa-arrow-left"></i></button>
+      <button id="pvNext" aria-label="Sonraki"><i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="dots" id="pDots"></div>
+  </div>
+</section>
 
-    // Scroll görünürlük + sayaç (masaüstü)
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('is-visible');
-          if(entry.target.id==='stats') animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    },{ threshold:0.45 });
-    document.querySelectorAll('section').forEach(sec=>observer.observe(sec));
+<!-- ============ 06 · ANLIK DEĞERLEME ============ -->
+<section class="sec" id="hesapla">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="kicker"><span class="idx">06</span> Anlık değerleme</span>
+        <h2 style="font-size:clamp(1.9rem,3.8vw,3.4rem)">Mülkünüzün değerini<br><span class="ac">saniyeler içinde</span> öğrenin</h2>
+        <p class="lead" style="margin-top:22px">Bölgesel m² fiyatları; konum, durum, yaş ve kategoriye göre anlık tahmin aralığı üretir. Kesin değer için ücretsiz yerinde değerleme talep edin.</p>
+        <div class="klist">
+          <div><i class="fas fa-check"></i><div><b>Emsal bazlı analiz</b><p>Gerçek işlem verileriyle pazar gerçeklerine uygun fiyat.</p></div></div>
+          <div><i class="fas fa-check"></i><div><b>Hızlı geri dönüş</b><p>WhatsApp veya telefon ile aynı gün ön bilgilendirme.</p></div></div>
+          <div><i class="fas fa-check"></i><div><b>Bağlayıcı değil</b><p>Değerleme ücretsiz ve taahhütsüz.</p></div></div>
+        </div>
+      </div>
 
-    // MOBİL: reveal kapalıyken sayaçları hemen çalıştır
-    if (window.matchMedia('(max-width: 768px)').matches){
-      document.querySelectorAll('section').forEach(sec=>sec.classList.add('is-visible'));
-      try{ observer.disconnect(); }catch(e){}
-      animateCounters();  // anında tetikleme
-    }
+      <div class="panel">
+        <h3>Değer Hesaplayıcı</h3>
+        <form id="calcForm" onsubmit="return false" aria-label="Değer hesaplayıcı">
+          <div class="row2">
+            <div class="field"><label for="cType">Kategori</label>
+              <select id="cType" name="type"><option value="konut">Konut</option><option value="arsa">Arsa</option><option value="ticari">Ticari</option></select></div>
+            <div class="field"><label for="cDist">İlçe</label>
+              <select id="cDist" name="dist"><option>Altınordu</option><option>Ünye</option><option>Fatsa</option><option>Perşembe</option><option>Gülyalı</option><option>Korgan</option><option>Diğer</option></select></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="cM2">m²</label><input id="cM2" name="m2" type="number" value="120" min="1" /></div>
+            <div class="field"><label for="cAge">Bina yaşı</label><input id="cAge" name="age" type="number" value="5" min="0" /></div>
+          </div>
+          <div class="field"><label for="cCond">Durum</label>
+            <select id="cCond" name="cond"><option value="cok-iyi">Çok iyi / renoveli</option><option value="iyi" selected>İyi</option><option value="orta">Orta</option><option value="kotu">Kötü / çıkma</option></select></div>
+          <div id="calcOut" aria-live="polite"></div>
+          <a href="#degerleme" class="btn btn-p" style="margin-top:6px">Yerinde Ücretsiz Değerleme <i class="fas fa-arrow-right"></i></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Ek güvence: sayfa yüklendikten 1 sn sonra hâlâ 0 ise tekrar dene
-    window.addEventListener('load', ()=>{
-      setTimeout(()=>{
-        const anyZero = Array.from(document.querySelectorAll('.counter'))
-          .some(el => (el.textContent||'').trim()==='0');
-        if(anyZero) animateCounters();
-      }, 1000);
-    });
-  });
-  
-  </script>
+<!-- ============ 07 · SERTİFİKALAR ============ -->
+<section class="sec" id="certificates">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">07</span> Güvence</span>
+        <h2>Sertifikalarım ve<br><span class="ac">belgelerim</span></h2>
+      </div>
+      <p>Mesleki yetkinlik ve yasal yeterlilik belgelerim. Büyütmek için karta dokunun.</p>
+    </div>
+    <div class="certs">
+      <figure class="cert" aria-label="Sertifika 1" tabindex="0"><img src="assets/img/certificates/belge-1.jpg" alt="Sertifika 1" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 2" tabindex="0"><img src="assets/img/certificates/belge-2.jpg" alt="Sertifika 2" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 3" tabindex="0"><img src="assets/img/certificates/belge-3.jpg" alt="Sertifika 3" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 4" tabindex="0"><img src="assets/img/certificates/belge-4.jpg" alt="Sertifika 4" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 5" tabindex="0"><img src="assets/img/certificates/belge-5.jpg" alt="Sertifika 5" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 6" tabindex="0"><img src="assets/img/certificates/belge-6.jpg" alt="Sertifika 6" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 7" tabindex="0"><img src="assets/img/certificates/belge-7.jpg" alt="Sertifika 7" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 8" tabindex="0"><img src="assets/img/certificates/belge-8.jpg" alt="Sertifika 8" loading="lazy" /></figure>
+      <figure class="cert" aria-label="Sertifika 9" tabindex="0"><img src="assets/img/certificates/belge-9.jpg" alt="Sertifika 9" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEĞERLEME FORMU ============ -->
+<section class="sec" id="degerleme">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="kicker"><span class="idx">06</span> Devamı</span>
+        <h2 style="font-size:clamp(1.9rem,3.8vw,3.4rem)">Formu doldurun,<br><span class="ac">24 saat</span> içinde dönüş yapayım</h2>
+        <p class="lead" style="margin-top:22px">Mülkünüzün konumunu, büyüklüğünü ve durumunu paylaşın; emsal verilerle hazırlanmış ücretsiz ön değerlemeyi ileteyim.</p>
+        <div class="klist">
+          <div><i class="fas fa-shield-halved"></i><div><b>Gizlilik</b><p>Bilgileriniz yalnızca size dönüş için kullanılır, üçüncü tarafla paylaşılmaz.</p></div></div>
+          <div><i class="fas fa-clock"></i><div><b>Hız</b><p>Mesai saatleri içinde ortalama dönüş süresi 2 saatin altında.</p></div></div>
+        </div>
+      </div>
+
+      <form class="panel" id="vForm" novalidate>
+        <h3>Değerleme Talebi</h3>
+        <div class="row2">
+          <div class="field"><label for="fName">Ad Soyad</label><input id="fName" required placeholder="Adınız Soyadınız" /></div>
+          <div class="field"><label for="fPhone">Telefon</label><input id="fPhone" type="tel" required pattern="[\d\s+()\-]{7,}" placeholder="05xx xxx xx xx" /></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="fType2">Mülk Türü</label><select id="fType2" required><option value="">Seçiniz</option><option>Konut</option><option>Arsa</option><option>Ticari</option><option>Yatırım</option></select></div>
+          <div class="field"><label for="fM2">m² (yaklaşık)</label><input id="fM2" type="number" min="1" placeholder="Örn. 120" /></div>
+        </div>
+        <div class="field"><label for="fLoc">İlçe / Mahalle</label><input id="fLoc" placeholder="Örn. Fatsa, Merkez" /></div>
+        <div class="field"><label for="fNote">Notunuz</label><textarea id="fNote" placeholder="Kat, yaş, eşya durumu…"></textarea></div>
+        <button class="btn btn-p" id="fBtn" type="submit">Talebi Gönder <i class="fas fa-paper-plane"></i></button>
+        <div class="fmsg" id="fMsg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · REFERANSLAR ============ -->
+<section class="sec" id="testimonials">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">08</span> Referanslar</span>
+        <h2>Müşterilerim<br><span class="ac">ne diyor?</span></h2>
+      </div>
+      <p>İşlemleri şeffaf ve güvenli kılmanın en iyi kanıtı, müşteri memnuniyetidir.</p>
+    </div>
+    <div class="tslider" id="tslider">
+      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Evimizi satma sürecimizde olağanüstü destek oldu. Uzmanlığı ve samimiyeti sayesinde her şey sorunsuz ilerledi.</p><div class="who"><div class="av">AY</div><div><b>Ayşe Yılmaz</b><span>Konut satışı</span></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>İhtiyaçlarımızı dinleyerek tam da hayalimizdeki evi buldu. Her sorumuza sabırla yanıt verdi.</p><div class="who"><div class="av">MD</div><div><b>Mehmet Demir</b><span>Konut alımı</span></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Profesyonel yaklaşımı ve pazarlık becerileri sayesinde arsamı beklediğimden iyi bir fiyata sattım.</p><div class="who"><div class="av">SA</div><div><b>Selin Arslan</b><span>Arsa satışı</span></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Kiralama sürecimizi o kadar kolaylaştırdı ki sanki hiçbir şey yapmamıza gerek kalmadı.</p><div class="who"><div class="av">EK</div><div><b>Emre Karaca</b><span>Kiralama</span></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Doğru yatırım için doğru kişiyi bulduğumuzu anladık. Tavsiyeleriyle kısa sürede kazanç sağladık.</p><div class="who"><div class="av">BA</div><div><b>Burcu Aksoy</b><span>Yatırım</span></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><div class="q"><i class="fas fa-quote-left"></i></div><p>Sadece danışman değil, aynı zamanda bir dost. Her zaman ulaşılabilir. Kesinlikle tavsiye ederim.</p><div class="who"><div class="av">KD</div><div><b>Kemal Doğan</b><span>Konut satışı</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 · BLOG ============ -->
+<section class="sec" id="blog">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">09</span> Blog</span>
+        <h2>Piyasaya dair<br><span class="ac">güncel yazılar</span></h2>
+      </div>
+      <p>Ordu ve çevresinde yatırımcılar için yol gösterici analizler ve pratik rehberler.</p>
+    </div>
+    <div class="bgrid">
+      <article class="post rv" data-a="trendler" tabindex="0">
+        <div class="top"><i class="fas fa-chart-line"></i></div>
+        <div class="bd"><span class="date">Eylül 2026 · Piyasa</span><h3>2026 Emlak Piyasası Trendleri</h3><p>Ordu ve çevresinde yatırımcıları ilgilendiren makro ve mikro trendler…</p><span class="more">Oku <i class="fas fa-arrow-right"></i></span></div>
+      </article>
+      <article class="post rv" data-a="danisman" tabindex="0">
+        <div class="top"><i class="fas fa-user-check"></i></div>
+        <div class="bd"><span class="date">Ağustos 2026 · Rehber</span><h3>Doğru Emlak Danışmanı Nasıl Seçilir?</h3><p>Şeffaflık, yerel uzmanlık ve pazarlama gücü neden belirleyici?…</p><span class="more">Oku <i class="fas fa-arrow-right"></i></span></div>
+      </article>
+      <article class="post rv" data-a="deger" tabindex="0">
+        <div class="top"><i class="fas fa-screwdriver-wrench"></i></div>
+        <div class="bd"><span class="date">Temmuz 2026 · İpuçları</span><h3>Ev Satarken Değeri Zıplatmak</h3><p>Küçük dokunuşlarla büyük fark yaratmanın pratik yolları…</p><span class="more">Oku <i class="fas fa-arrow-right"></i></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 · SSS ============ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">10</span> SSS</span>
+        <h2>Sıkça sorulan<br><span class="ac">sorular</span></h2>
+      </div>
+      <p>Aklınıza takılanlar; kısa ve net yanıtlarıyla.</p>
+    </div>
+    <div class="faq">
+      <div class="fq"><div class="q">Gayrimenkulümü neden sizinle satmalıyım? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Stratejik pazarlama, güçlü müzakere ve şeffaf iletişimle en doğru fiyattan hızlı satış hedeflerim. Her adımı raporladığım için sürecin neresinde olduğunuzu hep bilirsiniz.</p></div></div>
+      <div class="fq"><div class="q">Ücretsiz mülk değerlemesi yapıyor musunuz? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Evet. Bölgesel piyasa analizleriyle ücretsiz ve profesyonel değerleme sağlıyorum; formu doldurmanız yeterli.</p></div></div>
+      <div class="fq"><div class="q">Sadece konut satışıyla mı ilgileniyorsunuz? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Hayır. Arsa, ticari gayrimenkul, kiralama ve farklı yatırım fırsatları da uzmanlık alanımda; oto alım–satım da yürütüyorum.</p></div></div>
+      <div class="fq"><div class="q">Süreç ne kadar sürüyor? <i class="fas fa-chevron-down"></i></div><div class="a"><p>Değerleme aynı gün, pazara çıkış 3–5 gün içinde gerçekleşir. Satış süresi fiyatlama ve pazar koşullarına bağlıdır; hedefim en kısa sürede en doğru fiyattır.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 · İLETİŞİM ============ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <span class="kicker"><span class="idx">11</span> İletişim</span>
+        <h2>Yolculuğa<br><span class="ac">birlikte başlayalım</span></h2>
+      </div>
+      <p>Sorularınız, değerleme talepleriniz ve yatırım fırsatları için bana doğrudan ulaşın.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="ccards">
+        <a class="ccard" href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum." target="_blank" rel="noopener">
+          <div class="ic"><i class="fab fa-whatsapp"></i></div><div><b>WhatsApp</b><span>Anlık mesaj · 7/24 ulaşılabilir</span></div></a>
+        <a class="ccard" href="tel:+905327983352">
+          <div class="ic"><i class="fas fa-phone"></i></div><div><b>Telefon</b><span>+90 532 798 33 52</span></div></a>
+        <a class="ccard" href="https://www.instagram.com/ozel.demir.737" target="_blank" rel="noopener">
+          <div class="ic"><i class="fab fa-instagram"></i></div><div><b>Instagram</b><span>@ozel.demir · güncel ilanlar</span></div></a>
+        <div class="map"><iframe title="Ofis konumu — Fatsa, Ordu" src="https://www.openstreetmap.org/export/embed.html?bbox=37.44%2C40.99%2C37.56%2C41.06&amp;layer=mapnik" loading="lazy"></iframe></div>
+      </div>
+
+      <div class="quickform">
+        <h3>Hızlı mesaj</h3>
+        <form id="quickForm" novalidate style="display:flex;flex-direction:column;gap:14px">
+          <div class="field"><label for="kName">Ad Soyad</label><input id="kName" required placeholder="Adınız" /></div>
+          <div class="field"><label for="kMsg">Mesajınız</label><textarea id="kMsg" required placeholder="Kısa mesajınız…"></textarea></div>
+          <button class="btn btn-wa" type="submit"><i class="fab fa-whatsapp"></i> WhatsApp ile Gönder</button>
+          <div class="fmsg" id="kMsgOut" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final" id="final">
+  <div class="wrap">
+    <h2>Bu sayfa biter —<br><span class="ac">anahtar teslimi</span> başlar.</h2>
+    <div class="cta">
+      <a class="btn btn-p" href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+      <a class="btn" href="tel:+905327983352"><i class="fas fa-phone"></i> +90 532 798 33 52</a>
+    </div>
+    <div class="trustrow">
+      <span><i class="fas fa-check"></i>Ücretsiz değerleme</span>
+      <span><i class="fas fa-check"></i>Tapuya kadar tek muhatap</span>
+      <span><i class="fas fa-check"></i>Şeffaf raporlama</span>
+      <span><i class="fas fa-check"></i>7/24 WhatsApp</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#" class="logo"><span class="lm photo"><img src="assets/img/od-avatar.jpg" alt="" width="32" height="32" /></span>Özel Demir</a>
+        <p class="fclose">Bu sadece sayfanın sonu. Bir sonrakini birlikte bulalım.</p>
+        <div class="fsocial">
+          <a href="https://www.facebook.com/share/1CXTdbtjbb/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ozel.demir.737" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/905327983352" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Hızlı Erişim</h4>
+        <a href="#ilanlar">İlanlar</a>
+        <a href="#services">Hizmetler</a>
+        <a href="#hesapla">Değer Hesaplama</a>
+        <a href="#blog">Blog</a>
+        <a href="#degerleme">Ücretsiz Değerleme</a>
+        <a href="yonetim.html">Yönetim Paneli</a>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <a href="tel:+905327983352">+90 532 798 33 52</a>
+        <a href="https://wa.me/905327983352" target="_blank" rel="noopener">WhatsApp</a>
+        <a>Fatsa / Ordu, Türkiye</a>
+      </div>
+    </div>
+    <div class="fbot"><span>© 2026 Özel Demir · Gayrimenkul Danışmanlığı</span><span>Tüm hakları saklıdır.</span></div>
+  </div>
+</footer>
+
+<a class="fab wa" href="https://wa.me/905327983352?text=Merhaba,%20web%20sitenizden%20geliyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile yaz"><i class="fab fa-whatsapp"></i></a>
+<button class="fab top" id="toTop" aria-label="Yukarı çık"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ============ MODALS ============ -->
+<div class="modal" id="mImg" role="dialog" aria-modal="true" aria-label="Görsel görüntüleyici">
+  <span class="x" data-close aria-label="Kapat">&times;</span><img class="mv" id="mImgSrc" alt="" />
+</div>
+<div class="modal" id="mBlog" role="dialog" aria-modal="true" aria-label="Blog yazısı">
+  <span class="x" data-close aria-label="Kapat">&times;</span><div class="art" id="mBlogBox"></div>
+</div>
+<div class="modal" id="mDetail" role="dialog" aria-modal="true" aria-label="İlan detayı">
+  <span class="x" data-close aria-label="Kapat">&times;</span><div class="art" id="dBody"></div>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="assets/data/listings.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/listings.js"></script>
+<script src="assets/js/valuation.js"></script>
 </body>
 </html>

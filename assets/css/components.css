@@ -1,0 +1,50 @@
+/* ============================================================
+   components.css — buton, kart, form, kartcık, chip, badge
+   ============================================================ */
+
+/* ---------- butonlar ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;
+  border-radius:14px;font-weight:700;font-size:.95rem;text-decoration:none;border:0;cursor:pointer;
+  font-family:var(--fb);transition:transform .18s,box-shadow .18s,background .18s}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 10px 28px rgba(37,99,235,.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(37,99,235,.45)}
+.btn-g{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.btn-g:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.btn-o{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn-o:hover{border-color:var(--p);color:var(--p)}
+.btn-wa{background:var(--wa);color:#06340f;box-shadow:0 10px 28px rgba(37,211,102,.32)}
+.btn-wa:hover{transform:translateY(-2px);background:#1fbe57}
+.btn-sm{padding:10px 18px;font-size:.85rem;border-radius:11px}
+
+/* ---------- kartlar ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.dark .card{background:var(--bg-dark-2);border-color:rgba(255,255,255,.08)}
+
+/* ---------- rozetler / chip'ler ---------- */
+.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;
+  background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.35);color:#7dd3fc;
+  font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:#38bdf8;box-shadow:0 0 12px #38bdf8;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;font-size:.78rem;
+  font-weight:700;background:var(--bg-soft);border:1px solid var(--line);color:var(--muted)}
+.tag{display:inline-block;padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em}
+.tag-satilik{background:#16a34a;color:#fff}
+.tag-kiralik{background:#2563eb;color:#fff}
+.tag-satildi{background:#dc2626;color:#fff}
+
+/* ---------- form elemanları ---------- */
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border-radius:13px;border:1.5px solid var(--line);
+  background:var(--bg-soft);color:var(--ink);font-family:var(--fb);font-size:.96rem;outline:none;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--p);box-shadow:0 0 0 4px rgba(37,99,235,.13)}
+.field textarea{resize:vertical;min-height:92px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:680px){.row2,.row3{grid-template-columns:1fr}}
+.hint{font-size:.8rem;color:var(--muted)}
+
+/* ---------- yükleme / spinner ---------- */
+.spin{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}

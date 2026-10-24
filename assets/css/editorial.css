@@ -1,0 +1,88 @@
+/* ============================================================
+   editorial.css — editoryal premium katman (sybiosme.com +
+   david-estrada.dev tersine mühendislik çıktısı)
+   kural: mevcut bileşenleri EZMEZ, üstüne giydirir
+   ============================================================ */
+
+/* editoryal vurgu: serif italik */
+.ac{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0}
+
+/* section editoryal başlık: hairline üstü, 2 kolon */
+.sechead{border-top:1px solid var(--line);padding-top:26px;margin-bottom:56px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+.sechead .kicker{margin-bottom:16px}
+.sechead h2{font-size:clamp(1.9rem,3.4vw,3rem);margin:0}
+.sechead p{margin:0;font-size:1rem;color:var(--muted)}
+.sechead .idx{font-family:var(--fh);font-weight:700;font-size:.8rem;color:var(--p);letter-spacing:.16em}
+.dark .sechead{border-top-color:rgba(255,255,255,.14)}
+@media (max-width:768px){.sechead{grid-template-columns:1fr;gap:18px;align-items:start}}
+
+/* kicker editoryal: kutu değil, ince etiket */
+.kicker{background:transparent;border:0;padding:0;color:var(--muted);font-weight:700}
+.dark .kicker{background:transparent;border:0;color:#7dd3fc}
+
+/* marquee şerit */
+.marquee{border-block:1px solid var(--line);background:var(--bg);overflow:hidden;padding:16px 0}
+.mtrack{display:inline-flex;gap:56px;white-space:nowrap;animation:mq 30s linear infinite;will-change:transform}
+.mtrack span{font-family:var(--fh);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--muted)}
+.mtrack i{color:var(--p);font-size:.55rem;align-self:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marquee:hover .mtrack{animation-play-state:paused}
+
+/* buton: editoryal parlama geçişi */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent 52%,rgba(255,255,255,.25) 52%);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.23,1,.32,1)}
+.btn:hover::after{transform:scaleX(1)}
+
+/* fchip: gradient yerine editoryal dolu siyah pill */
+.fchip.on{background:var(--ink);color:var(--bg);border-color:transparent}
+html[data-theme="dark"] .fchip.on{background:#fff;color:#05080f}
+
+/* süreç gün çizgisi (sybiosme "Days 1→10") */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin:0 0 56px;
+  border-top:1px solid rgba(255,255,255,.18);position:relative}
+.tl>div{padding-top:20px;position:relative}
+.tl>div::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;
+  background:var(--p-2);box-shadow:0 0 0 4px rgba(56,189,248,.22)}
+.tl b{display:block;font-family:var(--fh);font-size:1rem;color:#fff;margin-bottom:4px}
+.tl span{font-size:.85rem;color:#9fb0cb}
+@media (max-width:680px){.tl{grid-template-columns:1fr 1fr;gap:20px}}
+
+/* bilgi tablosu (david-estrada meta list) — yalnız dl.meta */
+dl.meta{border-top:1px solid var(--line);margin-top:30px}
+dl.meta>div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:13px 2px;border-bottom:1px solid var(--line)}
+dl.meta dt{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+dl.meta dd{font-family:var(--fh);font-weight:700;text-align:right;font-size:.95rem}
+
+/* editoryal kart: yumuşak radius yerine keskin hairline */
+.listing,.bcard,.post,.tcard,.fq,.card,.form{border-radius:10px}
+.listing .ph,.post .top{border-radius:0}
+.dspec{border-radius:12px}
+
+/* final CTA (sybiosme "This is only the end of the page") */
+.final{background:var(--bg-dark);color:#fff;text-align:center;padding:130px 0 96px;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(640px 400px at 50% 0%,rgba(37,99,235,.22),transparent 60%)}
+.final .wrap{position:relative;z-index:1}
+.final h2{font-size:clamp(2rem,5vw,3.7rem);color:#fff;margin-bottom:34px}
+.final .cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.trustrow{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:52px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.12);color:#9fb0cb;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.trustrow i{color:var(--p-2);margin-right:8px}
+
+/* hero mikro meta satırı */
+.herometa{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;color:#8ea0bd;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.herometa i{color:var(--p-2);margin-right:8px}
+
+/* footer kapanış cümlesi */
+.fclose{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.25rem;color:#cbd5e1;margin:8px 0 26px}
+
+/* editoryal link altı çizgisi */
+.ulink{position:relative;text-decoration:none}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.23,1,.32,1)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
+
+@media (prefers-reduced-motion:reduce){.mtrack{animation:none}}

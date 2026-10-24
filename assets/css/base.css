@@ -1,0 +1,86 @@
+/* ============================================================
+   base.css — tasarım token'ları, reset, tipografi, yardımcılar
+   Proje: ozeldemirweb  |  Yazar: Özel Demir Emlak
+   ============================================================ */
+
+:root{
+  /* marka */
+  --p:#2563eb;            /* primary */
+  --p-2:#38bdf8;          /* secondary */
+  --grad:linear-gradient(120deg,#2563eb,#38bdf8);
+
+  /* yüzeyler (light) */
+  --bg:#ffffff; --bg-soft:#f6f8fc; --bg-dark:#0a1022; --bg-dark-2:#0e1730;
+  --ink:#0b1220; --muted:#5b6779; --line:#e6eaf2; --card:#ffffff;
+
+  /* derinlik */
+  --shadow:0 8px 30px rgba(16,29,54,.08);
+  --shadow-lg:0 24px 60px rgba(16,29,54,.14);
+
+  /* tipografi & ölçüler */
+  --fh:'Space Grotesk',sans-serif;
+  --fb:'Inter',sans-serif;
+  --r:18px;
+  --max:1180px;
+
+  /* durum renkleri */
+  --ok:#16a34a; --err:#dc2626; --warn:#d97706;
+  --wa:#25d366;
+}
+
+html[data-theme="dark"]{
+  --bg:#070c1a; --bg-soft:#0b1222; --bg-dark:#05080f; --bg-dark-2:#0a1022;
+  --ink:#eef2f8; --muted:#93a1b8; --line:#18233d; --card:#0d1528;
+  --shadow:0 10px 34px rgba(0,0,0,.5); --shadow-lg:0 26px 70px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+/* ---------- reset ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--fb);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font-family:inherit}
+ul{list-style:none}
+
+h1,h2,h3,h4{font-family:var(--fh);letter-spacing:-.02em;line-height:1.15;font-weight:700}
+
+::selection{background:rgba(37,99,235,.25)}
+:focus-visible{outline:3px solid var(--p);outline-offset:2px;border-radius:6px}
+
+/* ---------- skip link (a11y) ---------- */
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:16px;top:16px;width:auto;height:auto;padding:12px 18px;background:var(--p);color:#fff;border-radius:10px;z-index:3000}
+
+/* ---------- layout yardımcıları ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.sec{padding:104px 0}
+.dark{background:var(--bg-dark);color:#fff}
+.dark h2,.dark h3{color:#fff}
+.dark .lead{color:#a9b6cf}
+.light-soft{background:var(--bg-soft)}
+.text-c{text-align:center}
+
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:1.06rem}
+
+.shead{max-width:660px;margin:0 auto 64px;text-align:center}
+.shead h2{font-size:clamp(1.8rem,3.2vw,2.7rem);margin-bottom:16px}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;
+  background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25);color:var(--p);
+  font-weight:800;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.dark .kicker{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.3);color:#7dd3fc}
+
+/* ---------- scroll reveal ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation:none!important;transition:none!important}
+}
+
+/* ---------- mobil breakpoint çekirdeği ---------- */
+@media (max-width:1024px){.sec{padding:88px 0}}
+@media (max-width:680px){.sec{padding:76px 0}}

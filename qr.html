@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Özel Demir | Hızlı Erişim</title>
+<meta name="description" content="Özel Demir Gayrimenkul Danışmanlığı — WhatsApp, telefon, Instagram ve Facebook'a tek dokunuşla ulaşın." />
+<meta name="theme-color" content="#efeae0" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#11150f" media="(prefers-color-scheme: dark)" />
+<link rel="canonical" href="https://caca1403.github.io/ozeldemirweb/qr.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2314231c'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='24' fill='%236fbf95'%3EOD%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<style>
+  :root{
+    --desk:#efeae0; --paper:#fbf9f3; --ink:#17241d; --muted:#5f6a62; --fog:#8b9389;
+    --line:rgba(23,36,29,.16); --line-soft:rgba(23,36,29,.08);
+    --accent:#2f6b4f; --accent-ink:#f6f4ec; --accent-deep:#204c37;
+    --wa-bg:#12803d; --wa-deep:#0a5a2a; --wa-fg:#ffffff; --wa-soft:#e6f4ea;
+    --shadow:0 1px 1px rgba(23,36,29,.06), 0 18px 36px -24px rgba(23,36,29,.55), 0 46px 70px -50px rgba(23,36,29,.5);
+    --font:"Geist",system-ui,sans-serif;
+    --serif:"Fraunces",Georgia,serif;
+    --mono:"Geist Mono",ui-monospace,Menlo,monospace;
+    --ease:cubic-bezier(.16,1,.3,1);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--desk:#11150f;--paper:#181d17;--ink:#eeefe7;--muted:#a3ada4;--fog:#758073;
+      --line:rgba(238,239,231,.18);--line-soft:rgba(238,239,231,.08);
+      --accent:#78c69b;--accent-ink:#0d1710;--accent-deep:#0f2b1e;
+      --wa-bg:#25d366;--wa-deep:#12803d;--wa-fg:#0c1710;--wa-soft:#0a3b21;
+      --shadow:0 1px 1px rgba(0,0,0,.5), 0 20px 40px -24px rgba(0,0,0,.9), 0 50px 80px -50px rgba(0,0,0,.9);
+      color-scheme:dark}
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--desk);color:var(--ink);font-family:var(--font);line-height:1.6;
+    -webkit-font-smoothing:antialiased;min-height:100dvh;display:flex;align-items:center;
+    justify-content:center;padding:26px 16px;position:relative;overflow-x:hidden}
+
+  /* masa: sıcak ışık + ince kâğıt dokusu */
+  .desk{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .desk::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(70% 55% at 50% -10%,rgba(255,255,255,.55),transparent 65%),
+               radial-gradient(60% 50% at 85% 110%,rgba(47,107,79,.16),transparent 70%)}
+  .desk::after{content:"";position:absolute;inset:0;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @media (prefers-color-scheme:dark){.desk::before{background:radial-gradient(70% 55% at 50% -10%,rgba(120,198,155,.08),transparent 65%)}}
+
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .mono{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+
+  .scene{position:relative;z-index:1;width:100%;max-width:412px;perspective:1300px}
+  .sheet{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:3px;
+    padding:26px 24px 20px;box-shadow:var(--shadow);transform-style:preserve-3d;
+    transition:transform .6s var(--ease)}
+  /* belge köşe işaretleri */
+  .sheet .corner{position:absolute;width:9px;height:9px;border:1px solid var(--line);pointer-events:none}
+  .sheet .corner.tl{top:9px;left:9px;border-right:0;border-bottom:0}
+  .sheet .corner.tr{top:9px;right:9px;border-left:0;border-bottom:0}
+  .sheet .corner.bl{bottom:9px;left:9px;border-right:0;border-top:0}
+  .sheet .corner.br{bottom:9px;right:9px;border-left:0;border-top:0}
+
+  .topline{display:flex;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .topline .mono:last-child{color:var(--accent)}
+
+  .id{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 0 18px}
+
+  /* mühür: dairesel yazı + portre */
+  .seal{position:relative;width:112px;height:112px;display:grid;place-items:center;transform:translateZ(26px)}
+  .seal svg{position:absolute;inset:0;width:100%;height:100%;color:var(--accent);opacity:.85}
+  .seal .ph{width:74px;height:74px;border-radius:50%;overflow:hidden;
+    box-shadow:0 0 0 1px var(--line), 0 10px 20px -12px rgba(23,36,29,.9)}
+  .seal img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+
+  h1{font-family:var(--serif);font-weight:400;font-size:2.15rem;line-height:1.05;
+    letter-spacing:-.02em;margin-top:16px;font-optical-sizing:auto}
+  .role{margin-top:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted)}
+  .lead{margin:18px auto 0;max-width:30ch;color:var(--muted);font-size:.88rem;line-height:1.6}
+
+  .rule{display:flex;align-items:center;gap:10px;margin:22px 0 18px;color:var(--line)}
+  .rule::before,.rule::after{content:"";flex:1;height:1px;background:currentColor}
+  .rule span{width:4px;height:4px;background:var(--accent);transform:rotate(45deg)}
+
+  /* birincil aksiyon: basılabilir yeşil tuş */
+  .cta{display:flex;align-items:center;gap:13px;padding:16px 18px;border-radius:3px;
+    background:linear-gradient(180deg,color-mix(in srgb,var(--wa-bg) 86%,#fff),var(--wa-bg));
+    color:var(--wa-fg);border:1px solid color-mix(in srgb,var(--wa-bg) 70%,#000);
+    box-shadow:0 4px 0 var(--wa-deep), 0 14px 22px -14px rgba(10,60,30,.9);
+    transition:transform .18s var(--ease), box-shadow .18s var(--ease), filter .2s}
+  .cta:hover{filter:brightness(1.03)}
+  .cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--wa-deep), 0 8px 14px -12px rgba(10,60,30,.9)}
+  .cta .ic{font-size:1.15rem}
+  .cta b{display:block;font-size:.97rem;font-weight:600;letter-spacing:-.01em}
+  .cta small{display:block;font-size:.76rem;color:var(--wa-soft);line-height:1.3}
+  .cta .arw{margin-left:auto;font-size:.8rem;opacity:.9}
+
+  /* defter satırları */
+  nav{display:flex;flex-direction:column;margin-top:8px}
+  .row{display:grid;grid-template-columns:26px 1fr auto;align-items:center;gap:12px;
+    padding:14px 2px;border-bottom:1px solid var(--line-soft);
+    transition:background .25s, padding .25s var(--ease)}
+  .row:last-child{border-bottom:0}
+  .row:hover{background:color-mix(in srgb,var(--accent) 7%,transparent);padding-left:8px}
+  .row .no{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--fog);transition:color .2s}
+  .row:hover .no{color:var(--accent)}
+  .row b{display:block;font-size:.94rem;font-weight:500;letter-spacing:-.01em}
+  .row small{display:block;color:var(--muted);font-size:.76rem;line-height:1.35}
+  .row .arw{font-size:.75rem;color:var(--fog);transition:transform .25s var(--ease), color .2s}
+  .row:hover .arw{transform:translateX(4px);color:var(--accent)}
+
+  footer{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fog)}
+  footer .loc{display:inline-flex;align-items:center;gap:5px}
+  footer .loc i{color:var(--accent);font-size:9px}
+
+  @media (prefers-reduced-motion:reduce){
+    .sheet{transition:none}
+    .cta,.cta:active,.row,.row:hover{transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="desk" aria-hidden="true"></div>
+
+<div class="scene" id="scene">
+<main class="sheet" id="sheet">
+  <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+  <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+
+  <div class="topline">
+    <span class="mono">Gayrimenkul Danışmanlığı</span>
+    <span class="mono">SP · 2026</span>
+  </div>
+
+  <div class="id">
+    <div class="seal">
+      <svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke="currentColor">
+        <defs>
+          <path id="arcTop" d="M60,60 m-46,0 a46,46 0 0,1 92,0" />
+          <path id="arcBottom" d="M60,60 m46,0 a46,46 0 0,1 -92,0" />
+        </defs>
+        <circle cx="60" cy="60" r="58" stroke-width=".8" stroke-dasharray="1 4" opacity=".7" />
+        <circle cx="60" cy="60" r="33" stroke-width=".8" opacity=".45" />
+        <text font-family="Geist Mono, monospace" font-size="7.4" letter-spacing="2.4" fill="currentColor" stroke="none" text-anchor="middle">
+          <textPath href="#arcTop" startOffset="50%">ÖZEL DEMİR</textPath>
+        </text>
+        <text font-family="Geist Mono, monospace" font-size="7.4" letter-spacing="2.4" fill="currentColor" stroke="none" text-anchor="middle">
+          <textPath href="#arcBottom" startOffset="50%">GAYRİMENKUL</textPath>
+        </text>
+        <rect x="12" y="58.5" width="3" height="3" transform="rotate(45 13.5 60)" fill="currentColor" stroke="none" />
+        <rect x="105" y="58.5" width="3" height="3" transform="rotate(45 106.5 60)" fill="currentColor" stroke="none" />
+      </svg>
+      <span class="ph"><img src="assets/img/od-avatar.jpg" alt="Özel Demir" width="74" height="74" /></span>
+    </div>
+    <h1>Özel Demir</h1>
+    <p class="role">Satılık · Kiralık · Değerleme</p>
+    <p class="lead">Portföy, ücretsiz değerleme ve yatırım soruları için tek dokunuşla ulaşın.</p>
+  </div>
+
+  <div class="rule" aria-hidden="true"><span></span></div>
+
+  <a class="cta" href="https://wa.me/905327983352?text=Merhaba%2C%20QR%20kodunuzdan%20geliyorum." target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp ic" aria-hidden="true"></i>
+    <span><b>WhatsApp'tan Yaz</b><small>7/24 açık · doğrudan bana yazın</small></span>
+    <i class="fas fa-arrow-right arw" aria-hidden="true"></i>
+  </a>
+
+  <nav aria-label="İletişim kanalları">
+    <a class="row" href="tel:+905327983352">
+      <span class="no">01</span>
+      <span><b>Telefon</b><small>+90 532 798 33 52</small></span>
+      <i class="fas fa-arrow-right arw" aria-hidden="true"></i>
+    </a>
+    <a class="row" href="https://www.instagram.com/ozel.demir.737" target="_blank" rel="noopener">
+      <span class="no">02</span>
+      <span><b>Instagram</b><small>@ozel.demir.737 · güncel portföy</small></span>
+      <i class="fas fa-arrow-right arw" aria-hidden="true"></i>
+    </a>
+    <a class="row" href="https://www.facebook.com/share/1CXTdbtjbb/" target="_blank" rel="noopener">
+      <span class="no">03</span>
+      <span><b>Facebook</b><small>İlanlar ve paylaşımlar</small></span>
+      <i class="fas fa-arrow-right arw" aria-hidden="true"></i>
+    </a>
+  </nav>
+
+  <footer>
+    <span>OD · Danışman</span>
+    <span class="loc"><i class="fas fa-location-dot" aria-hidden="true"></i>Fatsa / Ordu</span>
+  </footer>
+</main>
+</div>
+
+<script>
+  // Fare ile hafif 3D eğim; dokunmatikte ve hareket azaltma tercihinde kapalı.
+  const scene = document.getElementById('scene'), sheet = document.getElementById('sheet');
+  if (matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) {
+    scene.addEventListener('pointermove', (e) => {
+      const r = scene.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      sheet.style.transform = `rotateY(${(x * 4).toFixed(2)}deg) rotateX(${(-y * 3).toFixed(2)}deg)`;
+    });
+    scene.addEventListener('pointerleave', () => { sheet.style.transform = ''; });
+  }
+</script>
+</body>
+</html>

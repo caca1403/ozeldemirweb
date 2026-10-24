@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caca1403.github.io/ozeldemirweb/sitemap.xml
