@@ -197,6 +197,46 @@ h1,h2,h3,h4,p{margin:0}
   html:not(.reduced) .hno{font-size:3rem}
   html:not(.reduced) .hpanel h3{font-size:1.4rem}}
 
+
+
+/* ilce sayfalan */
+.sayfa-baslik{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.08;letter-spacing:-.02em;max-width:22ch;margin-top:14px}
+.sayfa-altbaslik{font-family:var(--font-display);font-weight:300;font-size:clamp(1.5rem,3vw,2.2rem);margin:48px 0 6px}
+.factgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 8px}
+.fact{padding:16px 16px 14px;border:1px solid rgba(201,162,74,.16);border-radius:var(--r);background:rgba(42,32,25,.45);position:relative}
+.fact b{display:block;font-family:var(--font-display);font-weight:400;font-size:1.45rem;color:var(--accent)}
+.fact span{display:block;margin-top:6px;font-family:var(--font-mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary)}
+.fact .delta{position:absolute;top:12px;right:12px;font-family:var(--font-mono);font-size:.62rem;padding:3px 8px;border-radius:999px;border:1px solid}
+.delta.up{color:#9EC7A8;border-color:rgba(158,199,168,.35)}
+.delta.down{color:#E4948F;border-color:rgba(228,148,143,.35)}
+@media (max-width:900px){.factgrid{grid-template-columns:1fr 1fr}}
+.istatgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media (max-width:720px){.istatgrid{grid-template-columns:1fr 1fr}}
+.mini-delta{font-family:var(--font-mono);font-size:.6rem;color:#9EC7A8;margin-left:4px}
+.mini-delta.neg{color:#E4948F}
+.adimlar{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.adim{padding:20px;border:1px solid rgba(201,162,74,.16);border-radius:var(--r);background:rgba(42,32,25,.4)}
+.adim b{font-family:var(--font-mono);font-size:.62rem;color:var(--accent);letter-spacing:.14em}
+.adim h3{font-family:var(--font-display);font-weight:400;font-size:1.15rem;margin:10px 0 6px}
+.adim p{font-size:.88rem;color:var(--text-secondary)}
+@media (max-width:720px){.adimlar{grid-template-columns:1fr}}
+.sss{margin-top:14px;max-width:70ch}
+.sss details{border-bottom:1px solid rgba(201,162,74,.14);padding:14px 0}
+.sss summary{cursor:pointer;font-family:var(--font-display);font-size:1.05rem;list-style:none;display:flex;gap:10px}
+.sss summary::before{content:"+";color:var(--accent);font-family:var(--font-mono)}
+.sss details[open] summary::before{content:"\2013"}
+.sss p{margin:10px 0 2px;color:var(--text-secondary);font-size:.92rem}
+
+/* fiyat egrisi */
+.curve{margin:30px 0 0;padding:18px 18px 14px;border:1px solid rgba(201,162,74,.16);border-radius:var(--r);background:rgba(42,32,25,.45)}
+.curve figcaption{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:12px}
+.curve figcaption b{color:var(--accent-hover);font-weight:500}
+.curve svg{width:100%;height:150px;display:block}
+.curve polyline{opacity:.9}
+.curve-note{margin:10px 0 0;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--text-secondary)}
+.mrow.hl .mname{color:var(--accent-hover)}
+.mrow.hl b{color:var(--accent-hover)}
+
 /* 03 ilanlar */
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
 .chip{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text-secondary);font-size:.86rem;cursor:pointer;transition:all .3s var(--ease)}

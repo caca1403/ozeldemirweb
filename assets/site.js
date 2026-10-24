@@ -353,6 +353,25 @@
   }
 
   /* ilan filtreleri */
+  /* fiyat egrisi: kendi gunluk olcumlerimiz */
+  const curve = $('#curve');
+  if (curve) {
+    fetch('assets/piyasa-history.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((h) => {
+      const AY2 = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+      const tr = (iso) => { const t = new Date(iso + 'T00:00:00'); return t.getDate() + ' ' + AY2[t.getMonth()] + ' ' + t.getFullYear(); };
+      const p = (Array.isArray(h) ? h : []).filter((e) => e.Fatsa).map((e) => e.Fatsa);
+      if (p.length < 2) {
+        if (h && h[0]) $('#curveNote').textContent = 'İlk ölçüm: ' + tr(h[0].t) + ' · ' + fmt(h[0].Fatsa) + " TL/m² — her sabah 06:00'da yeniden ölçüyoruz.";
+        return;
+      }
+      const mn = Math.min(...p), mx = Math.max(...p), ac = Math.max(1, mx - mn);
+      $('#curveLine').setAttribute('points', p.map((y, i) =>
+        ((8 + (i / (p.length - 1)) * 604).toFixed(1)) + ',' + (140 - ((y - mn) / ac) * 128).toFixed(1)).join(' '));
+      const dv = Math.round((p[p.length - 1] / p[0] - 1) * 1000) / 10;
+      $('#curveNote').textContent = p.length + ' ölçüm · ' + tr(h[0].t) + ' → ' + tr(h[h.length - 1].t) + ' · ilkine göre %' + (dv > 0 ? '+' : '') + dv;
+    }).catch(() => {});
+  }
+
   const chips = $$('.chip');
   const cards = $$('.card');
   /* ilan detay penceresi */

@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-24",
+ "guncellendi": "2026-10-25",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -9,5 +9,35 @@
   "Gülyalı": 44642,
   "Korgan": 23122,
   "Diğer": 19423
+ },
+ "ek": {
+  "Fatsa": {
+   "amortisman": 18,
+   "yasi": 7
+  },
+  "Altınordu": {
+   "amortisman": 17,
+   "yasi": 5
+  },
+  "Ünye": {
+   "amortisman": 19,
+   "yasi": 4
+  },
+  "Perşembe": {
+   "amortisman": 19,
+   "yasi": 4
+  },
+  "Gülyalı": {
+   "amortisman": 14,
+   "yasi": 1
+  },
+  "Korgan": {
+   "amortisman": 12,
+   "yasi": 9
+  },
+  "Diğer": {
+   "amortisman": 16,
+   "yasi": 5
+  }
  }
 }

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Korgan Satılık Daire Fiyatları — Güncel m² Ortalaması, Amortisman ve İlanlar | Özel Demir</title>
+<meta name="description" content="Korgan satılık daire ilanları, güncel metrekare fiyat ortalaması, amortisman süresi ve bina yaşı verileri. Her sabah otomatik ölçülür. Fatsa merkezli alım-satım ve değerleme: +90 532 798 33 52.">
+<link rel="canonical" href="https://caca1403.github.io/ozeldemirweb/korgan.html">
+<meta property="og:title" content="Korgan satılık daire fiyatları — Özel Demir">
+<meta property="og:description" content="Korgan için güncel m² fiyatı, amortisman süresi ve güncel ilanlar, tek sayfada.">
+<meta property="og:url" content="https://caca1403.github.io/ozeldemirweb/korgan.html">
+<meta property="og:image" content="https://caca1403.github.io/ozeldemirweb/assets/hero-poster.jpg">
+<meta name="theme-color" content="#1E1712">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Korgan Satılık Daire Fiyatları","url":"https://caca1403.github.io/ozeldemirweb/korgan.html","inLanguage":"tr","about":{"@type":"RealEstateAgent","name":"Özel Demir Gayrimenkul","telephone":"+905327983352","areaServed":"Korgan, Ordu"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Korgan bir metrekare ev fiyatı ne kadar?","acceptedAnswer":{"@type":"Answer","text":"Güncel metrekare fiyatı bu sayfada her sabah otomatik ölçülür; en son ölçüm sayfanın başında tarihli olarak yayınlanır."}},{"@type":"Question","name":"Korgan için ücretsiz değerleme yapıyor musunuz?","acceptedAnswer":{"@type":"Answer","text":"Evet. WhatsApp'tan gönderdiğiniz bilgi ve fotoğraflarla aynı gün ücretsiz ön değerleme yapılır; kesin değer yerinde inceleme ile netleşir."}},{"@type":"Question","name":"Evimi satmak için süreç nasıl işliyor?","acceptedAnswer":{"@type":"Answer","text":"Önce emsaller ve m² ortalamalarıyla doğru fiyat belirlenir; ardından ilan, alıcı görüşmeleri ve tapu süreci birlikte yürütülür."}},{"@type":"Question","name":"Başka ilçelerde de çalışıyor musunuz?","acceptedAnswer":{"@type":"Answer","text":"Evet. Merkezimiz Fatsa; Ordu'nun tüm ilçelerinde alım-satım, kiralama ve değerleme yapıyoruz."}}]}]}
+</script>
+</head>
+<body data-ilce="Korgan">
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Özel Demir, ana sayfa"><b>Özel Demir</b><span>Gayrimenkul</span></a>
+  <nav class="nav-links" aria-label="Menü">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="index.html#ilanlar">İlanlar</a>
+    <a href="index.html#deger">Değer Hesabı</a>
+  </nav>
+  <a class="btn small" href="https://wa.me/905327983352?text=Merhaba%2C%20Korgan%20fiyatlar%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
+<main>
+  <section class="sec" style="padding-top:clamp(110px,16vh,170px)">
+    <div class="wrap">
+      <span class="kicker">Özel Demir · Korgan</span>
+      <h1 class="sayfa-baslik">Korgan'da satılık daire: güncel fiyatlar ve güncel ilanlar</h1>
+      <p class="lede" id="ilcePpm">Ortalama metrekare fiyatı yükleniyor…</p>
+
+      <div class="factgrid" aria-label="Korgan piyasa rakamları">
+        <div class="fact"><b id="fFiyat">—</b><span>m² fiyatı · satılık daire</span></div>
+        <div class="fact"><b id="fAmort">—</b><span>Amortisman süresi</span></div>
+        <div class="fact"><b id="fYas">—</b><span>Ortalama bina yaşı</span></div>
+        <div class="fact"><b id="fIl">—</b><span>Ordu geneli m²</span></div>
+      </div>
+
+      <section id="istatSec" hidden>
+        <h2 class="sayfa-altbaslik">Son 1 yıl · Korgan</h2>
+        <div class="istatgrid" id="istatGrid"></div>
+        <p class="fine" id="istatNot"></p>
+      </section>
+
+      <div class="bigstat">
+        <span class="bigstat-no" id="ilceNo">—</span>
+        <span class="bigstat-unit">TL / m²</span>
+        <p>Korgan · her sabah otomatik ölçüm · satılık daire ilan ortalaması</p>
+      </div>
+
+      <div class="market" id="ilceBars" aria-label="İlçelere göre metrekare fiyatları"></div>
+
+      <figure class="curve" id="curve">
+        <figcaption><b>Korgan</b> · kendi günlük ölçümümüz</figcaption>
+        <svg viewBox="0 0 620 150" preserveAspectRatio="none" role="img" aria-label="Korgan metrekare fiyatının zaman içinde değişimi"><polyline id="curveLine" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"></polyline></svg>
+        <p class="curve-note" id="curveNote">İlk ölçüm toplandı — eğri yeni ölçümlerle belirir.</p>
+      </figure>
+
+      <h2 class="sayfa-altbaslik">Güncel Korgan ilanlarımız</h2>
+      <p class="lede" id="ilceSayi"></p>
+      <div class="grid" id="ilceGrid" style="margin-top:20px"></div>
+
+      <section id="soldSec" hidden>
+        <h2 class="sayfa-altbaslik">Korgan'nda elimizden çıkanlar</h2>
+        <p class="lede">Satışını tamamladığımız taşınmazlardan örnekler.</p>
+        <div class="grid" id="ilceSold" style="margin-top:20px"></div>
+      </section>
+
+      <section id="mahSec" hidden>
+        <h2 class="sayfa-altbaslik">Korgan mahallelerinde m² fiyatları</h2>
+        <p class="lede">Şu an ilanı olan mahalleler, büyükten küçüğe. Yüzde: son bir yıldaki değişim.</p>
+        <div class="market" id="mahBars"></div>
+        <p class="fine" id="mahNot"></p>
+      </section>
+
+      <h2 class="sayfa-altbaslik">Nasıl çalışıyoruz?</h2>
+      <div class="adimlar">
+        <div class="adim"><b>01</b><h3>Doğru fiyat</h3><p>Emsal ilanlar ve m² ortalamalarıyla fiyatı birlikte belirliyoruz — internetteki rakam değil, satan rakam.</p></div>
+        <div class="adim"><b>02</b><h3>Doğru alıcı</h3><p>İlanımızı ciddi alıcıyla buluşturuyoruz; gereksiz aramayla vaktinizi almıyoruz.</p></div>
+        <div class="adim"><b>03</b><h3>Güvenli teslim</h3><p>Pazarlıktan tapuya kadar süreci birlikte yürütüyoruz; satış günü sürpriz yaşamazsınız.</p></div>
+      </div>
+
+      <h2 class="sayfa-altbaslik">Sık sorulanlar</h2>
+      <div class="sss">
+        <details open>
+          <summary>Korgan bir metrekare ev fiyatı ne kadar?</summary>
+          <p id="faqPpm">Bu sayfadaki ölçüm her sabah yeniden yapılır; en güncel rakam sayfanın başında tarihli olarak yer alır.</p>
+        </details>
+        <details>
+          <summary>Ücretsiz değerleme yapıyor musunuz?</summary>
+          <p>Evet — ücretsiz ve mümkünse aynı gün. WhatsApp'tan konum, m² ve fotoğraf gönderin; yazılı bir aralık verelim. Kesin değer yerinde inceleme ile netleşir.</p>
+        </details>
+        <details>
+          <summary>Evimi satmak için süreç nasıl işliyor?</summary>
+          <p>Doğru fiyatı belirliyoruz, ilanı hazırlıyoruz, alıcı görüşmelerini yürütüyor ve tapu gününe kadar yanınızda oluyoruz. Sözleşme yoksa gizli listeyle de çalışabiliriz.</p>
+        </details>
+        <details>
+          <summary>Başka ilçelerde de çalışıyor musunuz?</summary>
+          <p>Evet. Merkezimiz Fatsa; Ordu'nun tüm ilçelerinde alım-satım, kiralama, değerleme ve müteahhitlik iş birliği yapıyoruz.</p>
+        </details>
+      </div>
+
+      <p class="note" style="margin-top:40px">Bu sayfadaki metrekare fiyatı, amortisman süresi ve bina yaşı, Emlakjet satılık daire ilan ortalamalarından her gün otomatik ölçülür; eğri kendi günlük ölçümlerimizden oluşur. İlanlar ve satış örnekleri Özel Demir portföyüdür. Kesin değer, yerinde inceleme ile netleşir.</p>
+      <div class="actions" style="margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 16px">
+        <a class="btn" href="https://wa.me/905327983352?text=Merhaba%2C%20Korgan%27da%20ev%20almak%20i%C3%A7in%20dan%C4%B1%C5%9Fmak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yaz</a>
+        <a class="btn ghost" href="index.html#deger">Evimin değerini hesapla</a>
+        <a class="btn ghost" href="index.html#ilanlar">Tüm ilanlar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b>Özel Demir</b>
+        <p>Gayrimenkul danışmanlığı. Fatsa, Ordu. Otuz yıldır doğru fiyat.</p>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <div class="row">
+          <a href="tel:+905327983352">+90 532 798 33 52</a>
+          <a href="https://wa.me/905327983352" target="_blank" rel="noopener">WhatsApp</a>
+          <span>Fatsa, Ordu</span>
+        </div>
+      </div>
+      <div>
+        <h4>İlçeler</h4>
+        <div class="row"><a href="fatsa.html">Fatsa</a><a href="altinordu.html">Altınordu</a><a href="unye.html">Ünye</a><a href="persembe.html">Perşembe</a><a href="gulyali.html">Gülyalı</a><a href="index.html">Tümü</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/listings.js"></script>
+<script src="assets/ilce.js?v=3"></script>
+</body>
+</html>

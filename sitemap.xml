@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://caca1403.github.io/ozeldemirweb/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/fatsa.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/altinordu.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/unye.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/persembe.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/gulyali.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://caca1403.github.io/ozeldemirweb/korgan.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
 </urlset>
