@@ -8,7 +8,7 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 24740
+  "Diğer": 25944
  },
  "ek": {
   "Fatsa": {
@@ -209,7 +209,6 @@
    {
     "ad": "Dumlupınar",
     "m2": 29884,
-    "yillik": 47.9,
     "ucuz": 2450000,
     "pahali": 7000000,
     "tahmin": 11
@@ -223,7 +222,6 @@
    {
     "ad": "Fatih",
     "m2": 27841,
-    "yillik": 39.2,
     "ucuz": 1900000,
     "pahali": 9000000,
     "tahmin": 7
