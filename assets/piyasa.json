@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-25",
+ "guncellendi": "2026-10-26",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -8,7 +8,7 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 25944
+  "Diğer": 17519
  },
  "ek": {
   "Fatsa": {
@@ -85,7 +85,7 @@
   },
   "Perşembe": {
    "amortisman": 19,
-   "yasi": 4,
+   "yasi": 5,
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
@@ -209,6 +209,7 @@
    {
     "ad": "Dumlupınar",
     "m2": 29884,
+    "yillik": 47.9,
     "ucuz": 2450000,
     "pahali": 7000000,
     "tahmin": 11
@@ -222,6 +223,7 @@
    {
     "ad": "Fatih",
     "m2": 27841,
+    "yillik": 39.2,
     "ucuz": 1900000,
     "pahali": 9000000,
     "tahmin": 7
