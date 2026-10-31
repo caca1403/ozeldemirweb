@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-30",
+ "guncellendi": "2026-10-31",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -8,7 +8,7 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 34227
+  "Diğer": 40704
  },
  "ek": {
   "Fatsa": {
@@ -133,7 +133,7 @@
   },
   "Korgan": {
    "amortisman": 12,
-   "yasi": 9,
+   "yasi": 11,
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
@@ -195,7 +195,7 @@
     "m2": 30855,
     "yillik": 39.0,
     "ucuz": 2225000,
-    "pahali": 9000000,
+    "pahali": 9750000,
     "tahmin": 11
    },
    {
