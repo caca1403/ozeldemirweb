@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-31",
+ "guncellendi": "2026-11-01",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -8,7 +8,7 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 40704
+  "Diğer": 36586
  },
  "ek": {
   "Fatsa": {
@@ -17,19 +17,19 @@
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
-     "a": 34085,
+     "a": 34447,
      "t": "unitPrice",
-     "r": 0.3756
+     "r": 0.3702
     },
     {
      "l": "Ort. Fiyat",
-     "a": 5010495,
+     "a": 4994815,
      "t": "totalPrice",
      "r": null
     },
     {
      "l": "Ort. Kira",
-     "a": 21307,
+     "a": 21830,
      "t": "totalPrice",
      "r": null
     }
@@ -41,19 +41,19 @@
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
-     "a": 45599,
+     "a": 46294,
      "t": "unitPrice",
-     "r": 0.3248
+     "r": 0.3184
     },
     {
      "l": "Ort. Fiyat",
-     "a": 5243885,
+     "a": 5323810,
      "t": "totalPrice",
      "r": null
     },
     {
      "l": "Ort. Kira",
-     "a": 23019,
+     "a": 23470,
      "t": "totalPrice",
      "r": null
     }
@@ -65,19 +65,19 @@
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
-     "a": 37173,
+     "a": 37935,
      "t": "unitPrice",
-     "r": 0.404
+     "r": 0.3927
     },
     {
      "l": "Ort. Fiyat",
-     "a": 4720971,
+     "a": 4817745,
      "t": "totalPrice",
      "r": null
     },
     {
      "l": "Ort. Kira",
-     "a": 21215,
+     "a": 21758,
      "t": "totalPrice",
      "r": null
     }
@@ -89,19 +89,19 @@
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
-     "a": 47556,
+     "a": 47621,
      "t": "unitPrice",
-     "r": 0.4833
+     "r": 0.4823
     },
     {
      "l": "Ort. Fiyat",
-     "a": 6182280,
+     "a": 6000246,
      "t": "totalPrice",
      "r": null
     },
     {
      "l": "Ort. Kira",
-     "a": 24210,
+     "a": 24621,
      "t": "totalPrice",
      "r": null
     }
@@ -113,19 +113,19 @@
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
-     "a": 54722,
+     "a": 55569,
      "t": "unitPrice",
-     "r": 0.3671
+     "r": 0.3595
     },
     {
      "l": "Ort. Fiyat",
-     "a": 6566640,
+     "a": 7779660,
      "t": "totalPrice",
      "r": null
     },
     {
      "l": "Ort. Kira",
-     "a": 16804,
+     "a": 16908,
      "t": "totalPrice",
      "r": null
     }
@@ -133,7 +133,7 @@
   },
   "Korgan": {
    "amortisman": 12,
-   "yasi": 11,
+   "yasi": 10,
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
@@ -161,19 +161,19 @@
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
-     "a": 40020,
+     "a": 40915,
      "t": "unitPrice",
-     "r": 0.2759
+     "r": 0.2683
     },
     {
      "l": "Ort. Fiyat",
-     "a": 5002500,
+     "a": 5114375,
      "t": "totalPrice",
      "r": null
     },
     {
      "l": "Ort. Kira",
-     "a": 23579,
+     "a": 23264,
      "t": "totalPrice",
      "r": null
     }
@@ -185,7 +185,7 @@
    {
     "ad": "Dolunay",
     "m2": 36746,
-    "yillik": 37.1,
+    "yillik": 36.3,
     "ucuz": 2250000,
     "pahali": 13500000,
     "tahmin": 11
@@ -193,7 +193,7 @@
    {
     "ad": "Ayazlı",
     "m2": 30855,
-    "yillik": 39.0,
+    "yillik": 38.3,
     "ucuz": 2225000,
     "pahali": 9750000,
     "tahmin": 11
@@ -201,7 +201,7 @@
    {
     "ad": "Evkaf",
     "m2": 30081,
-    "yillik": 55.5,
+    "yillik": 54.4,
     "ucuz": 2500000,
     "pahali": 6390000,
     "tahmin": 9
@@ -209,7 +209,7 @@
    {
     "ad": "Dumlupınar",
     "m2": 29884,
-    "yillik": 47.9,
+    "yillik": 48.0,
     "ucuz": 2450000,
     "pahali": 7000000,
     "tahmin": 11
@@ -217,7 +217,7 @@
    {
     "ad": "Fatih",
     "m2": 27841,
-    "yillik": 39.2,
+    "yillik": 38.9,
     "ucuz": 1900000,
     "pahali": 9000000,
     "tahmin": 7
@@ -225,7 +225,7 @@
    {
     "ad": "Kurtuluş",
     "m2": 27445,
-    "yillik": 37.0,
+    "yillik": 37.3,
     "ucuz": 1250000,
     "pahali": 5990000,
     "tahmin": 7
@@ -233,7 +233,7 @@
    {
     "ad": "Mustafakemalpaşa",
     "m2": 24898,
-    "yillik": 27.8,
+    "yillik": 27.1,
     "ucuz": 2550000,
     "pahali": 4690000,
     "tahmin": 5
@@ -241,7 +241,7 @@
    {
     "ad": "Sakarya",
     "m2": 24608,
-    "yillik": 33.1,
+    "yillik": 33.0,
     "ucuz": 1425000,
     "pahali": 10000000,
     "tahmin": 8
