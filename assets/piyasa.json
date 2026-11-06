@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-05",
+ "guncellendi": "2026-11-06",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -8,12 +8,12 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 36145
+  "Diğer": 32950
  },
  "ek": {
   "Fatsa": {
    "amortisman": 18,
-   "yasi": 7,
+   "yasi": 8,
    "istat": [
     {
      "l": "Ort. m² Fiyatı",
@@ -202,7 +202,7 @@
     "ad": "Evkaf",
     "m2": 30081,
     "yillik": 60.8,
-    "ucuz": 2500000,
+    "ucuz": 2100000,
     "pahali": 6390000,
     "tahmin": 9
    },
@@ -227,7 +227,7 @@
     "m2": 27445,
     "yillik": 40.9,
     "ucuz": 1250000,
-    "pahali": 5990000,
+    "pahali": 6250000,
     "tahmin": 7
    },
    {
