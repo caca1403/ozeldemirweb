@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-11",
+ "guncellendi": "2026-11-12",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -182,6 +182,11 @@
  },
  "mahalle": {
   "Fatsa": [
+   {
+    "ad": "Yalıköy",
+    "m2": 51663,
+    "tahmin": 4
+   },
    {
     "ad": "Dolunay",
     "m2": 36746,
