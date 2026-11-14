@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-13",
+ "guncellendi": "2026-11-14",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -8,7 +8,7 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 39948
+  "Diğer": 25534
  },
  "ek": {
   "Fatsa": {
@@ -232,7 +232,7 @@
     "m2": 27445,
     "yillik": 40.9,
     "ucuz": 1250000,
-    "pahali": 6250000,
+    "pahali": 17500000,
     "tahmin": 7
    },
    {
