@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-19",
+ "guncellendi": "2026-11-20",
  "kaynak": "emlakjet.com",
  "ppm2": {
   "Fatsa": 30018,
@@ -8,7 +8,7 @@
   "Perşembe": 38287,
   "Gülyalı": 44642,
   "Korgan": 23122,
-  "Diğer": 29420
+  "Diğer": 27543
  },
  "ek": {
   "Fatsa": {
@@ -199,7 +199,7 @@
     "ad": "Ayazlı",
     "m2": 30855,
     "yillik": 34.8,
-    "ucuz": 2400000,
+    "ucuz": 2550000,
     "pahali": 9750000,
     "tahmin": 11
    },
